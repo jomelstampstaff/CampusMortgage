@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 2: Advanced Loan Processing · Certified Master Loan Processor</title>
+    <meta name="description" content="Module 2 of the Certified Master Loan Processor Bootcamp — credit report review, income analysis, self-employment income, assets, appraisals, title, and underwriting conditions.">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <a href="../index.html" class="brand">🎓 Certified Master Loan Processor</a>
+        <nav>
+            <a href="../index.html">Home</a>
+            <a href="index.html" class="active">Bootcamp</a>
+            <a href="../reference/index.html">Reference</a>
+            <a href="../about.html">About</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <span style="display:inline-block; background:#7c3aed; color:#fff; font-size:0.7rem; font-weight:800; padding:0.28rem 0.9rem; border-radius:30px; letter-spacing:0.06em; text-transform:uppercase; margin-bottom:0.7rem;">Module 2</span>
+        <h1>Advanced Loan Processing</h1>
+        <p>Credit report review, income analysis, self-employment income, asset review, appraisals, title, and underwriting conditions — with real-world examples and highlighted calculations.</p>
+    </section>
+
+    <div class="app">
+
+        <!-- ===== SIDEBAR ===== -->
+        <nav class="sidebar">
+            <h3>📗 Module 2 Sections</h3>
+
+            <div class="module-block" id="m2-core">
+                <div class="module-header" onclick="toggleModule('m2-core')">
+                    <span class="label"><span class="dot purple"></span> Core Review</span>
+                    <span class="chevron">▼</span>
+                </div>
+                <div class="module-body">
+                    <ul>
+                        <li><a href="#m2-credit">1. Credit Report Review</a></li>
+                        <li><a href="#m2-income">2. Income Review</a></li>
+                        <li><a href="#m2-base">3. Base Pay</a></li>
+                        <li><a href="#m2-bonus">4. Bonus, OT &amp; Commission</a></li>
+                        <li><a href="#m2-parttime">5. Part-Time &amp; Seasonal</a></li>
+                        <li><a href="#m2-retire">6. Retirement &amp; Pension</a></li>
+                        <li><a href="#m2-quiz1">7. Quiz (Income)</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="module-block collapsed" id="m2-other">
+                <div class="module-header" onclick="toggleModule('m2-other')">
+                    <span class="label"><span class="dot orange"></span> Other Income Types</span>
+                    <span class="chevron">▼</span>
+                </div>
+                <div class="module-body">
+                    <ul>
+                        <li><a href="#m2-alimony">8. Alimony &amp; Child Support</a></li>
+                        <li><a href="#m2-ss">9. Social Security</a></li>
+                        <li><a href="#m2-military">10. Military Pay</a></li>
+                        <li><a href="#m2-quiz2">11. Quiz (Other Income)</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="module-block collapsed" id="m2-se">
+                <div class="module-header" onclick="toggleModule('m2-se')">
+                    <span class="label"><span class="dot green"></span> Self-Employment</span>
+                    <span class="chevron">▼</span>
+                </div>
+                <div class="module-body">
+                    <ul>
+                        <li><a href="#m2-se-basics">12. Self-Employment Basics</a></li>
+                        <li><a href="#m2-schedc">13. Schedule C</a></li>
+                        <li><a href="#m2-rental">14. Rental Income</a></li>
+                        <li><a href="#m2-1065">15. Form 1065 &amp; K1s</a></li>
+                        <li><a href="#m2-1120s">16. Form 1120S &amp; K1s</a></li>
+                        <li><a href="#m2-quiz3">17. Quiz (Self-Employment)</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="module-block collapsed" id="m2-assets">
+                <div class="module-header" onclick="toggleModule('m2-assets')">
+                    <span class="label"><span class="dot red"></span> Assets &amp; Collateral</span>
+                    <span class="chevron">▼</span>
+                </div>
+                <div class="module-body">
+                    <ul>
+                        <li><a href="#m2-assets-main">18. Asset Review</a></li>
+                        <li><a href="#m2-bank">19. Bank Statement Review</a></li>
+                        <li><a href="#m2-large">20. Large Deposits</a></li>
+                        <li><a href="#m2-stocks">21. Stocks, IRA, 401k</a></li>
+                        <li><a href="#m2-business-assets">22. Business Assets</a></li>
+                        <li><a href="#m2-quiz4">23. Quiz (Assets)</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="module-block collapsed" id="m2-collateral">
+                <div class="module-header" onclick="toggleModule('m2-collateral')">
+                    <span class="label"><span class="dot blue"></span> Purchase, Appraisal &amp; Title</span>
+                    <span class="chevron">▼</span>
+                </div>
+                <div class="module-body">
+                    <ul>
+                        <li><a href="#m2-purchase">24. Purchase Agreement</a></li>
+                        <li><a href="#m2-appraisal">25. Appraisal Review</a></li>
+                        <li><a href="#m2-title">26. Title Review</a></li>
+                        <li><a href="#m2-conditions">27. Underwriting Conditions</a></li>
+                        <li><a href="#m2-quiz5">28. Quiz (Final)</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <main class="main">
+
+            <!-- ============ 1. CREDIT REPORT REVIEW ============ -->
+            <section id="m2-credit" class="card">
+                <h2>1. Credit Report Review <span class="badge purple">Module 2</span></h2>
+
+                <div class="note purple">
+                    <strong>🔑 First step in every file:</strong> Pull the 1003, the credit report, and the photo ID. Get familiar with the borrower — you will see these three items constantly throughout the entire file.
+                </div>
+
+                <h3>Credit Report Requirements</h3>
+                <ul>
+                    <li>Every file must have a <strong>tri-merge credit report</strong> for all borrowers</li>
+                    <li>Must have at least <strong>one national repository credit score</strong> for all borrowers</li>
+                    <li>Three repositories: <strong>TransUnion, Experian, Equifax</strong></li>
+                    <li>Credit report must be within <strong>120 days</strong> of the note date (180 days for new construction)</li>
+                </ul>
+
+                <h3>Credit Report Review Checklist</h3>
+                <div class="process-step"><span class="num purple">1</span><span class="desc"><strong>Verify borrower data</strong> — name, SSN, address match photo ID and SSN verification</span></div>
+                <div class="process-step"><span class="num purple">2</span><span class="desc"><strong>Review three credit scores</strong> — determine mid FICO</span></div>
+                <div class="process-step"><span class="num purple">3</span><span class="desc"><strong>Review all trade lines</strong> — mortgages, revolving, installments, leases</span></div>
+                <div class="process-step"><span class="num purple">4</span><span class="desc"><strong>Review public records</strong> — judgments, bankruptcies, foreclosures</span></div>
+                <div class="process-step"><span class="num purple">5</span><span class="desc"><strong>Review inquiries</strong> — any within <strong>90 days</strong> must be evaluated</span></div>
+                <div class="process-step"><span class="num purple">6</span><span class="desc"><strong>Review AKAs and address variations</strong> — any within <strong>24 months</strong> require LOX</span></div>
+                <div class="process-step"><span class="num purple">7</span><span class="desc"><strong>Review late payments</strong> — check overlays (some disallow within 24 months)</span></div>
+
+                <h3>Credit Score Determination</h3>
+                <div class="formula-box">
+                    <span class="label">Single Borrower</span>
+                    <span class="formula">Mid FICO = Middle score of the three repositories</span>
+                </div>
+                <div class="formula-box">
+                    <span class="label">Multiple Borrowers</span>
+                    <span class="formula">Qualifying Score = Lowest of each borrower's middle score</span>
+                </div>
+
+                <div class="computation-box">
+                    <div class="step"><strong>Example (Joint):</strong></div>
+                    <div class="step">Michael: 585, 637, 651 → middle = <strong>637</strong></div>
+                    <div class="step">Megan: 600, 645, 660 → middle = <strong>645</strong></div>
+                    <span class="result">Qualifying score: 637 (lower of the two)</span>
+                </div>
+
+                <h3>Trade Line Types</h3>
+                <div class="table-wrap">
+                    <table>
+                        <thead><tr><th>Trade Line</th><th>How It's Treated</th></tr></thead>
+                        <tbody>
+                            <tr><td><strong>Mortgages</strong></td><td>Full PITIA counted in DTI</td></tr>
+                            <tr><td><strong>HELOCs</strong></td><td>Use full line of credit for HCLTV</td></tr>
+                            <tr><td><strong>Installment Debt</strong></td><td>Payment counted; if &lt;10 payments remaining may be excluded</td></tr>
+                            <tr><td><strong>Revolving Debt</strong></td><td>Payment counted; utilization considered by AUS</td></tr>
+                            <tr><td><strong>30-Day Charge Accounts</strong></td><td>Check guidelines — may need full balance or payment</td></tr>
+                            <tr><td><strong>Leases</strong></td><td>Always counted in DTI (including car leases)</td></tr>
+                            <tr><td><strong>Student Loans</strong></td><td>Check guidelines for calculation methods</td></tr>
+                            <tr><td><strong>Timeshares</strong></td><td>FHA: always included in DTI</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Three Letters of Explanation Needed</h3>
+                <div class="grid-3">
+                    <div class="tile">
+                        <h5>1. Inquiries</h5>
+                        <p>Each inquiry within <strong>90 days</strong>. If mortgage-related, must state "shopping for a mortgage, no new debt obtained."</p>
+                    </div>
+                    <div class="tile">
+                        <h5>2. Address Variations</h5>
+                        <p>Any address within the last <strong>24 months</strong>.</p>
+                    </div>
+                    <div class="tile">
+                        <h5>3. AKAs</h5>
+                        <p>Every AKA on the credit report.</p>
+                    </div>
+                </div>
+
+                <h3>Payment History Grades</h3>
+                <div class="table-wrap">
+                    <table>
+                        <thead><tr><th>Code</th><th>Meaning</th></tr></thead>
+                        <tbody>
+                            <tr><td><strong>C</strong></td><td>Current</td></tr>
+                            <tr><td><strong>1</strong></td><td>30 days past due</td></tr>
+                            <tr><td><strong>2</strong></td><td>60 days past due</td></tr>
+                            <tr><td><strong>3</strong></td><td>90 days past due</td></tr>
+                            <tr><td><strong>4</strong></td><td>120 days past due</td></tr>
+                            <tr><td><strong>5</strong></td><td>150 days past due</td></tr>
+                            <tr><td><strong>6</strong></td><td>180+ days past due</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="note danger">
+                    <strong>🚨 Red flags:</strong> Accounts with payment but no balance (unless closed) · Fraud messages or OFAC hits · SSN discrepancies · Multiple late payments within 24 months · Large inquiries within 90 days
+                </div>
+            </section>
+
+            <!-- ============ 2. INCOME REVIEW ============ -->
+            <section id="m2-income" class="card">
+                <h2>2. Income Review <span class="badge purple">Module 2</span></h2>
+
+                <div class="note purple">
+                    <strong>🔑 Stable and reliable flow of income</strong> is a key consideration in mortgage loan underwriting. If a borrower changes jobs frequently but has consistent and predictable income, they are considered to have a reliable flow of income.
+                </div>
+
+                <h3>Pay Cycle Reference</h3>
+                <div class="table-wrap">
+                    <table>
+                        <thead><tr><th>Pay Cycle</th><th>Pay Periods Per Year</th><th>Pay Stubs for 30 Days</th></tr></thead>
+                        <tbody>
+                            <tr><td><strong>Weekly</strong></td><td>52</td><td>4 consecutive stubs</td></tr>
+                            <tr><td><strong>Bi-Weekly</strong></td><td>26</td><td>3 consecutive stubs</td></tr>
+                            <tr><td><strong>Semi-Monthly</strong></td><td>24</td><td>2 consecutive stubs</td></tr>
+                            <tr><td><strong>Monthly</strong></td><td>12</td><td>1 stub</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Income Documentation Requirements</h3>
+                <ul>
+                    <li>Most recent pay stubs covering <strong>30 days</strong></li>
+                    <li>Most recent <strong>2 years W-2s</strong> (or per AUS findings)</li>
+                    <li>Fully executed <strong>written VOE</strong> from all jobs in the most recent 2-year period</li>
+                    <li>2 years tax returns when required by AUS or overlays</li>
+                </ul>
+
+                <div class="note warning">
+                    <strong>⚠️ Always do at least two calculations</strong> to arrive at the most conservative income. If you submit high income and the underwriter reduces it, you could lose an Approve/Eligible.
+                </div>
+            </section>
+
+            <!-- ============ 3. BASE PAY ============ -->
+            <section id="m2-base" class="card">
+                <h2>3. Base Pay (Salary or Hourly) <span class="badge purple">Module 2</span></h2>
+
+                <p>Base pay includes hourly wages, salaries, and average hours worked.</p>
+
+                <div class="formula-box">
+                    <span class="label">Variable Hours — Declining Trend</span>
+                    <span class="formula">Use LOWER of: (Current YTD ÷ Months Elapsed) OR ((Current YTD + Previous W-2) ÷ (Months Elapsed + 12))</span>
+                </div>
+                <div class="formula-box">
+                    <span class="label">Variable Hours — Increasing Trend</span>
+                    <span class="formula">May average Current YTD + Previous Year W-2 income</span>
+                </div>
+
+                <h3>Base Pay Calculation — Salary</h3>
+                <div class="computation-box">
+                    <div class="step"><strong>Given:</strong> Pay period ends Dec 25; YTD gross $37,440; 2024 W-2 $35,225</div>
+                    <div class="step"><strong>Months elapsed:</strong> 11 + (25 ÷ 31) = 11 + 0.81 = <strong>11.81 months</strong></div>
+                    <div class="step"><strong>Calc 1 — YTD only:</strong> $37,440 ÷ 11.81 = <strong>$3,170.19/mo</strong></div>
+                    <div class="step"><strong>Calc 2 — YTD + Prior W-2:</strong> $72,665 ÷ 23.81 = <strong>$3,051.87/mo</strong></div>
+                    <span class="result">Use most conservative: $3,051.87/month</span>
+                </div>
+
+                <h3>Base Pay Calculation — Hourly</h3>
+                <div class="computation-box">
+                    <div class="step"><strong>Given:</strong> $23.50/hr, 32 hrs/wk avg, weekly pay; YTD May 31 = $16,525; 2024 W-2 = $39,500</div>
+                    <div class="step"><strong>Calc 1 — Avg Hours × Rate:</strong> $23.50 × 32 × 52 = $39,104 ÷ 12 = <strong>$3,258.67/mo</strong></div>
+                    <div class="step"><strong>Calc 2 — YTD only:</strong> $16,525 ÷ 5 = <strong>$3,305/mo</strong></div>
+                    <div class="step"><strong>Calc 3 — YTD + Prior W-2:</strong> $56,025 ÷ 17 = <strong>$3,295.59/mo</strong></div>
+                    <span class="result">Use most conservative: $3,258.67/month</span>
+                </div>
+            </section>
+
+            <!-- ============ 4. BONUS, OT, COMMISSION ============ -->
+            <section id="m2-bonus" class="card">
+                <h2>4. Bonus, Overtime &amp; Commission <span class="badge purple">Module 2</span></h2>
+
+                <h3>Requirements</h3>
+                <ul>
+                    <li><strong>Minimum 2-year history</strong> required to verify income is stable</li>
+                    <li>Completed <strong>written VOE</strong> breaking out base, OT, and/or commission income</li>
+                    <li>Borrower's most recent pay stub and last 2 years W-2s</li>
+                </ul>
+
+                <div class="note purple">
+                    <strong>December 4, 2018 — Fannie Mae Change:</strong> Commission income is now treated the same as base income. Tax returns are no longer required just because commission exceeds 25% of income.
+                </div>
+
+                <div class="note danger">
+                    <strong>🚨 Declining trend:</strong> If there is a declining trend in bonus, OT, or commission income, the underwriter may deem the income unacceptable. If you don't need it, don't use it.
+                </div>
+
+                <div class="formula-box">
+                    <span class="label">24-Month Average</span>
+                    <span class="formula">(Prior Year Total + Current YTD) ÷ 24 months = Monthly Income</span>
+                </div>
+                <div class="formula-box">
+                    <span class="label">Year-to-Date Only (Most Conservative)</span>
+                    <span class="formula">Current YTD ÷ Months Elapsed = Monthly Income</span>
+                </div>
+
+                <h3>Calculation Examples</h3>
+                <div class="computation-box">
+                    <div class="step"><strong>Overtime Example:</strong> Yr 1 = $15,000 · Yr 2 = $12,000 · YTD 6mo = $3,000</div>
+                    <div class="step">YTD only: $3,000 ÷ 6 = <strong>$500/mo</strong></div>
+                    <span class="result">Use $500/month (most conservative)</span>
+                </div>
+
+                <div class="computation-box">
+                    <div class="step"><strong>Overtime — substantial decline:</strong> Yr 1 = $5,000 · YTD Aug = $1,500</div>
+                    <div class="step">Option A (24-mo avg): $6,500 ÷ 24 = <strong>$270.83/mo</strong></div>
+                    <div class="step">Option B (YTD only): $1,500 ÷ 8 = <strong>$187.50/mo</strong></div>
+                    <span class="result">Use $187.50/month (most conservative)</span>
+                </div>
+
+                <div class="computation-box">
+                    <div class="step"><strong>Bonus Example:</strong> 2024 = $10,000 · 2025 = $5,000 · YTD = $500</div>
+                    <div class="step">12-month conservative: $5,000 ÷ 12 = <strong>$416.67/mo</strong></div>
+                    <span class="result">Use $416.67/month (if needed)</span>
+                </div>
+            </section>
+
+            <!-- ============ 5. PART-TIME & SEASONAL ============ -->
+            <section id="m2-parttime" class="card">
+                <h2>5. Part-Time, Second Job &amp; Seasonal <span class="badge purple">Module 2</span></h2>
+
+                <h3>Part-Time &amp; Second Job</h3>
+                <ul>
+                    <li><strong>Two years of uninterrupted part-time employment</strong></li>
+                    <li>Can be combined with history of different employers as long as income consistently received</li>
+                    <li>Fully completed written VOE</li>
+                    <li>Most recent pay stubs and IRS W-2 forms for most recent 2 years</li>
+                    <li><strong>Verbal VOE required</strong> from each employer</li>
+                </ul>
+
+                <h3>Seasonal Income</h3>
+                <ul>
+                    <li>Verify borrower worked in the <strong>same job or same line of seasonal work for the past 2 years</strong></li>
+                    <li>Must confirm with employer there's a reasonable expectation of <strong>rehire next season</strong></li>
+                    <li>Fully completed VOE, most recent pay stubs, and 2 years W-2s</li>
+                </ul>
+
+                <div class="note warning">
+                    <strong>⚠️ Written VOE for seasonal workers must confirm:</strong> Reasonable expectation of rehire + the season they work.
+                </div>
+            </section>
+
+            <!-- ============ 6. RETIREMENT & PENSION ============ -->
+            <section id="m2-retire" class="card">
+                <h2>6. Retirement &amp; Pension Income <span class="badge purple">Module 2</span></h2>
+
+                <h3>Documentation</h3>
+                <ul>
+                    <li>Letters from the organization providing income</li>
+                    <li>Retirement award letters</li>
+                    <li>Most current signed tax returns</li>
+                    <li>IRS 1099 form</li>
+                    <li>Proof of current receipt</li>
+                </ul>
+
+                <h3>401(k) Distribution Rules</h3>
+                <div class="note">
+                    If paid as a 401(k) distribution:
+                    <ul>
+                        <li>Income must be expected to continue for at least <strong>3 years</strong> after application</li>
+                        <li>Borrower must have <strong>unrestricted access without penalty</strong></li>
+                    </ul>
+                </div>
+
+                <div class="note warning">
+                    <strong>Fannie Mae does NOT allow</strong> non-employment related assets as a basis for repayment. <strong>Freddie Mac DOES allow</strong> this.
+                </div>
+
+                <div class="formula-box">
+                    <span class="label">Freddie Mac Asset Depletion Formula</span>
+                    <span class="formula">(Asset Balance − Cash to Close) ÷ 240 months = Monthly Qualifying Income</span>
+                </div>
+
+                <div class="computation-box">
+                    <div class="step"><strong>Example:</strong> Stock balance $500,000; Cash to close $100,000</div>
+                    <div class="step">Available: $500,000 − $100,000 = <strong>$400,000</strong></div>
+                    <div class="step">Monthly: $400,000 ÷ 240 = <strong>$1,666.67/mo</strong></div>
+                    <span class="result">Monthly Qualifying Income = $1,666.67</span>
+                </div>
+            </section>
+
+            <!-- ============ QUIZ 1 ============ -->
+            <section id="m2-quiz1" class="card">
+                <h2>7. Practice Quiz — Income <span class="badge purple">10 Questions</span></h2>
+
+                <div class="quiz-q"><p>1. How many credit repositories must be returned on credit reports at minimum?</p><div class="quiz-answer"><strong>One</strong></div></div>
+                <div class="quiz-q"><p>2. Does the processor consider a car lease in the DTI?</p><div class="quiz-answer"><strong>Yes</strong> — always counted.</div></div>
+                <div class="quiz-q"><p>3. True or False — Credit reports must include credit and public record information.</p><div class="quiz-answer"><strong>True.</strong></div></div>
+                <div class="quiz-q"><p>4. A borrower on semi-monthly pay is paid how many times a year?</p><div class="quiz-answer"><strong>24 times</strong></div></div>
+                <div class="quiz-q"><p>5. A minimum of ___ years of uninterrupted work history is needed for part-time employees.</p><div class="quiz-answer"><strong>2 years</strong></div></div>
+                <div class="quiz-q"><p>6. If there is a declining trend in bonus income, the underwriter may:</p><div class="quiz-answer"><strong>Deem the income unacceptable.</strong></div></div>
+                <div class="quiz-q"><p>7. True or False — A verbal VOE is required for all borrowers.</p><div class="quiz-answer"><strong>True.</strong> Within 10 days of closing.</div></div>
+                <div class="quiz-q"><p>8. Pension income can be verified with a ___ form.</p><div class="quiz-answer"><strong>1099</strong></div></div>
+                <div class="quiz-q"><p>9. The written VOE for seasonal workers must confirm what?</p><div class="quiz-answer"><strong>Reasonable expectation of rehire next season.</strong></div></div>
+                <div class="quiz-q"><p>10. Base pay includes what?</p><div class="quiz-answer"><strong>Salary and hourly</strong> income.</div></div>
+            </section>
+
+            <!-- ============ 8. ALIMONY & CHILD SUPPORT ============ -->
+            <section id="m2-alimony" class="card">
+                <h2>8. Alimony &amp; Child Support <span class="badge orange">Module 2</span></h2>
+
+                <h3>Documentation Requirements</h3>
+                <ul>
+                    <li>Verify <strong>most recent 6 months</strong> of receipt</li>
+                    <li>At least a <strong>3-year continuance</strong></li>
+                    <li>Canceled checks or bank statements</li>
+                    <li>Copy of divorce decree or separation agreement</li>
+                    <li>Any written legal agreement or court decree</li>
+                </ul>
+
+                <div class="note warning">
+                    <strong>⚠️ Must verify child's date of birth.</strong> If support stops at age 18, the child must be young enough for payments to continue for at least <strong>3 years</strong> from closing.
+                </div>
+
+                <div class="note">
+                    <strong>To be considered stable:</strong> Income must have been received for at least 6 months.
+                </div>
+            </section>
+
+            <!-- ============ 9. SOCIAL SECURITY ============ -->
+            <section id="m2-ss" class="card">
+                <h2>9. Social Security Income <span class="badge orange">Module 2</span></h2>
+
+                <h3>Types</h3>
+                <ul>
+                    <li>Retirement or long-term disability — no defined expiration date, must be expected to continue</li>
+                    <li>Benefits paid to a family member — may be used if 3-year continuance documented</li>
+                </ul>
+
+                <div class="formula-box">
+                    <span class="label">Gross-Up Formula</span>
+                    <span class="formula">Non-Taxable SS Income × 1.25 = Grossed-Up Amount</span>
+                </div>
+
+                <div class="note">
+                    <strong>To gross up, you MUST have the tax returns.</strong> Look at:
+                    <ul>
+                        <li>Line 6A: Total Social Security benefits</li>
+                        <li>Line 6B: Taxable portion</li>
+                    </ul>
+                    Non-taxable portion = 6A − 6B
+                </div>
+
+                <div class="computation-box">
+                    <div class="step"><strong>Year 1:</strong> 6A = $21,600 · 6B = $12,137</div>
+                    <div class="step">Non-taxable: $9,463</div>
+                    <div class="step">Grossed up: $9,463 × 1.25 = <strong>$11,828.75</strong></div>
+                    <div class="step"><strong>Year 2:</strong> 6A = $22,500 · 6B = $11,462</div>
+                    <div class="step">Non-taxable: $11,038</div>
+                    <div class="step">Grossed up: $11,038 × 1.25 = <strong>$13,797.50</strong></div>
+                    <div class="step">Total grossed up (2 years): <strong>$25,626.25</strong></div>
+                    <div class="step">Monthly additional income: $25,626.25 ÷ 24 = <strong>$1,067.76/mo</strong></div>
+                    <span class="result">Additional Monthly Income from Gross-Up: $1,067.76</span>
+                </div>
+            </section>
+
+            <!-- ============ 10. MILITARY PAY ============ -->
+            <section id="m2-military" class="card">
+                <h2>10. Military Income <span class="badge orange">Module 2</span></h2>
+
+                <h3>Acceptable Income Sources</h3>
+                <ul>
+                    <li>Base pay</li>
+                    <li>Flight pay, hazard pay, proficiency pay</li>
+                    <li>Rations, clothing allowance, quarters allowance</li>
+                </ul>
+
+                <h3>Military Reservists</h3>
+                <ul>
+                    <li>Income paid while satisfying reserve obligations is acceptable if it satisfies stability and continuity tests for secondary employment</li>
+                    <li>Look at military reservists as people who have a second job</li>
+                </ul>
+
+                <div class="note warning">
+                    <strong>⚠️ Base pay is stable UNLESS</strong> the borrower is within 12 months of release from active duty. Then request documentation of remaining term of service and ETS.
+                </div>
+
+                <div class="formula-box">
+                    <span class="label">Quarters Allowance</span>
+                    <span class="formula">If non-taxable amount can be verified, it CAN be grossed up</span>
+                </div>
+
+                <div class="note danger">
+                    <strong>🚫 Military education benefits are NOT acceptable income.</strong> These funds are allocated for secondary education, not household income.
+                </div>
+            </section>
+
+            <!-- ============ QUIZ 2 ============ -->
+            <section id="m2-quiz2" class="card">
+                <h2>11. Practice Quiz — Other Income <span class="badge orange">10 Questions</span></h2>
+
+                <div class="quiz-q"><p>1. To be considered stable income, child support must have been received for how long?</p><div class="quiz-answer"><strong>6 months</strong></div></div>
+                <div class="quiz-q"><p>2. How many years continuance is required for child support?</p><div class="quiz-answer"><strong>3 years</strong></div></div>
+                <div class="quiz-q"><p>3. True or False — Non-taxable SS income can be grossed up by 1.25%.</p><div class="quiz-answer"><strong>True</strong></div></div>
+                <div class="quiz-q"><p>4. A borrower is considered self-employed when they own how much of the business?</p><div class="quiz-answer"><strong>25% or more</strong></div></div>
+                <div class="quiz-q"><p>5. The Fannie Mae form ___ provides a written evaluation of a self-employed borrower's personal income.</p><div class="quiz-answer"><strong>1084</strong></div></div>
+                <div class="quiz-q"><p>6. Form ___ is used to determine a business's viability.</p><div class="quiz-answer"><strong>1088</strong></div></div>
+                <div class="quiz-q"><p>7. Rental income is reported on what schedule?</p><div class="quiz-answer"><strong>Schedule E</strong></div></div>
+                <div class="quiz-q"><p>8. ___ are used to report a borrower's share of income on 1065 or 1120S.</p><div class="quiz-answer"><strong>K1s</strong></div></div>
+                <div class="quiz-q"><p>9. Sole proprietor income is reported on what schedule?</p><div class="quiz-answer"><strong>Schedule C</strong></div></div>
+                <div class="quiz-q"><p>10. How many years tax returns for a self-employed borrower?</p><div class="quiz-answer"><strong>1 or 2 years</strong> based on DU findings.</div></div>
+            </section>
+
+            <!-- ============ 12. SELF-EMPLOYMENT BASICS ============ -->
+            <section id="m2-se-basics" class="card">
+                <h2>12. Self-Employment Basics <span class="badge green">Module 2</span></h2>
+
+                <p>A borrower is considered self-employed when they own <strong>25% or more</strong> of a company.</p>
+
+                <h3>Factors to Analyze</h3>
+                <ul>
+                    <li>Stability of the self-employment income</li>
+                    <li>Location and nature of the business</li>
+                    <li>Demand of the product or services offered</li>
+                    <li>Financial strength and ability to continue generating income</li>
+                </ul>
+
+                <h3>Documentation Requirements</h3>
+                <ul>
+                    <li>1 or 2 years personal and business tax returns (per AUS findings)</li>
+                    <li>CPA letter verifying self-employment for last 2 years</li>
+                    <li>IRS transcripts matching tax returns</li>
+                    <li>Secretary of State (SOS) website for business license info</li>
+                </ul>
+
+                <div class="note">
+                    <strong>To waive business returns, ALL must be met:</strong>
+                    <ul>
+                        <li>Borrower using own personal funds for cash to close</li>
+                        <li>Self-employed in same business for at least <strong>5 years</strong></li>
+                        <li>Individual tax returns show an <strong>increase in self-employment income</strong> over past 2 years</li>
+                    </ul>
+                </div>
+
+                <h3>Fannie Mae Form 1084 — Cash Flow Analysis</h3>
+                <p>Provides a written evaluation of a self-employed borrower's personal income. Used to determine stable and continuous income available to the borrower.</p>
+
+                <h3>Fannie Mae Form 1088 — Comparative Income Analysis</h3>
+                <p>Required when business tax returns are needed. Used to determine business viability by measuring year-to-year trends.</p>
+            </section>
+
+            <!-- ============ 13. SCHEDULE C ============ -->
+            <section id="m2-schedc" class="card">
+                <h2>13. Schedule C — Sole Proprietor <span class="badge green">Module 2</span></h2>
+
+                <p>Income generally derived from 1099 income where the borrower is an independent contractor. The borrower is <strong>100% owner</strong> of the business.</p>
+
+                <h3>Documentation</h3>
+                <ul>
+                    <li>2 years tax returns including Schedule C</li>
+                    <li>Income averaged over 24 months</li>
+                </ul>
+
+                <h3>Key Line Items</h3>
+                <div class="table-wrap">
+                    <table>
+                        <thead><tr><th>Line</th><th>What to Look For</th></tr></thead>
+                        <tbody>
+                            <tr><td><strong>Name of Proprietor</strong></td><td>Must match borrower</td></tr>
+                            <tr><td><strong>SSN</strong></td><td>Must match borrower</td></tr>
+                            <tr><td><strong>Line F</strong></td><td>Accounting method (cash or accrual)</td></tr>
+                            <tr><td><strong>Line H</strong></td><td>Indicates if business is new</td></tr>
+                            <tr><td><strong>Line 1</strong></td><td>Gross receipts or sales</td></tr>
+                            <tr><td><strong>Line 7</strong></td><td>Gross income</td></tr>
+                            <tr><td><strong>Line 13</strong></td><td>Depreciation — can be added back</td></tr>
+                            <tr><td><strong>Line 30</strong></td><td>Business use of home — can be added back</td></tr>
+                            <tr><td><strong>Line 31</strong></td><td>Net profit or loss — key number</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="formula-box">
+                    <span class="label">Schedule C — Qualifying Income</span>
+                    <span class="formula">Net Profit (Line 31) + Depreciation + Business Use of Home + Amortization + Casualty Loss − Non-Deductible Travel/Meals</span>
+                </div>
+            </section>
+
+            <!-- ============ 14. RENTAL INCOME ============ -->
+            <section id="m2-rental" class="card">
+                <h2>14. Rental Income <span class="badge green">Module 2</span></h2>
+
+                <h3>Where Reported</h3>
+                <ul>
+                    <li>Schedule E of borrower's personal tax returns</li>
+                    <li>Or partnership/S-corp business returns (Form 8825)</li>
+                </ul>
+
+                <h3>Calculation Rules</h3>
+                <ul>
+                    <li>Add back: <strong>depreciation, interest, HOA dues, taxes, insurance</strong></li>
+                    <li>Deduct: <strong>full PITIA</strong> of the property</li>
+                    <li>If in service full year: average over 12 months</li>
+                    <li>If in service less: average over months used as rental</li>
+                </ul>
+
+                <h3>Forms Used</h3>
+                <div class="grid-3">
+                    <div class="tile"><h5>Form 1037</h5><p>Single investment property</p></div>
+                    <div class="tile"><h5>Form 1038</h5><p>Multiple properties</p></div>
+                    <div class="tile"><h5>Form 1038A</h5><p>Up to 10 additional properties</p></div>
+                </div>
+
+                <h3>Calculation Example</h3>
+                <div class="computation-box">
+                    <div class="step"><strong>Given from Schedule E:</strong></div>
+                    <div class="step">Total Rents Received: <strong>$25,000</strong></div>
+                    <div class="step">Total Expenses: <strong>$32,500</strong></div>
+                    <div class="step"><strong>Add-backs:</strong> Insurance $1,200 + Interest $1,250 + Taxes $5,000</div>
+                    <div class="step">PITIA (from mortgage statement): <strong>$1,500</strong></div>
+                    <div class="step">Net: $25,000 − $32,500 + $1,200 + $1,250 + $5,000 = <strong>−$50</strong></div>
+                    <div class="step">Monthly: −$50 ÷ 12 = <strong>−$4.17/mo</strong></div>
+                    <span class="result">Net Loss: Borrower hit with full PITIA of $1,500/mo</span>
+                </div>
+            </section>
+
+            <!-- ============ 15. FORM 1065 ============ -->
+            <section id="m2-1065" class="card">
+                <h2>15. Form 1065 — Partnership &amp; K1s <span class="badge green">Module 2</span></h2>
+
+                <p>US Return of Partnership Income. Used to report a borrower's share of partnership income or loss.</p>
+
+                <h3>Key Items</h3>
+                <ul>
+                    <li>Principal business activity (A, B)</li>
+                    <li>Name of partnership, address</li>
+                    <li>Business start date — verify 2-year history</li>
+                    <li><strong>Line 10: Guaranteed payments to partners</strong></li>
+                    <li>Ordinary income/loss from other partnerships (Line 4)</li>
+                    <li>Depreciation, depletion, amortization — add back</li>
+                </ul>
+
+                <h3>K1 Form 1065</h3>
+                <ul>
+                    <li>Verify partnership EIN, name, address match Form 1065</li>
+                    <li>Verify partner's name and address match borrower</li>
+                    <li>Confirm percentage of ownership</li>
+                    <li>Key: Box 1 (Ordinary income/loss), Box 2 (Net rental real estate), Box 4 (Guaranteed payments)</li>
+                </ul>
+
+                <div class="formula-box">
+                    <span class="label">Partnership K1 — Qualifying Income</span>
+                    <span class="formula">Ordinary Income (Box 1) + Net Rental Real Estate (Box 2) + Guaranteed Payments (Box 4) + Depreciation + Depletion + Amortization</span>
+                </div>
+
+                <div class="note warning">
+                    <strong>⚠️ Multiple partnerships:</strong> Request a supporting K1 for EACH one.
+                </div>
+            </section>
+
+            <!-- ============ 16. FORM 1120S ============ -->
+            <section id="m2-1120s" class="card">
+                <h2>16. Form 1120S — S-Corp &amp; K1s <span class="badge green">Module 2</span></h2>
+
+                <p>US Income Tax Return for an S Corporation. More documentation needed than Schedule C.</p>
+
+                <h3>Key Items</h3>
+                <ul>
+                    <li>Letters A, B: Name, EIN, date incorporated, total assets</li>
+                    <li>Ordinary income/loss</li>
+                    <li>Other income or loss</li>
+                    <li>Depreciation, depletion, amortization — add back</li>
+                    <li><strong>Mortgages or notes payable in less than one year</strong> — must be SUBTRACTED</li>
+                </ul>
+
+                <h3>K1 Form 1120S</h3>
+                <ul>
+                    <li>Verify corporation EIN, name, address match Form 1120S</li>
+                    <li>Verify shareholder name and address match borrower</li>
+                    <li>Confirm percentage of stock ownership</li>
+                    <li>Key: Box 1 (Ordinary income/loss), Box 2 (Net rental real estate)</li>
+                </ul>
+
+                <div class="formula-box">
+                    <span class="label">S-Corp K1 — Qualifying Income</span>
+                    <span class="formula">Ordinary Income (Box 1) + Net Rental Real Estate (Box 2) + Depreciation + Depletion + Amortization − Mortgages/Notes Payable ≤ 1 year</span>
+                </div>
+
+                <div class="note danger">
+                    <strong>🚨 Critical:</strong> Mortgages or notes payable in less than one year are <strong>SUBTRACTED</strong>. Many processors miss this and turn an approved borrower into a denied one.
+                </div>
+
+                <h3>Corporation Summary</h3>
+                <div class="table-wrap">
+                    <table>
+                        <thead><tr><th>Form</th><th>Purpose</th><th>K1?</th></tr></thead>
+                        <tbody>
+                            <tr><td><strong>Schedule C</strong></td><td>Sole Proprietor</td><td>No</td></tr>
+                            <tr><td><strong>Form 1065</strong></td><td>Partnership</td><td>Yes — each partnership</td></tr>
+                            <tr><td><strong>Form 1120S</strong></td><td>S-Corp</td><td>Yes — each S-Corp</td></tr>
+                            <tr><td><strong>Form 1120</strong></td><td>C-Corp (100% owner)</td><td>No</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- ============ QUIZ 3 ============ -->
+            <section id="m2-quiz3" class="card">
+                <h2>17. Practice Quiz — Self-Employment <span class="badge green">10 Questions</span></h2>
+
+                <div class="quiz-q"><p>1. To be considered stable, child support must have been received for how long?</p><div class="quiz-answer"><strong>6 months</strong></div></div>
+                <div class="quiz-q"><p>2. How many years continuance is required for child support?</p><div class="quiz-answer"><strong>3 years</strong></div></div>
+                <div class="quiz-q"><p>3. True or False — Non-taxable SS can be grossed up by 1.25%.</p><div class="quiz-answer"><strong>True</strong></div></div>
+                <div class="quiz-q"><p>4. Self-employed when owning how much of a business?</p><div class="quiz-answer"><strong>25% or more</strong></div></div>
+                <div class="quiz-q"><p>5. Form ___ provides a written evaluation of a self-employed borrower's personal income.</p><div class="quiz-answer"><strong>1084</strong></div></div>
+                <div class="quiz-q"><p>6. Form ___ is used to determine business viability.</p><div class="quiz-answer"><strong>1088</strong></div></div>
+                <div class="quiz-q"><p>7. Rental income is reported on what schedule?</p><div class="quiz-answer"><strong>Schedule E</strong></div></div>
+                <div class="quiz-q"><p>8. ___ are used to report a borrower's share of income on 1065 or 1120S.</p><div class="quiz-answer"><strong>K1s</strong></div></div>
+                <div class="quiz-q"><p>9. Sole proprietor income reported on what schedule?</p><div class="quiz-answer"><strong>Schedule C</strong></div></div>
+                <div class="quiz-q"><p>10. How many years tax returns for a self-employed borrower?</p><div class="quiz-answer"><strong>1 or 2 years</strong> based on DU findings.</div></div>
+            </section>
+
+            <!-- ============ 18. ASSET REVIEW ============ -->
+            <section id="m2-assets-main" class="card">
+                <h2>18. Asset Review <span class="badge red">Module 2</span></h2>
+
+                <h3>Funds Required to Close</h3>
+                <ul>
+                    <li><strong>Down payment</strong> — purchase price minus new loan</li>
+                    <li><strong>Refinance shortfall</strong> — payoff minus new loan</li>
+                    <li><strong>Closing costs</strong></li>
+                    <li><strong>Reserves</strong> — required by program after closing</li>
+                </ul>
+
+                <h3>Allowable Assets</h3>
+                <div class="grid-3">
+                    <div class="tile"><h5>Liquid</h5><p>Checking, savings, money market, CDs</p></div>
+                    <div class="tile"><h5>Investment</h5><p>Stocks, bonds, mutual funds, trust funds</p></div>
+                    <div class="tile"><h5>Other</h5><p>Retirement, bridge loans, gifts, gifts of equity, net equity</p></div>
+                </div>
+
+                <h3>Checking &amp; Savings Review</h3>
+                <ul>
+                    <li>Borrower's name on account</li>
+                    <li>If another person is on the account (not on loan), may need <strong>100% access letter</strong></li>
+                    <li>All pages of statements</li>
+                    <li>Verify previous ending balances — if none, request <strong>two full months</strong></li>
+                    <li>If latest statement is more than <strong>45 days</strong> old, request current printout</li>
+                    <li>100% of checking/savings allowed</li>
+                </ul>
+            </section>
+
+            <!-- ============ 19. BANK STATEMENT REVIEW ============ -->
+            <section id="m2-bank" class="card">
+                <h2>19. Bank Statement Review <span class="badge red">Module 2</span></h2>
+
+                <h3>What to Look For</h3>
+                <div class="process-step"><span class="num red">1</span><span class="desc"><strong>Account holder names</strong> — borrowers must be on account</span></div>
+                <div class="process-step"><span class="num red">2</span><span class="desc"><strong>Full statement period</strong> — verify dates, all pages</span></div>
+                <div class="process-step"><span class="num red">3</span><span class="desc"><strong>Consistent fonts</strong> — check for fraud</span></div>
+                <div class="process-step"><span class="num red">4</span><span class="desc"><strong>Beginning/ending balances</strong> — verify math</span></div>
+                <div class="process-step"><span class="num red">5</span><span class="desc"><strong>Payroll deposits</strong> — cross-check against pay stubs</span></div>
+                <div class="process-step"><span class="num red">6</span><span class="desc"><strong>Undisclosed payments</strong> — recurring payments not on credit report</span></div>
+                <div class="process-step"><span class="num red">7</span><span class="desc"><strong>Large deposits</strong> — anything exceeding 50% of monthly qualifying income</span></div>
+                <div class="process-step"><span class="num red">8</span><span class="desc"><strong>NSF fees</strong> — repeated may require LOX</span></div>
+                <div class="process-step"><span class="num red">9</span><span class="desc"><strong>Recurring transfers</strong> from outside accounts</span></div>
+                <div class="process-step"><span class="num red">10</span><span class="desc"><strong>Earnest money checks</strong> — verify cleared</span></div>
+            </section>
+
+            <!-- ============ 20. LARGE DEPOSITS ============ -->
+            <section id="m2-large" class="card">
+                <h2>20. Large Deposits <span class="badge red">Module 2</span></h2>
+
+                <div class="formula-box">
+                    <span class="label">Large Deposit Definition</span>
+                    <span class="formula">Single deposit that exceeds 50% of Total Monthly Qualifying Income</span>
+                </div>
+
+                <h3>Rules</h3>
+                <ul>
+                    <li><strong>Refinance:</strong> Not required to document (but borrowed funds still considered)</li>
+                    <li><strong>Purchase:</strong> Must be sourced or backed out</li>
+                    <li>Only the <strong>unsourced portion</strong> counts toward the 50% test</li>
+                </ul>
+
+                <h3>Example 1 — Not a Large Deposit</h3>
+                <div class="computation-box">
+                    <div class="step"><strong>Given:</strong> Income $4,000; Deposit $3,000; Documented refund $2,500</div>
+                    <div class="step">Unsourced: $3,000 − $2,500 = <strong>$500</strong></div>
+                    <div class="step">$500 ÷ $4,000 = <strong>12.5%</strong></div>
+                    <div class="step">12.5% &lt; 50% — NOT a large deposit</div>
+                    <span class="result">Entire $20,000 balance can be used</span>
+                </div>
+
+                <h3>Example 2 — IS a Large Deposit</h3>
+                <div class="computation-box">
+                    <div class="step"><strong>Given:</strong> Income $4,000; Deposit $3,000; Documented refund only $500</div>
+                    <div class="step">Unsourced: $3,000 − $500 = <strong>$2,500</strong></div>
+                    <div class="step">$2,500 ÷ $4,000 = <strong>62.5%</strong></div>
+                    <div class="step">62.5% &gt; 50% — IS a large deposit</div>
+                    <div class="step">Deduct $2,500 from $20,000</div>
+                    <span class="result">Only $17,500 may be used</span>
+                </div>
+            </section>
+
+            <!-- ============ 21. STOCKS, IRA, 401K ============ -->
+            <section id="m2-stocks" class="card">
+                <h2>21. Stocks, IRA &amp; 401(k) <span class="badge red">Module 2</span></h2>
+
+                <h3>Stocks &amp; Mutual Funds</h3>
+                <ul>
+                    <li>Verify current value</li>
+                    <li>Most recent statement OR stock certificate + newspaper stock list</li>
+                    <li>100% of value may be used for reserves — liquidation not required</li>
+                    <li>If used for cash to close, liquidation IS required</li>
+                </ul>
+
+                <h3>IRA &amp; 401(k)</h3>
+                <ul>
+                    <li>Verify vested funds</li>
+                    <li>Acceptable for down payment, closing costs, reserves</li>
+                    <li>Verify ownership and withdrawal availability</li>
+                    <li>If using for cash to close: provide <strong>terms of withdrawal</strong></li>
+                    <li>If using for reserves only: vested balance minus outstanding loans</li>
+                </ul>
+
+                <div class="note warning">
+                    <strong>⚠️ Check overlays</strong> for any requirement to hit for taxes or penalties.
+                </div>
+            </section>
+
+            <!-- ============ 22. BUSINESS ASSETS ============ -->
+            <section id="m2-business-assets" class="card">
+                <h2>22. Business Assets <span class="badge red">Module 2</span></h2>
+
+                <h3>Requirements</h3>
+                <ul>
+                    <li>Borrower must be self-employed</li>
+                    <li>Borrower must be listed as <strong>owner of the account</strong></li>
+                    <li>Federal income tax returns must have been evaluated</li>
+                    <li>Lender must perform a <strong>business cash flow analysis</strong></li>
+                    <li>May require a <strong>CPA letter</strong></li>
+                </ul>
+
+                <div class="note danger">
+                    <strong>🚨 If borrower is NOT 100% owner:</strong> Other owners must provide <strong>written permission</strong> for the borrower to access funds for the real estate transaction.
+                </div>
+            </section>
+
+            <!-- ============ QUIZ 4 ============ -->
+            <section id="m2-quiz4" class="card">
+                <h2>23. Practice Quiz — Assets <span class="badge red">10 Questions</span></h2>
+
+                <div class="quiz-q"><p>1. The difference between purchase price and new loan amount?</p><div class="quiz-answer"><strong>Down payment</strong></div></div>
+                <div class="quiz-q"><p>2. The difference between payoff and new loan amount?</p><div class="quiz-answer"><strong>Shortfall</strong></div></div>
+                <div class="quiz-q"><p>3. True or False — Gift of equity are not allowable assets.</p><div class="quiz-answer"><strong>False.</strong> Allowable if documented correctly.</div></div>
+                <div class="quiz-q"><p>4. Large deposit exceeds what % of monthly qualifying income?</p><div class="quiz-answer"><strong>50%</strong></div></div>
+                <div class="quiz-q"><p>5. Business assets may be used when the ___ is the account holder.</p><div class="quiz-answer"><strong>Borrower</strong></div></div>
+                <div class="quiz-q"><p>6. What appraisal form for one-unit condo exterior only?</p><div class="quiz-answer"><strong>Form 1075</strong></div></div>
+                <div class="quiz-q"><p>7. Potential title defects include what?</p><div class="quiz-answer"><strong>Liens for unpaid taxes</strong> (among others)</div></div>
+                <div class="quiz-q"><p>8. A copy of the ___ + newspaper stock list is required for stocks.</p><div class="quiz-answer"><strong>Stock certificate</strong></div></div>
+                <div class="quiz-q"><p>9. If no previous ending balance, ___ months of statements are needed.</p><div class="quiz-answer"><strong>Two full months</strong></div></div>
+                <div class="quiz-q"><p>10. HOA questionnaire for condo project approval is a potential ___.</p><div class="quiz-answer"><strong>Underwriting condition</strong></div></div>
+            </section>
+
+            <!-- ============ 24. PURCHASE AGREEMENT ============ -->
+            <section id="m2-purchase" class="card">
+                <h2>24. Purchase Agreement Review <span class="badge blue">Module 2</span></h2>
+
+                <div class="process-step"><span class="num blue">1</span><span class="desc"><strong>Parties to contract</strong> — match 1003</span></div>
+                <div class="process-step"><span class="num blue">2</span><span class="desc"><strong>Property details</strong> — lot, block, city, county, full address</span></div>
+                <div class="process-step"><span class="num blue">3</span><span class="desc"><strong>Sales price</strong> — cash portion, financing, final price</span></div>
+                <div class="process-step"><span class="num blue">4</span><span class="desc"><strong>Earnest money</strong> — amount, title company, address</span></div>
+                <div class="process-step"><span class="num blue">5</span><span class="desc"><strong>Title policy</strong> — who pays</span></div>
+                <div class="process-step"><span class="num blue">6</span><span class="desc"><strong>Survey</strong> — existing survey, additions since</span></div>
+                <div class="process-step"><span class="num blue">7</span><span class="desc"><strong>HOA</strong> — check dues</span></div>
+                <div class="process-step"><span class="num blue">8</span><span class="desc"><strong>Closing date</strong> — if expired, request amendment</span></div>
+                <div class="process-step"><span class="num blue">9</span><span class="desc"><strong>Possession</strong> — upon closing and funding</span></div>
+                <div class="process-step"><span class="num blue">10</span><span class="desc"><strong>Special provisions</strong> — repairs, unique terms</span></div>
+                <div class="process-step"><span class="num blue">11</span><span class="desc"><strong>Seller contributions</strong> — FHA 6%, Conventional 3%</span></div>
+                <div class="process-step"><span class="num blue">12</span><span class="desc"><strong>Addendums</strong> — all checked addendums attached</span></div>
+                <div class="process-step"><span class="num blue">13</span><span class="desc"><strong>Executed date</strong> — buyer and seller</span></div>
+                <div class="process-step"><span class="num blue">14</span><span class="desc"><strong>Broker info</strong> — names, license numbers, contact info</span></div>
+                <div class="process-step"><span class="num blue">15</span><span class="desc"><strong>FHA:</strong> Page 9 of 10 fully completed with realtor license numbers</span></div>
+            </section>
+
+            <!-- ============ 25. APPRAISAL REVIEW ============ -->
+            <section id="m2-appraisal" class="card">
+                <h2>25. Appraisal Review <span class="badge blue">Module 2</span></h2>
+
+                <h3>Appraisal Form Reference</h3>
+                <div class="table-wrap">
+                    <table>
+                        <thead><tr><th>Form</th><th>Use</th></tr></thead>
+                        <tbody>
+                            <tr><td><strong>1004</strong></td><td>One-unit and PUDs (interior)</td></tr>
+                            <tr><td><strong>2055</strong></td><td>One-unit and PUDs (exterior only)</td></tr>
+                            <tr><td><strong>1004C</strong></td><td>Manufactured homes</td></tr>
+                            <tr><td><strong>1073</strong></td><td>Condos (interior)</td></tr>
+                            <tr><td><strong>1075</strong></td><td>Condos (exterior only)</td></tr>
+                            <tr><td><strong>2090</strong></td><td>Co-op (interior/exterior)</td></tr>
+                            <tr><td><strong>2095</strong></td><td>Co-op (exterior only)</td></tr>
+                            <tr><td><strong>1025</strong></td><td>2-4 unit properties</td></tr>
+                            <tr><td><strong>1004D</strong></td><td>Appraisal update or final inspection</td></tr>
+                            <tr><td><strong>1004MC</strong></td><td>Market trends (optional since 2018)</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Key Checkpoints</h3>
+                <ul>
+                    <li>Property address matches sales contract</li>
+                    <li>Legal description matches title</li>
+                    <li>Borrower name and owner of public record match</li>
+                    <li>Occupant — owner vs. tenant (red flag if mismatch)</li>
+                    <li>HOA dues — use for qualifying if on appraisal</li>
+                    <li>Appraiser analyzed contract for sale</li>
+                    <li>Seller concessions disclosed</li>
+                    <li>Neighborhood stable/in balance</li>
+                    <li>Rooms, beds, baths, sq ft match photos</li>
+                    <li>Comparables within mileage for area type</li>
+                    <li>Prior sale date — FHA 90-day rule if applicable</li>
+                    <li>"As-is" value vs. "subject to"</li>
+                    <li>Utilities on and functioning (especially FHA)</li>
+                    <li>FHA: head-and-shoulders attic inspection</li>
+                    <li>Building sketch matches bed/bath count</li>
+                    <li>Appraiser license not expired</li>
+                    <li>FHA case number on each page</li>
+                </ul>
+            </section>
+
+            <!-- ============ 26. TITLE REVIEW ============ -->
+            <section id="m2-title" class="card">
+                <h2>26. Title Review <span class="badge blue">Module 2</span></h2>
+
+                <p>An agreement between insurer and lender providing protection from loss due to <strong>defects in the title</strong>.</p>
+
+                <h3>Title Commitment Components</h3>
+                <ul>
+                    <li>Title Certification</li>
+                    <li>Schedule A (current status)</li>
+                    <li>Schedules B1, B2 (requirements and exceptions)</li>
+                    <li>Judgment, bankruptcy, mortgage, Patriot searches</li>
+                    <li>Tax and water lien searches</li>
+                </ul>
+
+                <h3>Potential Title Defects</h3>
+                <ul>
+                    <li>Forged deeds or other legal documents</li>
+                    <li>Failure of spouses to join conveyances</li>
+                    <li>Undisclosed or missing heirs</li>
+                    <li>Deeds from minors or those of unsound mind</li>
+                    <li>Errors in indexing public records</li>
+                    <li>Liens for unpaid taxes</li>
+                    <li>Erroneous reports from tax officials</li>
+                    <li>Deeds from defunct corporations or unprobated wills</li>
+                </ul>
+
+                <h3>Title Review Checklist</h3>
+                <ul>
+                    <li>Effective date within 60–90 days of closing</li>
+                    <li>Record title ID number kept handy</li>
+                    <li>Policy amounts match first and second liens</li>
+                    <li><strong>Owner of record must match:</strong> sales contract, title, appraisal</li>
+                    <li><strong>Legal description must match</strong> across all three</li>
+                    <li>Schedule C — verify only expected liens on refinance</li>
+                </ul>
+
+                <div class="note">
+                    <strong>Must Match:</strong> Sales contract ↔ Title commitment ↔ Appraisal
+                </div>
+            </section>
+
+            <!-- ============ 27. UW CONDITIONS ============ -->
+            <section id="m2-conditions" class="card">
+                <h2>27. Possible Underwriting Conditions <span class="badge blue">Module 2</span></h2>
+
+                <div class="note purple">
+                    <strong>🔑 Every underwriter underwrites differently.</strong> Conditions may vary between underwriters and lenders. But agency requirements must be consistently met.
+                </div>
+
+                <h3>Common Conditions</h3>
+                <ul>
+                    <li>Credit supplement for mortgage accounts paid 0×30 in last 12 months</li>
+                    <li>Evidence of student loan repayment terms (or 1% of balance)</li>
+                    <li>Signed LOXs for AKAs, address variations, inquiries</li>
+                    <li>LOX for purchasing another primary residence</li>
+                    <li>Flood insurance if in flood zone</li>
+                    <li>Legible front/back of permanent resident alien card</li>
+                    <li>Signed and dated initial 1003</li>
+                    <li>Arms-length affidavit for FSBO</li>
+                    <li>Evidence current mortgage paid current</li>
+                    <li>Power of Attorney executed prior to CTC</li>
+                    <li>12 months VOR or VOM</li>
+                    <li>Credit explanation for derogatory items</li>
+                    <li>Signed rent-free letter</li>
+                    <li>Verbal VOE for all jobs in last 2 years</li>
+                    <li>CPA letter, business license, or articles of incorporation</li>
+                    <li>Fully executed sales contract with addendums</li>
+                    <li>HOA questionnaire for condo project approval</li>
+                    <li>Short sale approval</li>
+                    <li>30 days pay stubs, 2 years W-2s</li>
+                    <li>2 years 1040s with all schedules</li>
+                    <li>Fully executed CD or settlement statement from sale of current residence</li>
+                    <li>VOD or 2 months bank statements</li>
+                    <li>Earnest money deposit and source of funds</li>
+                </ul>
+
+                <h3>Helpful Links</h3>
+                <ul>
+                    <li>Fannie Mae Single Family Selling Guide</li>
+                    <li>Freddie Mac Single Family Seller/Servicer Guide</li>
+                </ul>
+            </section>
+
+            <!-- ============ QUIZ 5 ============ -->
+            <section id="m2-quiz5" class="card">
+                <h2>28. Practice Quiz — Final <span class="badge blue">10 Questions</span></h2>
+
+                <div class="quiz-q"><p>1. Potential title defects include what?</p><div class="quiz-answer"><strong>Liens for unpaid taxes</strong></div></div>
+                <div class="quiz-q"><p>2. Form ___ for one-unit condo exterior only inspections?</p><div class="quiz-answer"><strong>Form 1075</strong></div></div>
+                <div class="quiz-q"><p>3. Large deposit exceeds what % of monthly income?</p><div class="quiz-answer"><strong>50%</strong></div></div>
+                <div class="quiz-q"><p>4. Business assets may be used when the ___ is the account holder.</p><div class="quiz-answer"><strong>Borrower</strong></div></div>
+                <div class="quiz-q"><p>5. If no previous ending balance, ___ months of statements needed.</p><div class="quiz-answer"><strong>Two full months</strong></div></div>
+                <div class="quiz-q"><p>6. What form is used for a 100% owner of a C-Corp?</p><div class="quiz-answer"><strong>Form 1120</strong> (no K1)</div></div>
+                <div class="quiz-q"><p>7. What form is used for S-Corp earnings?</p><div class="quiz-answer"><strong>Form 1120S</strong> with K1s</div></div>
+                <div class="quiz-q"><p>8. What form is used for partnership income?</p><div class="quiz-answer"><strong>Form 1065</strong> with K1s</div></div>
+                <div class="quiz-q"><p>9. Minimum history required for part-time income?</p><div class="quiz-answer"><strong>Two years uninterrupted</strong></div></div>
+                <div class="quiz-q"><p>10. Rental income is reported on what schedule?</p><div class="quiz-answer"><strong>Schedule E</strong></div></div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- ===== MODULE NAVIGATION ===== -->
+    <div class="module-nav">
+        <a href="module-1-loan-processing-101.html">
+            <span class="dir">← Previous</span>
+            <span class="label">Module 1: Loan Processing 101</span>
+        </a>
+        <a href="index.html" class="next">
+            <span class="dir">Back to →</span>
+            <span class="label">All Modules</span>
+        </a>
+    </div>
+
+    <p class="version-info">Module 2 · Version 1.0 · Part of the Certified Master Loan Processor Bootcamp</p>
+
+    <footer class="site-footer">
+        © 2025 Campus Mortgage · Certified Master Loan Processor Bootcamp
+        <br>
+        <a href="../about.html">About</a> · <a href="index.html">Bootcamp</a> · <a href="../reference/index.html">Reference</a>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>
