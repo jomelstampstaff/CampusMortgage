@@ -42,3 +42,70 @@ Deep-dive reference material for day-to-day work.
 ---
 
 ## 🗂️ Site Structure
+bootcamp/
+├── index.html Home page
+├── about.html About + disclaimer
+├── 404.html Custom 404
+├── css/
+│ └── style.css Shared stylesheet
+├── js/
+│ └── script.js Shared JavaScript
+├── modules/
+│ ├── index.html Bootcamp hub
+│ ├── module-1-loan-processing-101.html
+│ └── module-2-advanced-processing.html
+└── reference/
+├── index.html Reference hub
+└── du-lpa-trid-guide.html DU/LPA + TRID combined guide
+
+
+---
+
+## 🚀 How to Use
+
+**As a learner:**
+1. Start at the [home page](https://jomelstampstaff.github.io/bootcamp/)
+2. Take Module 1 → Module 2 in order, or jump straight to a topic
+3. Use the Reference section for quick lookups while you work
+4. Take the practice quizzes to test your knowledge
+
+**As a contributor:**
+1. Fork this repo
+2. Create a new module page in `modules/` following the existing template
+3. Add the module card to `modules/index.html` and `index.html`
+4. Submit a pull request
+
+---
+
+## 🛠️ Tech Stack
+
+- **Pure HTML/CSS/JavaScript** — no frameworks, no build step
+- **Hosted on GitHub Pages** — free, fast, automatic deploys
+- **Zero dependencies** — just open the HTML files
+
+---
+
+## ⚖️ Disclaimer
+
+The views and opinions expressed in this material are those of the instructor and do not necessarily reflect any official policy or position.
+
+Examples of analysis performed within this content are only examples. They should **not** be utilized in real-world application as they are based only on very limited and dated open-source information.
+
+Nothing contained in this material should be considered legal advice. Due to ongoing changes to mortgage regulations and guidelines, the information presented is time-sensitive and subject to change without notice.
+
+This training is based solely on agency guidelines. Each investor and/or lender may have additional overlays which you need to be aware of.
+
+---
+
+## 🙏 Acknowledgments
+
+Content adapted from Campus Mortgage webinar training material. This site is an independent study guide organization of that material for educational reference.
+
+---
+
+## 📅 Version
+
+**Current Version:** 1.0
+**Last Updated:** 2025
+
+New modules and reference material will be added over time.
