@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DU &amp; LPA + TRID Guide · Certified Master Loan Processor</title>
+    <meta name="description" content="Interactive reference for Desktop Underwriter, Loan Product Advisor, and TRID disclosures — with searchable terminology.">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .term-search {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            transition: border-color 0.2s;
+            font-family: inherit;
+        }
+        .term-search:focus {
+            outline: none;
+            border-color: #0f172a;
+        }
+        .term-category {
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #7c3aed;
+            margin: 1.4rem 0 0.5rem;
+            padding-bottom: 0.3rem;
+            border-bottom: 1px solid #ede9fe;
+        }
+        .term-category:first-of-type { margin-top: 0; }
+    </style>
+</head>
+<body>
+
+    <header class="site-header">
+        <a href="../index.html" class="brand">🎓 Certified Master Loan Processor</a>
+        <nav>
+            <a href="../index.html">Home</a>
+            <a href="../modules/index.html">Bootcamp</a>
+            <a href="index.html" class="active">Reference</a>
+            <a href="../about.html">About</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <span style="display:inline-block; background:#0284c7; color:#fff; font-size:0.7rem; font-weight:800; padding:0.28rem 0.9rem; border-radius:30px; letter-spacing:0.06em; text-transform:uppercase; margin-bottom:0.7rem;">Reference Guide</span>
+        <h1>DU &amp; LPA + TRID</h1>
+        <p>Interactive reference for Desktop Underwriter, Loan Product Advisor, and TRID disclosures — with a searchable terminology glossary.</p>
+    </section>
+
+    <div class="app">
+
+        <!-- ===== SIDEBAR ===== -->
+        <nav class="sidebar">
+            <h3>📕 Reference Sections</h3>
+
+            <div class="module-block" id="du-block">
+                <div class="module-header" onclick="toggleModule('du-block')">
+                    <span class="label"><span class="dot blue"></span> DU &amp; LPA – A to Z</span>
+                    <span class="chevron">▼</span>
+                </div>
+                <div class="module-body">
+                    <ul>
+                        <li><a href="#du-1">1. Foundations of AUS</a></li>
+                        <li><a href="#du-2">2. Credit Reports &amp; Data</a></li>
+                        <li><a href="#du-3">3. DU Red Flags</a></li>
+                        <li><a href="#du-4">4. LPA Guidelines</a></li>
+                        <li><a href="#du-5">5. Total Scorecard</a></li>
+                        <li><a href="#du-6">6. Lender Responsibilities</a></li>
+                        <li><a href="#du-7">7. Non-Traditional Credit</a></li>
+                        <li><a href="#du-8">8. Validation Services</a></li>
+                        <li><a href="#du-9">9. UCDP &amp; Appraisals</a></li>
+                        <li><a href="#du-10">10. Collateral Underwriter</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="module-block collapsed" id="trid-block">
+                <div class="module-header" onclick="toggleModule('trid-block')">
+                    <span class="label"><span class="dot green"></span> TRID Compliance</span>
+                    <span class="chevron">▼</span>
+                </div>
+                <div class="module-body">
+                    <ul>
+                        <li><a href="#trid-1">1. Purpose of TRID</a></li>
+                        <li><a href="#trid-2">2. Forms &amp; Acronyms</a></li>
+                        <li><a href="#trid-3">3. Loan Estimate</a></li>
+                        <li><a href="#trid-4">4. Closing Disclosure</a></li>
+                        <li><a href="#trid-5">5. Timing</a></li>
+                        <li><a href="#trid-6">6. Fee Tolerances</a></li>
+                        <li><a href="#trid-7">7. Redisclosing</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="module-block collapsed" id="terms-block">
+                <div class="module-header" onclick="toggleModule('terms-block')">
+                    <span class="label"><span class="dot purple"></span> Common Terminology</span>
+                    <span class="chevron">▼</span>
+                </div>
+                <div class="module-body">
+                    <ul>
+                        <li><a href="#terms-aus">AUS &amp; Underwriting</a></li>
+                        <li><a href="#terms-credit">Credit &amp; Risk</a></li>
+                        <li><a href="#terms-property">Property &amp; Appraisal</a></li>
+                        <li><a href="#terms-trid">TRID &amp; Disclosures</a></li>
+                        <li><a href="#terms-agency">Agency &amp; GSE</a></li>
+                        <li><a href="#terms-compliance">Compliance &amp; Legal</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- ===== MAIN ===== -->
+        <main class="main">
+
+            <!-- ============ DU SECTION ============ -->
+            <section id="du-1" class="card">
+                <h2>DU &amp; LPA: Foundations <span class="badge blue">Reference</span></h2>
+
+                <h3>What are DU and LPA?</h3>
+                <div class="table-wrap">
+                    <table>
+                        <thead><tr><th>System</th><th>Full Name</th><th>Owner</th><th>Used By</th></tr></thead>
+                        <tbody>
+                            <tr><td><strong>DU</strong></td><td>Desktop Underwriter</td><td>Fannie Mae</td><td>Lenders</td></tr>
+                            <tr><td><strong>DO</strong></td><td>Desktop Originator</td><td>Fannie Mae</td><td>Brokers / TPOs</td></tr>
+                            <tr><td><strong>LPA</strong></td><td>Loan Product Advisor</td><td>Freddie Mac</td><td>Lenders</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="note">
+                    <strong>🔑 Both are tools, not replacements for human underwriters.</strong> Neither evaluates compliance with federal/state laws.
+                </div>
+
+                <h3>Scopes of Analysis</h3>
+                <div class="grid-2">
+                    <div class="tile">
+                        <h5>💳 Credit Risk Factors</h5>
+                        <ul>
+                            <li>Credit history &amp; delinquencies</li>
+                            <li>Installment &amp; mortgage accounts</li>
+                            <li>Foreclosures, bankruptcies</li>
+                            <li>Revolving credit utilization</li>
+                            <li>Collections, inquiries</li>
+                        </ul>
+                    </div>
+                    <div class="tile">
+                        <h5>🏠 Non-Credit Risk Factors</h5>
+                        <ul>
+                            <li>LTV, CLTV, HLTV</li>
+                            <li>Liquid reserves</li>
+                            <li>Loan purpose, terms, amortization</li>
+                            <li>Occupancy, ratios, property type</li>
+                            <li>Co-borrowers, self-employment</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3>Reps &amp; Warrants</h3>
+                <p>A set of assurances lenders make to the GSE regarding loan quality. Relief is provided when information is validated, all messaging is complied with, and final recommendation matches final documents.</p>
+
+                <div class="note danger">
+                    <strong>Relief voided</strong> if lender fails to validate employment or misrepresents data. Lender must buy back the loan.
+                </div>
+            </section>
+
+            <section id="du-2" class="card">
+                <h2>Credit Reports &amp; Data Integrity <span class="badge blue">Reference</span></h2>
+
+                <h3>Credit Report Options</h3>
+                <div class="grid-3">
+                    <div class="tile"><h5>Credit Only</h5><p>Order credit report without underwriting analysis.</p></div>
+                    <div class="tile"><h5>Credit &amp; Underwriting</h5><p>Order credit and run underwriting.</p></div>
+                    <div class="tile"><h5>Underwriting Only</h5><p>Rerun underwriting with existing credit report.</p></div>
+                </div>
+
+                <h3>Joint vs. Individual Credit</h3>
+                <div class="table-wrap">
+                    <table>
+                        <thead><tr><th>Scenario</th><th>Application</th><th>Credit Report</th></tr></thead>
+                        <tbody>
+                            <tr><td>Married / co-mingled</td><td>Joint</td><td>Joint</td></tr>
+                            <tr><td>Non-related borrowers</td><td>Individual</td><td>Individual</td></tr>
+                            <tr><td>Unmarried co-habitating (commingled)</td><td>Joint</td><td>Joint</td></tr>
+                            <tr><td>Unmarried co-habitating (not commingled)</td><td>Individual</td><td>Individual</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="note warning">
+                    <strong>Maximum 4 borrowers</strong> supported by DU/LPA. 5+ requires manual underwriting.
+                </div>
+
+                <h3>Data Integrity — "Garbage in, garbage out"</h3>
+                <p>Critical fields to verify:</p>
+                <ul>
+                    <li>Borrower name / DOB / SSN</li>
+                    <li>Loan terms (update when term changes)</li>
+                    <li>LTV / CLTV / HLTV (include subordinate financing)</li>
+                    <li>Sales price, appraised value</li>
+                    <li>Income amounts &amp; sources</li>
+                    <li>DTI ratios</li>
+                    <li>Asset amounts &amp; sources</li>
+                    <li>Property / occupancy type</li>
+                </ul>
+            </section>
+
+            <section id="du-3" class="card">
+                <h2>DU Red Flags &amp; Tolerances <span class="badge blue">Reference</span></h2>
+
+                <h3>Red Flag Messages</h3>
+                <div class="grid-2">
+                    <div class="tile">
+                        <h5>🚩 Excessive Resubmissions</h5>
+                        <p>50-60 runs indicates possible manipulation. After 19 runs, flag stays permanently.</p>
+                    </div>
+                    <div class="tile">
+                        <h5>🚩 Frozen Credit Report</h5>
+                        <p>One or more bureaus frozen. If one frozen, proceed if data from 2 repositories available.</p>
+                    </div>
+                    <div class="tile">
+                        <h5>🚩 Potential Case File ID Reuse</h5>
+                        <p>Critical data changed. Investigate; open new DU if second loan.</p>
+                    </div>
+                    <div class="tile">
+                        <h5>🚩 Occupancy Modified</h5>
+                        <p>Investment changed to owner-occupied. Investigate with due diligence.</p>
+                    </div>
+                </div>
+
+                <h3>DU Recommendations</h3>
+                <div class="table-wrap">
+                    <table>
+                        <thead><tr><th>Recommendation</th><th>Meaning</th></tr></thead>
+                        <tbody>
+                            <tr><td><strong>Approve Eligible</strong></td><td>Meets credit risk AND loan eligibility</td></tr>
+                            <tr><td><strong>Approve Ineligible</strong></td><td>Meets credit risk but not eligibility</td></tr>
+                            <tr><td><strong>Refer with Caution</strong></td><td>Does not meet credit or eligibility</td></tr>
+                            <tr><td><strong>Out of Scope</strong></td><td>Unable to underwrite as submitted</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>DTI Tolerances</h3>
+                <div class="table-wrap">
+                    <table>
+                        <thead><tr><th>Original → New</th><th>Resubmit?</th><th>Reason</th></tr></thead>
+                        <tbody>
+                            <tr><td>35% → 40%</td><td>✅ Yes</td><td>Exceeds 3% tolerance</td></tr>
+                            <tr><td>44% → 46%</td><td>✅ Yes</td><td>Goes over 45%</td></tr>
+                            <tr><td>46% → 48%</td><td>❌ No</td><td>Only 2% increase; already &gt;45%</td></tr>
+                            <tr><td>48% → 51%</td><td>✅ Yes</td><td>Exceeds 50% max</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Other Tolerances</h3>
+                <ul>
+                    <li><strong>Rate increase:</strong> Always resubmit</li>
+                    <li><strong>Rate decrease (not from buyown):</strong> No resubmit</li>
+                    <li><strong>Funds to close exceed findings:</strong> Document sufficient assets; no resubmit</li>
+                    <li><strong>Reserves less than required:</strong> Verify ≥90% of required; no resubmit</li>
+                    <li><strong>Refinance loan amount:</strong> May increase $500 or 1% (whichever less); may decrease 5%</li>
+                </ul>
+            </section>
+
+            <section id="du-4" class="card">
+                <h2>LPA Specific Guidelines <span class="badge blue">Reference</span></h2>
+
+                <div class="table-wrap">
+                    <table>
+                        <thead><tr><th>Recommendation</th><th>Meaning</th></tr></thead>
+                        <tbody>
+                            <tr><td><strong>Accept</strong></td><td>Meets Freddie Mac credit risk standards</td></tr>
+                            <tr><td><strong>Caution</strong></td><td>Unlikely to meet standards; excessive layered risk</td></tr>
+                            <tr><td><strong>Streamline Accept</strong></td><td>Allows reduced documentation</td></tr>
+                            <tr><td><strong>Standard Documentation</strong></td><td>Most comprehensive; required for higher risk</td></tr>
+                            <tr><td><strong>Ineligible/Incomplete/Invalid</strong></td><td>Unable to underwrite as submitted</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>LPA Tolerances (No Resubmission)</h3>
+                <ul>
+                    <li>Monthly debt payment decreases</li>
+                    <li>Income for any borrower increases</li>
+                    <li>Income decreases if DTI doesn't increase &gt;3% or go over 45%</li>
+                    <li>Debt increases if DTI doesn't increase &gt;3% or go over 45%</li>
+                    <li>Verified assets/reserves increase</li>
+                    <li>Verified reserves decrease by no less than amount required</li>
+                    <li>Loan amount decreases ≤5% on refinance (if MI not impacted)</li>
+                </ul>
+            </section>
+
+            <section id="du-5" class="card">
+                <h2>Total Scorecard (FHA/VA) <span class="badge blue">Reference</span></h2>
+                <p><strong>TOTAL</strong> = Technology Open to Approved Lenders. An overlay accessed through DU and LPA — not a standalone AUS.</p>
+
+                <div class="table-wrap">
+                    <table>
+                        <thead><tr><th>Recommendation</th><th>Meaning</th></tr></thead>
+                        <tbody>
+                            <tr><td><strong>Accept Eligible</strong></td><td>May be eligible for insurance; docs must be validated</td></tr>
+                            <tr><td><strong>Refer</strong></td><td>Must be underwritten by a DE underwriter</td></tr>
+                            <tr><td><strong>Ineligible</strong></td><td>May be other ineligible characteristics</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="note">
+                    <strong>FHA:</strong> Accept eligible means FHA will insure without manual underwriting unless manual downgrade needed.
+                </div>
+            </section>
+
+            <section id="du-6" class="card">
+                <h2>Lender Responsibilities <span class="badge blue">Reference</span></h2>
+                <ul>
+                    <li><strong>Confirm accuracy of data</strong> — file must match AUS exactly</li>
+                    <li><strong>Employ prudent underwriting judgment</strong></li>
+                    <li><strong>Comply with all verification messages</strong></li>
+                    <li><strong>Exercise due diligence</strong> when reviewing documentation</li>
+                    <li><strong>Ensure derogatory/contradictory info is part of findings</strong></li>
+                    <li><strong>Take action when errors not referenced</strong> — rerun AUS</li>
+                    <li><strong>Review credit reports</strong> — trade lines current, student loans reflected</li>
+                    <li><strong>Update LOS and AUS with every change</strong></li>
+                </ul>
+            </section>
+
+            <section id="du-7" class="card">
+                <h2>Non-Traditional Credit <span class="badge blue">Reference</span></h2>
+
+                <div class="grid-2">
+                    <div class="tile">
+                        <h5>DU Requirements (No Score)</h5>
+                        <ul>
+                            <li>Primary residence, all occupy</li>
+                            <li>One unit, purchase/limited cash-out</li>
+                            <li>Fixed-rate, conforming limits</li>
+                            <li>Max LTV/CLTV/HLTV: 90%</li>
+                            <li>DTI &lt; 40%</li>
+                        </ul>
+                    </div>
+                    <div class="tile">
+                        <h5>LPA Requirements (No Score)</h5>
+                        <ul>
+                            <li>Purchase or no cash-out refi</li>
+                            <li>One-unit, all occupy as primary</li>
+                            <li>Fixed-rate</li>
+                            <li>Max LTV/TLTV/HTLTV: 95%</li>
+                            <li>Standard conforming limits</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="note">
+                    <strong>Document two non-traditional credit sources per borrower</strong> — each with 12-month pay history; one must be housing-related.
+                </div>
+            </section>
+
+            <section id="du-8" class="card">
+                <h2>Validation Services (D1C &amp; AIM) <span class="badge blue">Reference</span></h2>
+
+                <div class="grid-2">
+                    <div class="tile">
+                        <h5>Fannie Mae: Day One Certainty (D1C)</h5>
+                        <p>Uses third-party vendor reports for VOE, VOI, VOA. If validated, no further documentation required.</p>
+                    </div>
+                    <div class="tile">
+                        <h5>Freddie Mac: Asset &amp; Income Modeler (AIM)</h5>
+                        <p>Same concept — integrates electronic data from approved vendors.</p>
+                    </div>
+                </div>
+
+                <h3>What Can Be Validated</h3>
+                <ul>
+                    <li>Employment (via The Work Number, etc.)</li>
+                    <li>Income (bonus, OT, commission)</li>
+                    <li>Assets (60 days transaction history)</li>
+                    <li>Tax transcripts (self-employment, retirement, SS)</li>
+                </ul>
+
+                <h3>What Cannot Be Validated</h3>
+                <ul>
+                    <li>Military service members</li>
+                    <li>Child support or alimony</li>
+                    <li>Self-employed employment (income may be)</li>
+                    <li>Self-employed income on Form 1065 or 1120S</li>
+                    <li>Gifts or business assets for self-employed borrower</li>
+                </ul>
+
+                <div class="note">
+                    <strong>Documentation expiration:</strong> Same as any other — not over 120 days old at note execution. Exception: VOE must be updated within 10 calendar days of closing.
+                </div>
+            </section>
+
+            <section id="du-9" class="card">
+                <h2>UCDP &amp; Appraisals <span class="badge blue">Reference</span></h2>
+                <p>Electronic delivery system for appraisals to Fannie Mae and Freddie Mac. <strong>For lenders only</strong> — AMCs submit as agent.</p>
+
+                <h3>Key Facts</h3>
+                <ul>
+                    <li>Conventional loans requiring appraisal</li>
+                    <li>All appraisals must be uploaded: single family, manufactured, 2-4 units, condos, co-ops, exterior-only, repairs (1004D/442)</li>
+                    <li>Maintains up to <strong>3 appraisals</strong> per loan</li>
+                    <li>Field reviews are <em>not</em> submitted</li>
+                    <li>Must receive <strong>Successful</strong> SSR status before delivery</li>
+                </ul>
+
+                <h3>SSR Message Types</h3>
+                <div class="grid-3">
+                    <div class="tile"><h5>🔴 Hard Stop</h5><p>Must be cleared</p></div>
+                    <div class="tile"><h5>🟡 Warning / Overridable</h5><p>Manually overwrite or upload corrected appraisal</p></div>
+                    <div class="tile"><h5>⚫ Fatal</h5><p>Missing data; obtain corrected appraisal and resubmit</p></div>
+                </div>
+            </section>
+
+            <section id="du-10" class="card">
+                <h2>Collateral Underwriter (CU) &amp; ACE <span class="badge blue">Reference</span></h2>
+
+                <div class="grid-2">
+                    <div class="tile">
+                        <h5>Fannie Mae: Collateral Underwriter</h5>
+                        <ul>
+                            <li>Risk score 1.0 (low) to 5.0 (high)</li>
+                            <li>Available on one-unit attached/detached condos (not manufactured)</li>
+                            <li><strong>Risk score ≤2.5</strong> for relief</li>
+                            <li>Still need Form 442 on required repairs</li>
+                        </ul>
+                    </div>
+                    <div class="tile">
+                        <h5>Freddie Mac: ACE</h5>
+                        <ul>
+                            <li>LPA must provide <strong>Accept</strong> risk class</li>
+                            <li>Single-family one-unit (incl. condos)</li>
+                            <li>Primary or second home</li>
+                            <li>Purchase/No cash-out: Max LTV ≤90%</li>
+                            <li>Cash-out (primary): ≤70%; (second): ≤60%</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3>When Appraisal Waiver Cannot Be Used (DU)</h3>
+                <ul>
+                    <li>Lender has knowledge appraisal is warranted</li>
+                    <li>Proposed construction / construction-to-perm</li>
+                    <li>2-4 units when value ≥$1 million</li>
+                    <li>HomeStyle, Texas Section 50(a)(6)</li>
+                    <li>Leaseholds, resale restrictions, co-ops, manufactured homes</li>
+                    <li>Gift of equity</li>
+                    <li>Major repairs required affecting safety/soundness</li>
+                    <li>Borrower requests appraisal</li>
+                </ul>
+
+                <div class="note warning">
+                    <strong>Due diligence with waiver:</strong> FEMA disaster area — verify no damage. Home inspection — confirm not C6. Refinance — certify not listed for sale (cash-out not acquired in last 6 months).
+                </div>
+            </section>
+
+            <!-- ============ TRID SECTION ============ -->
+            <section id="trid-1" class="card">
+                <h2>TRID: Purpose <span class="badge green">Reference</span></h2>
+                <p>TRID (TILA‑RESPA Integrated Disclosure) is a CFPB tool to ensure lenders follow the Dodd‑Frank <span class="highlight">"Know Before You Owe"</span> rule. It protects and informs consumers by simplifying the loan process.</p>
+
+                <div class="note">
+                    <strong>🔑 Applies to closed‑end loans only.</strong> Not reverse mortgages, HELOCs, mobile homes without land.
+                </div>
+
+                <h3>Before vs. After</h3>
+                <div class="grid-2">
+                    <div class="tile">
+                        <h5>📄 Before (4 documents)</h5>
+                        <ul>
+                            <li>Good Faith Estimate (GFE)</li>
+                            <li>Initial Truth in Lending (TIL)</li>
+                            <li>HUD‑1 Settlement Statement</li>
+                            <li>Final TIL</li>
+                        </ul>
+                    </div>
+                    <div class="tile">
+                        <h5>📄 After (2 documents)</h5>
+                        <ul>
+                            <li><strong>Loan Estimate (LE)</strong> – GFE + initial TIL</li>
+                            <li><strong>Closing Disclosure (CD)</strong> – HUD‑1 + final TIL</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3>Application Trigger</h3>
+                <p>The loan application is triggered when <strong>six pieces</strong> are collected. LE must be delivered within <strong>3 business days</strong>.</p>
+                <div class="process-step"><span class="num green">1</span><span class="desc">Full name</span></div>
+                <div class="process-step"><span class="num green">2</span><span class="desc">Social Security Number</span></div>
+                <div class="process-step"><span class="num green">3</span><span class="desc">Income</span></div>
+                <div class="process-step"><span class="num green">4</span><span class="desc">Property address</span></div>
+                <div class="process-step"><span class="num green">5</span><span class="desc">Estimated value</span></div>
+                <div class="process-step"><span class="num green">6</span><span class="desc">Desired loan amount</span></div>
+            </section>
+
+            <section id="trid-2" class="card">
+                <h2>TRID: Forms &amp; Acronyms <span class="badge green">Reference</span></h2>
+
+                <div class="grid-3">
+                    <div class="tile"><h5>📌 LE</h5><p>Loan Estimate — within 3 business days of application.</p></div>
+                    <div class="tile"><h5>📌 CD</h5><p>Closing Disclosure — received 3 business days before consummation.</p></div>
+                    <div class="tile"><h5>📌 Acronyms</h5><p>APR, TILA, RESPA, CFPB, LE, CD, TRID, NMLS, MLO</p></div>
+                </div>
+
+                <h3>New Data Points</h3>
+                <ul>
+                    <li>Realtor's license number</li>
+                    <li>Services borrower can/cannot shop for</li>
+                    <li>Payment comparison over loan term</li>
+                    <li>Lender's responsibility for appraisal copy</li>
+                    <li>Rate lock confirmation</li>
+                    <li>Contact info + NMLS IDs</li>
+                </ul>
+
+                <div class="note warning">
+                    <strong>🚫 Pre‑disclosure restriction:</strong> You cannot create a "fake" LE‑looking form for pre‑qualification.
+                </div>
+            </section>
+
+            <section id="trid-3" class="card">
+                <h2>TRID: Loan Estimate <span class="badge green">Reference</span></h2>
+                <p>Delivered <strong>within 3 business days</strong> of application. Shows accurate terms and costs.</p>
+
+                <div class="table-wrap">
+                    <table>
+                        <thead><tr><th>Section</th><th>Includes</th></tr></thead>
+                        <tbody>
+                            <tr><td><strong>Loan Terms</strong></td><td>Amount, rate, monthly P&amp;I, prepayment penalty, MI &amp; payment changes</td></tr>
+                            <tr><td><strong>Closing Cost Details</strong></td><td>A. Origination · B. Cannot Shop · C. Can Shop · E. Taxes · F. Prepaids · G. Escrow</td></tr>
+                            <tr><td><strong>Cash to Close</strong></td><td>Down payment, deposits, seller credits, adjustments</td></tr>
+                            <tr><td><strong>Other Considerations</strong></td><td>Appraisal, assumption, insurance, late payment, refinance, servicing</td></tr>
+                            <tr><td><strong>Confirm Receipt</strong></td><td>Signature line – proof of receipt</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="note">
+                    <strong>📬 Delivery:</strong> If not electronic (with acknowledgment), must be mailed within 3 business days.
+                </div>
+                <div class="note warning">
+                    <strong>⏳ Intent to Proceed:</strong> Required before collecting any fees (except credit report).
+                </div>
+            </section>
+
+            <section id="trid-4" class="card">
+                <h2>TRID: Closing Disclosure <span class="badge green">Reference</span></h2>
+                <p>Must be <strong>received by borrower at least 3 business days before consummation</strong>.</p>
+
+                <h3>Key Additions</h3>
+                <ul>
+                    <li>Settlement agent, file number, seller info, MIC number</li>
+                    <li>LE vs. final cost comparison (line‑item)</li>
+                    <li>"Paid by others" column (including lender credits)</li>
+                    <li>Recording fees lumped together</li>
+                    <li>Owner's title policy disclosure</li>
+                    <li>APR, finance charge, TIP</li>
+                    <li>Escrow account details / waiver</li>
+                    <li>NMLS ID placement (must be on correct line)</li>
+                </ul>
+
+                <div class="note">
+                    <strong>✍️ Delivery:</strong> Electronic or mail. If mail, place in mail <strong>no later than 3 business days</strong> before consummation. Business day for CD = all calendar days except Sundays and legal holidays (Saturdays count).
+                </div>
+
+                <h3>Who Provides the CD?</h3>
+                <ul>
+                    <li><strong>Settlement agent</strong> must provide to seller.</li>
+                    <li>Lender can contract settlement agent to provide to buyer — usually lender retains responsibility.</li>
+                    <li>Cash transactions: CD not required, but state laws may require a form.</li>
+                </ul>
+            </section>
+
+            <section id="trid-5" class="card">
+                <h2>TRID: Timing <span class="badge green">Reference</span></h2>
+
+                <div class="grid-2">
+                    <div class="tile">
+                        <h5>📅 Loan Estimate</h5>
+                        <ul>
+                            <li>Within <strong>3 business days</strong> of application</li>
+                            <li>Business day = creditor open for substantially all business (Sat. excluded)</li>
+                            <li>If electronic not acknowledged by day 3, must mail</li>
+                            <li>Intent to Proceed required before fees (except credit report)</li>
+                        </ul>
+                    </div>
+                    <div class="tile">
+                        <h5>📅 Closing Disclosure</h5>
+                        <ul>
+                            <li>Received at least <strong>3 business days</strong> before consummation</li>
+                            <li>Business day = all calendar days except Sundays &amp; legal holidays (Sat. counts)</li>
+                            <li>Mail: place in mail no later than 3 business days before closing</li>
+                            <li>Redisclosure triggers new 3‑day waiting period</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="note">
+                    <strong>📬 Electronic delivery:</strong> Allowed, but must follow E‑SIGN and privacy rules. Acknowledgment of receipt is critical.
+                </div>
+            </section>
+
+            <section id="trid-6" class="card">
+                <h2>TRID: Fee Tolerance Limits <span class="badge green">Reference</span></h2>
+
+                <div class="grid-3">
+                    <div class="tile">
+                        <h5>🔴 Zero Tolerance</h5>
+                        <p><strong>Cannot increase</strong> unless valid change of circumstance.</p>
+                        <ul>
+                            <li>Lender/broker fees</li>
+                            <li>Transfer taxes</li>
+                            <li>FHA/VA upfront premiums (if disclosed incorrectly)</li>
+                            <li>Services borrower cannot shop for</li>
+                        </ul>
+                    </div>
+                    <div class="tile">
+                        <h5>🟡 10% Cumulative</h5>
+                        <p><strong>Total cannot increase more than 10%.</strong></p>
+                        <ul>
+                            <li>Recording fees</li>
+                            <li>Services borrower can shop for</li>
+                        </ul>
+                        <p>Sum all fees; if total &gt;10%, lender pays difference.</p>
+                    </div>
+                    <div class="tile">
+                        <h5>🟢 No Limit / Good Faith</h5>
+                        <p><strong>Can increase freely</strong> if good faith and changed circumstances.</p>
+                        <ul>
+                            <li>Prepaids (insurance, interest)</li>
+                            <li>Escrow deposits</li>
+                            <li>Property taxes</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="note danger">
+                    <strong>🚨 Human error is not a change of circumstance.</strong> Underestimating FHA premiums, transfer taxes, or lender fees — lender absorbs the cost.
+                </div>
+            </section>
+
+            <section id="trid-7" class="card">
+                <h2>TRID: Redisclosing &amp; Change of Circumstance <span class="badge green">Reference</span></h2>
+
+                <p>A <strong>valid change of circumstance</strong> allows redisclosure of the LE (and possibly new CD waiting period).</p>
+
+                <div class="grid-2">
+                    <div class="tile">
+                        <h5>✅ Valid</h5>
+                        <ul>
+                            <li>Rate lock (points/fees change)</li>
+                            <li>Bona fide discount point buy‑down</li>
+                            <li>Appraisal different than expected</li>
+                            <li>Title issues (e.g., quitclaim deed)</li>
+                            <li>Natural disaster, job loss</li>
+                            <li>Loan product change (documented)</li>
+                        </ul>
+                    </div>
+                    <div class="tile">
+                        <h5>❌ Not Valid</h5>
+                        <ul>
+                            <li>Human error / underestimating costs</li>
+                            <li>Adding forgotten lender fees</li>
+                            <li>Changing origination fees without valid reason</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="note">
+                    <strong>📝 Document everything:</strong> Keep letters, system logs, and explanations. Auditors will ask for proof.
+                </div>
+            </section>
+
+            <!-- ============ TERMINOLOGY ============ -->
+            <section id="terms-aus" class="card">
+                <h2>📖 Common Terminology <span class="badge purple">A–Z Reference</span></h2>
+                <p>Search terminology below. Grouped by category for easy browsing.</p>
+
+                <input type="text" id="termSearch" class="term-search" placeholder="🔍 Search terminology (e.g., LTV, TRID, AUS)..." onkeyup="filterTerms()">
+
+                <h3 class="term-category" id="terms-aus-cat">AUS &amp; Underwriting</h3>
+                <div class="table-wrap">
+                    <table class="term-table">
+                        <thead><tr><th style="width:25%;">Term</th><th>Definition</th></tr></thead>
+                        <tbody>
+                            <tr><td><strong>AUS</strong></td><td>Automated Underwriting System — software that analyzes loan data and provides a credit risk recommendation (e.g., DU, LPA).</td></tr>
+                            <tr><td><strong>DU</strong></td><td>Desktop Underwriter — Fannie Mae's automated underwriting system for lenders.</td></tr>
+                            <tr><td><strong>DO</strong></td><td>Desktop Originator — Fannie Mae's system for brokers/TPOs to originate and submit loans to sponsoring lenders.</td></tr>
+                            <tr><td><strong>LPA</strong></td><td>Loan Product Advisor — Freddie Mac's automated underwriting system.</td></tr>
+                            <tr><td><strong>D1C</strong></td><td>Day One Certainty — Fannie Mae's validation service that uses third-party vendor data for VOE, VOI, and VOA.</td></tr>
+                            <tr><td><strong>AIM</strong></td><td>Asset and Income Modeler — Freddie Mac's validation service (LPA's equivalent to D1C).</td></tr>
+                            <tr><td><strong>VOE</strong></td><td>Verification of Employment — confirmation that a borrower is employed.</td></tr>
+                            <tr><td><strong>VOI</strong></td><td>Verification of Income — confirmation of a borrower's income.</td></tr>
+                            <tr><td><strong>VOA</strong></td><td>Verification of Assets — confirmation of a borrower's assets.</td></tr>
+                            <tr><td><strong>LOS</strong></td><td>Loan Origination System — software used by lenders to manage the loan process.</td></tr>
+                            <tr><td><strong>TPO</strong></td><td>Third-Party Originator — a broker or correspondent who originates loans for a sponsoring lender.</td></tr>
+                            <tr><td><strong>1003</strong></td><td>Uniform Residential Loan Application (URLA) — the standard mortgage application form.</td></tr>
+                            <tr><td><strong>1008</strong></td><td>Uniform Underwriting and Transmittal Summary — underwriting transmittal form.</td></tr>
+                            <tr><td><strong>LLPA</strong></td><td>Loan-Level Price Adjustment — pricing adjustments based on credit score, LTV, occupancy, etc.</td></tr>
+                            <tr><td><strong>SFC</strong></td><td>Special Feature Code — codes used when delivering loans to the GSEs.</td></tr>
+                            <tr><td><strong>DTI</strong></td><td>Debt-to-Income ratio — total monthly debt payments divided by gross monthly income.</td></tr>
+                            <tr><td><strong>LTV</strong></td><td>Loan-to-Value ratio — loan amount divided by appraised value or sales price.</td></tr>
+                            <tr><td><strong>CLTV</strong></td><td>Combined Loan-to-Value — all liens on the property divided by value.</td></tr>
+                            <tr><td><strong>HLTV</strong></td><td>Home Equity Line Total Value — includes total credit line limit in CLTV calculation.</td></tr>
+                            <tr><td><strong>PITI</strong></td><td>Principal, Interest, Taxes, and Insurance — the total monthly housing payment.</td></tr>
+                            <tr><td><strong>MI / PMI</strong></td><td>Mortgage Insurance / Private Mortgage Insurance — required when LTV is above a certain threshold.</td></tr>
+                            <tr><td><strong>QM</strong></td><td>Qualified Mortgage — a loan that meets certain ability-to-repay requirements.</td></tr>
+                            <tr><td><strong>ATR</strong></td><td>Ability to Repay — Dodd-Frank requirement that lenders ensure borrowers can repay.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3 class="term-category" id="terms-credit-cat">Credit &amp; Risk</h3>
+                <div class="table-wrap">
+                    <table class="term-table">
+                        <thead><tr><th style="width:25%;">Term</th><th>Definition</th></tr></thead>
+                        <tbody>
+                            <tr><td><strong>FICO</strong></td><td>Fair Isaac Corporation score — the credit score most commonly used in mortgage lending.</td></tr>
+                            <tr><td><strong>Repo</strong></td><td>Repository — one of the three major credit bureaus: TransUnion, Equifax, Experian.</td></tr>
+                            <tr><td><strong>Trade Line</strong></td><td>A credit account listed on a credit report.</td></tr>
+                            <tr><td><strong>Derogatory</strong></td><td>Negative information on a credit report (e.g., late payments, collections, bankruptcies).</td></tr>
+                            <tr><td><strong>Foreclosure</strong></td><td>Legal process where a lender takes possession of a property due to non-payment.</td></tr>
+                            <tr><td><strong>Short Sale</strong></td><td>Sale of a property for less than the amount owed, with lender approval.</td></tr>
+                            <tr><td><strong>Deed-in-Lieu</strong></td><td>Borrower voluntarily transfers property to lender to avoid foreclosure.</td></tr>
+                            <tr><td><strong>Chapter 7</strong></td><td>Liquidation bankruptcy — debts are discharged; property may be sold.</td></tr>
+                            <tr><td><strong>Chapter 13</strong></td><td>Reorganization bankruptcy — borrower repays debts over 3-5 years.</td></tr>
+                            <tr><td><strong>Collections</strong></td><td>Debts that have been turned over to a collection agency.</td></tr>
+                            <tr><td><strong>Judgment</strong></td><td>A court order requiring a debtor to pay a creditor.</td></tr>
+                            <tr><td><strong>Tax Lien</strong></td><td>A claim against property for unpaid taxes.</td></tr>
+                            <tr><td><strong>Credit Utilization</strong></td><td>Percentage of available revolving credit being used.</td></tr>
+                            <tr><td><strong>Inquiry</strong></td><td>A request to view a credit report (hard = credit application; soft = promotional).</td></tr>
+                            <tr><td><strong>30-Day Account</strong></td><td>An account that must be paid in full each month (e.g., charge card).</td></tr>
+                            <tr><td><strong>Reserves</strong></td><td>Liquid assets remaining after closing, required by some loan programs.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3 class="term-category" id="terms-property-cat">Property &amp; Appraisal</h3>
+                <div class="table-wrap">
+                    <table class="term-table">
+                        <thead><tr><th style="width:25%;">Term</th><th>Definition</th></tr></thead>
+                        <tbody>
+                            <tr><td><strong>UCDP</strong></td><td>Uniform Collateral Data Portal — electronic delivery system for appraisals to Fannie Mae and Freddie Mac.</td></tr>
+                            <tr><td><strong>URAR</strong></td><td>Uniform Residential Appraisal Report — standard appraisal form (Form 1004).</td></tr>
+                            <tr><td><strong>UAD</strong></td><td>Uniform Appraisal Dataset — standard rules and abbreviations for appraisal data.</td></tr>
+                            <tr><td><strong>CU</strong></td><td>Collateral Underwriter — Fannie Mae's appraisal risk assessment tool (risk score 1.0–5.0).</td></tr>
+                            <tr><td><strong>ACE</strong></td><td>Automated Collateral Evaluation — Freddie Mac's appraisal risk assessment tool.</td></tr>
+                            <tr><td><strong>AMC</strong></td><td>Appraisal Management Company — independent entity that manages the appraisal process for lenders.</td></tr>
+                            <tr><td><strong>SSR</strong></td><td>Submission Summary Report — UCDP report showing appraisal submission status.</td></tr>
+                            <tr><td><strong>XML</strong></td><td>Extensible Markup Language — format used to transmit appraisal data to UCDP.</td></tr>
+                            <tr><td><strong>Form 1004D / 442</strong></td><td>Appraisal Update and/or Completion Report — used for repairs, final inspections.</td></tr>
+                            <tr><td><strong>Appraisal Waiver</strong></td><td>A waiver allowing the lender to forgo an appraisal (subject to eligibility and risk score).</td></tr>
+                            <tr><td><strong>REO</strong></td><td>Real Estate Owned — property owned by a lender after foreclosure.</td></tr>
+                            <tr><td><strong>ADU</strong></td><td>Accessory Dwelling Unit — secondary housing unit on the same lot.</td></tr>
+                            <tr><td><strong>PUD</strong></td><td>Planned Unit Development — a subdivision with common areas and shared amenities.</td></tr>
+                            <tr><td><strong>C6 Condition</strong></td><td>Appraisal rating indicating the property is not in average condition.</td></tr>
+                            <tr><td><strong>FEMA Disaster Area</strong></td><td>Area declared by FEMA where additional due diligence is required before closing.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3 class="term-category" id="terms-trid-cat">TRID &amp; Disclosures</h3>
+                <div class="table-wrap">
+                    <table class="term-table">
+                        <thead><tr><th style="width:25%;">Term</th><th>Definition</th></tr></thead>
+                        <tbody>
+                            <tr><td><strong>TRID</strong></td><td>TILA-RESPA Integrated Disclosure — CFPB rule combining mortgage disclosures.</td></tr>
+                            <tr><td><strong>TILA</strong></td><td>Truth in Lending Act — federal law requiring disclosure of credit terms.</td></tr>
+                            <tr><td><strong>RESPA</strong></td><td>Real Estate Settlement Procedures Act — federal law governing settlement practices.</td></tr>
+                            <tr><td><strong>CFPB</strong></td><td>Consumer Financial Protection Bureau — agency that created and enforces TRID.</td></tr>
+                            <tr><td><strong>LE</strong></td><td>Loan Estimate — disclosure given within 3 business days of application.</td></tr>
+                            <tr><td><strong>CD</strong></td><td>Closing Disclosure — final disclosure received at least 3 business days before consummation.</td></tr>
+                            <tr><td><strong>GFE</strong></td><td>Good Faith Estimate — old form replaced by the LE.</td></tr>
+                            <tr><td><strong>HUD-1</strong></td><td>HUD Settlement Statement — old form replaced by the CD.</td></tr>
+                            <tr><td><strong>APR</strong></td><td>Annual Percentage Rate — the cost of credit expressed as a yearly rate.</td></tr>
+                            <tr><td><strong>Finance Charge</strong></td><td>The dollar amount the credit will cost the borrower.</td></tr>
+                            <tr><td><strong>Consummation</strong></td><td>The date the borrower signs the security instrument and note.</td></tr>
+                            <tr><td><strong>Business Day (LE)</strong></td><td>A day the creditor is open for substantially all business functions (Saturdays usually excluded).</td></tr>
+                            <tr><td><strong>Business Day (CD)</strong></td><td>All calendar days except Sundays and legal holidays (Saturdays count).</td></tr>
+                            <tr><td><strong>Intent to Proceed</strong></td><td>Borrower's written intent to move forward; required before collecting fees.</td></tr>
+                            <tr><td><strong>Change of Circumstance</strong></td><td>A valid event allowing redisclosure of the LE.</td></tr>
+                            <tr><td><strong>Zero Tolerance</strong></td><td>Fees that cannot increase (e.g., lender fees, transfer taxes).</td></tr>
+                            <tr><td><strong>10% Cumulative Tolerance</strong></td><td>Fees that can increase up to 10% in aggregate.</td></tr>
+                            <tr><td><strong>Redisclosure</strong></td><td>Issuing a new LE or CD due to a valid change.</td></tr>
+                            <tr><td><strong>NMLS ID</strong></td><td>Nationwide Multistate Licensing System ID — license number for loan originators and lenders.</td></tr>
+                            <tr><td><strong>MIC</strong></td><td>Mortgage Insurance Certificate — number shown on the CD.</td></tr>
+                            <tr><td><strong>E-SIGN</strong></td><td>Electronic Signatures in Global and National Commerce Act — governs electronic delivery.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3 class="term-category" id="terms-agency-cat">Agency &amp; GSE</h3>
+                <div class="table-wrap">
+                    <table class="term-table">
+                        <thead><tr><th style="width:25%;">Term</th><th>Definition</th></tr></thead>
+                        <tbody>
+                            <tr><td><strong>GSE</strong></td><td>Government Sponsored Enterprise — Fannie Mae and Freddie Mac.</td></tr>
+                            <tr><td><strong>FHFA</strong></td><td>Federal Housing Finance Agency — oversees Fannie Mae, Freddie Mac, and the Federal Home Loan Banks.</td></tr>
+                            <tr><td><strong>FHA</strong></td><td>Federal Housing Administration — insures mortgages for qualified borrowers.</td></tr>
+                            <tr><td><strong>VA</strong></td><td>U.S. Department of Veterans Affairs — guarantees mortgages for veterans.</td></tr>
+                            <tr><td><strong>USDA</strong></td><td>U.S. Department of Agriculture — offers rural development loans.</td></tr>
+                            <tr><td><strong>HUD</strong></td><td>U.S. Department of Housing and Urban Development — oversees FHA.</td></tr>
+                            <tr><td><strong>Total Scorecard</strong></td><td>TOTAL = Technology Open to Approved Lenders — FHA/VA underwriting overlay accessed through DU/LPA.</td></tr>
+                            <tr><td><strong>DE Underwriter</strong></td><td>Direct Endorsement Underwriter — FHA-approved underwriter who can approve FHA loans.</td></tr>
+                            <tr><td><strong>MIP</strong></td><td>Mortgage Insurance Premium — FHA mortgage insurance (upfront and annual).</td></tr>
+                            <tr><td><strong>Funding Fee</strong></td><td>VA loan funding fee — percentage of loan amount charged to veteran borrowers.</td></tr>
+                            <tr><td><strong>HomeReady</strong></td><td>Fannie Mae loan program for low-to-moderate income borrowers.</td></tr>
+                            <tr><td><strong>Home Possible</strong></td><td>Freddie Mac loan program for low-to-moderate income borrowers.</td></tr>
+                            <tr><td><strong>Refi Possible</strong></td><td>Freddie Mac refinance program for eligible borrowers.</td></tr>
+                            <tr><td><strong>DU Refi Plus</strong></td><td>Fannie Mae refinance program for existing Fannie Mae loans.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3 class="term-category" id="terms-compliance-cat">Compliance &amp; Legal</h3>
+                <div class="table-wrap">
+                    <table class="term-table">
+                        <thead><tr><th style="width:25%;">Term</th><th>Definition</th></tr></thead>
+                        <tbody>
+                            <tr><td><strong>Dodd-Frank</strong></td><td>Dodd-Frank Wall Street Reform and Consumer Protection Act — created CFPB and ATR/QM rules.</td></tr>
+                            <tr><td><strong>Know Before You Owe</strong></td><td>Dodd-Frank rule that TRID implements.</td></tr>
+                            <tr><td><strong>Reps &amp; Warrants</strong></td><td>Representations and Warranties — lender assurances to the GSE about loan quality.</td></tr>
+                            <tr><td><strong>Relief from Reps &amp; Warrants</strong></td><td>Protection from buyback if loan meets certain criteria.</td></tr>
+                            <tr><td><strong>Buyback</strong></td><td>When a lender is required to repurchase a loan from the GSE due to defects.</td></tr>
+                            <tr><td><strong>QC</strong></td><td>Quality Control — internal review of loan files for compliance and accuracy.</td></tr>
+                            <tr><td><strong>Overlay</strong></td><td>Additional lender/investor requirements beyond agency guidelines.</td></tr>
+                            <tr><td><strong>Ability to Repay (ATR)</strong></td><td>Dodd-Frank requirement that lenders verify a borrower's ability to repay.</td></tr>
+                            <tr><td><strong>Qualified Mortgage (QM)</strong></td><td>A loan that meets ATR requirements and receives legal protections.</td></tr>
+                            <tr><td><strong>High-Cost Mortgage</strong></td><td>A loan with points/fees or rates above certain thresholds.</td></tr>
+                            <tr><td><strong>HOEPA</strong></td><td>Home Ownership and Equity Protection Act — addresses high-cost mortgages.</td></tr>
+                            <tr><td><strong>ECOA</strong></td><td>Equal Credit Opportunity Act — prohibits discrimination in lending.</td></tr>
+                            <tr><td><strong>HMDA</strong></td><td>Home Mortgage Disclosure Act — requires lenders to report loan data.</td></tr>
+                            <tr><td><strong>FCRA</strong></td><td>Fair Credit Reporting Act — governs credit reporting and consumer rights.</td></tr>
+                            <tr><td><strong>GLBA</strong></td><td>Gramm-Leach-Bliley Act — governs privacy of consumer financial information.</td></tr>
+                            <tr><td><strong>SAFE Act</strong></td><td>Secure and Fair Enforcement for Mortgage Licensing Act — requires MLO licensing.</td></tr>
+                            <tr><td><strong>MLO</strong></td><td>Mortgage Loan Originator — licensed professional who originates mortgage loans.</td></tr>
+                            <tr><td><strong>Cure</strong></td><td>Correcting a tolerance violation, often by refunding the borrower.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <p class="version-info">DU &amp; LPA + TRID Reference Guide · Version 1.0</p>
+
+    <footer class="site-footer">
+        © 2025 Campus Mortgage · Certified Master Loan Processor Bootcamp
+        <br>
+        <a href="../about.html">About</a> · <a href="../modules/index.html">Bootcamp</a> · <a href="index.html">Reference</a>
+    </footer>
+
+    <script src="../js/script.js"></script>
+    <script>
+        // ---------- TERM SEARCH FILTER ----------
+        function filterTerms() {
+            const input = document.getElementById('termSearch');
+            const filter = input.value.toLowerCase();
+            const tables = document.querySelectorAll('.term-table');
+
+            tables.forEach(table => {
+                const rows = table.querySelectorAll('tbody tr');
+                rows.forEach(row => {
+                    const text = row.textContent.toLowerCase();
+                    row.style.display = text.includes(filter) ? '' : 'none';
+                });
+
+                const visibleRows = Array.from(rows).filter(r => r.style.display !== 'none');
+                const tableWrap = table.closest('.table-wrap');
+                if (visibleRows.length === 0) {
+                    tableWrap.style.display = 'none';
+                } else {
+                    tableWrap.style.display = '';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
