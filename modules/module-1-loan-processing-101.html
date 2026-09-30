@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 1: Loan Processing 101 — The Basics · Certified Master Loan Processor</title>
+    <meta name="description" content="Module 1 of the Certified Master Loan Processor Bootcamp — mortgage terminology, ratio calculations, loan cycle, documentation, and forms.">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <!-- ===== SITE HEADER ===== -->
+    <header class="site-header">
+        <a href="../index.html" class="brand">🎓 Certified Master Loan Processor</a>
+        <nav>
+            <a href="../index.html">Home</a>
+            <a href="index.html" class="active">Bootcamp</a>
+            <a href="../reference/index.html">Reference</a>
+            <a href="../about.html">About</a>
+        </nav>
+    </header>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+        <span style="display:inline-block; background:#d97706; color:#fff; font-size:0.7rem; font-weight:800; padding:0.28rem 0.9rem; border-radius:30px; letter-spacing:0.06em; text-transform:uppercase; margin-bottom:0.7rem;">Module 1</span>
+        <h1>Loan Processing 101 — The Basics</h1>
+        <p>Mortgage terminology, ratio calculations, loan cycle, processor duties, documentation, and breaking down the key forms.</p>
+    </section>
+
+    <!-- ===== GUIDE LAYOUT ===== -->
+    <div class="app">
+
+        <!-- ===== SIDEBAR ===== -->
+        <nav class="sidebar">
+            <h3>📘 Module 1 Sections</h3>
+
+            <!-- Session 1 -->
+            <div class="module-block" id="s1-block">
+                <div class="module-header" onclick="toggleModule('s1-block')">
+                    <span class="label"><span class="dot orange"></span> Session 1: Intro &amp; Terminology</span>
+                    <span class="chevron">▼</span>
+                </div>
+                <div class="module-body">
+                    <ul>
+                        <li><a href="#s1-1">Mortgage Terminology</a></li>
+                        <li><a href="#s1-2">Ratio Terminology</a></li>
+                        <li><a href="#s1-3">Loan Cycle</a></li>
+                        <li><a href="#s1-4">Processor Duties</a></li>
+                        <li><a href="#s1-5">Documentation</a></li>
+                        <li><a href="#s1-6">Breaking Down Forms</a></li>
+                        <li><a href="#s1-quiz">Practice Quiz</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Session 2 -->
+            <div class="module-block collapsed" id="s2-block">
+                <div class="module-header" onclick="toggleModule('s2-block')">
+                    <span class="label"><span class="dot blue"></span> Session 2: TRID &amp; Disclosures</span>
+                    <span class="chevron">▼</span>
+                </div>
+                <div class="module-body">
+                    <ul>
+                        <li><a href="#s2-1">TRID Application</a></li>
+                        <li><a href="#s2-2">Loan Estimate</a></li>
+                        <li><a href="#s2-3">Closing Disclosure</a></li>
+                        <li><a href="#s2-4">CD Page by Page</a></li>
+                        <li><a href="#s2-quiz">Practice Quiz</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Session 3 -->
+            <div class="module-block collapsed" id="s3-block">
+                <div class="module-header" onclick="toggleModule('s3-block')">
+                    <span class="label"><span class="dot green"></span> Session 3: Credit &amp; Underwriting</span>
+                    <span class="chevron">▼</span>
+                </div>
+                <div class="module-body">
+                    <ul>
+                        <li><a href="#s3-1">Credit Report</a></li>
+                        <li><a href="#s3-2">AUS Recommendations</a></li>
+                        <li><a href="#s3-3">Verifications</a></li>
+                        <li><a href="#s3-4">Purchase Contract</a></li>
+                        <li><a href="#s3-5">Submitting to UW</a></li>
+                        <li><a href="#s3-quiz">Practice Quiz</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- ===== MAIN CONTENT ===== -->
+        <main class="main">
+
+            <!-- ============ S1: MORTGAGE TERMINOLOGY ============ -->
+            <section id="s1-1" class="card">
+                <h2>Mortgage Terminology <span class="badge orange">Session 1</span></h2>
+
+                <h3>Mortgage Note</h3>
+                <p>Also known as a <strong>real estate lien</strong> — a promissory note associated with a mortgage loan. It is a written promise to repay a specified sum plus interest at a specified rate and time.</p>
+                <div class="grid-2">
+                    <div class="tile"><h5>Fixed-Rate Note</h5><p>Interest rate stays the same for the life of the loan.</p></div>
+                    <div class="tile"><h5>Adjustable-Rate Note</h5><p>Interest rate can change based on an index.</p></div>
+                </div>
+
+                <h3>Mortgage vs. Note</h3>
+                <div class="table-wrap">
+                    <table>
+                        <thead><tr><th>Document</th><th>Purpose</th><th>Recorded?</th></tr></thead>
+                        <tbody>
+                            <tr><td><strong>Mortgage / Deed of Trust</strong></td><td>Pledges title to real property as security</td><td>Yes — public record</td></tr>
+                            <tr><td><strong>Mortgage Note</strong></td><td>Written promise to repay the debt</td><td>No — not recorded</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>First Mortgage</h3>
+                <p>A mortgage where the lender has <strong>first right to full payment</strong> before any other lenders or liens on the same property.</p>
+
+                <h3>Second Mortgage / Subordinate Lien</h3>
+                <p>Placed on a property <em>after</em> another mortgage. Typically used for seller financing, HELOC, or home improvement. Has <strong>greater risk</strong>, so usually charges a higher interest rate.</p>
+
+                <h3>HELOC (Home Equity Line of Credit)</h3>
+                <p>Usually a second mortgage structured as a <strong>line of credit</strong> — borrower can draw up to a maximum at any time. Usually adjustable rate.</p>
+
+                <div class="note">
+                    <strong>🔑 Remember:</strong> First mortgage = LTV · Second mortgage = part of CLTV · HELOC = HCLTV (uses full line limit).
+                </div>
+
+                <h3>Foreclosure Priority Example</h3>
+                <div class="computation-box">
+                    <div class="step">Property value (net of sale costs): <strong>$100,000</strong></div>
+                    <div class="step">First mortgage balance: <strong>$90,000</strong></div>
+                    <div class="step">Second mortgage balance: <strong>$115,000</strong></div>
+                    <div class="step">First lender collects: <strong>$90,000</strong> + interest + costs</div>
+                    <div class="step">Remaining for second lender: <strong>$100,000 − $90,000 = $10,000</strong></div>
+                    <span class="result">Second lender writes off shortage or pursues borrower</span>
+                </div>
+
+                <h3>Deed of Trust vs. Mortgage</h3>
+                <div class="grid-2">
+                    <div class="tile">
+                        <h5>Deed of Trust</h5>
+                        <p>Three parties: <strong>Trustor</strong> (borrower), <strong>Beneficiary</strong> (lender), <strong>Trustee</strong> (independent third party holding title).</p>
+                    </div>
+                    <div class="tile">
+                        <h5>Mortgage</h5>
+                        <p>Two parties: <strong>Mortgagor</strong> (borrower) and <strong>Mortgagee</strong> (lender).</p>
+                    </div>
+                </div>
+
+                <h3>Refinance Transactions</h3>
+                <div class="grid-2">
+                    <div class="tile"><h5>Cash-Out Refinance</h5><p>Borrower takes equity out for debt consolidation or other purpose.</p></div>
+                    <div class="tile"><h5>Rate-and-Term / Limited Cash-Out</h5><p>Restructure financing, reduce rate, or switch from ARM to fixed.</p></div>
+                </div>
+
+                <h3>Mortgage Insurance</h3>
+                <p>Protects the <strong>lender</strong> against loss in case of default. Required on conventional loans with LTV &gt; 80%.</p>
+                <div class="grid-2">
+                    <div class="tile">
+                        <h5>Conventional — PMI</h5>
+                        <p>Private Mortgage Insurance. Paid monthly. Borrowers can waive escrow only if LTV ≤ 80%.</p>
+                    </div>
+                    <div class="tile">
+                        <h5>FHA — Two Types</h5>
+                        <p>Upfront Mortgage Insurance Premium (collected at closing) + monthly insurance premium.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ============ S1: RATIO TERMINOLOGY ============ -->
+            <section id="s1-2" class="card">
+                <h2>Ratio Terminology <span class="badge orange">Session 1</span></h2>
+
+                <h3>Loan-to-Value (LTV)</h3>
+                <div class="formula-box">
+                    <span class="label">Formula</span>
+                    <span class="formula">LTV = First Mortgage Loan Amount ÷ Lesser of Appraised Value or Purchase Price</span>
+                </div>
+                <p>AUS rounds up to the nearest whole percentage when calculating all LTVs.</p>
+                <div class="computation-box">
+                    <div class="step">Loan Amount: <strong>$125,000</strong></div>
+                    <div class="step">Appraised Value: <strong>$200,000</strong></div>
+                    <div class="step">$125,000 ÷ $200,000 = <strong>62.5%</strong></div>
+                    <div class="step">Round up to nearest whole %</div>
+                    <span class="result">LTV = 63%</span>
+                </div>
+
+                <h3>Combined Loan-to-Value (CLTV)</h3>
+                <div class="formula-box">
+                    <span class="label">Formula</span>
+                    <span class="formula">CLTV = (First Loan + All Subordinate Liens) ÷ Lesser of Appraised Value or Purchase Price</span>
+                </div>
+                <div class="computation-box">
+                    <div class="step">First Loan: <strong>$125,000</strong></div>
+                    <div class="step">Second Lien Balance: <strong>$30,000</strong></div>
+                    <div class="step">Total: $125,000 + $30,000 = <strong>$155,000</strong></div>
+                    <div class="step">Appraised Value: <strong>$200,000</strong></div>
+                    <div class="step">$155,000 ÷ $200,000 = <strong>77.5%</strong></div>
+                    <span class="result">CLTV = 78%</span>
+                </div>
+
+                <h3>High Combined Loan-to-Value (HCLTV)</h3>
+                <div class="formula-box">
+                    <span class="label">Formula</span>
+                    <span class="formula">HCLTV = (First Loan + Total HELOC Credit Limit) ÷ Lesser of Appraised Value or Purchase Price</span>
+                </div>
+                <div class="note warning">
+                    <strong>⚠️ Critical:</strong> For HELOCs, use the <strong>full credit line limit</strong> — NOT the balance.
+                </div>
+                <div class="computation-box">
+                    <div class="step">First Loan: <strong>$125,000</strong></div>
+                    <div class="step">HELOC Line Limit (not balance): <strong>$45,000</strong></div>
+                    <div class="step">Total: $125,000 + $45,000 = <strong>$170,000</strong></div>
+                    <div class="step">Appraised Value: <strong>$200,000</strong></div>
+                    <div class="step">$170,000 ÷ $200,000 = <strong>85%</strong></div>
+                    <span class="result">HCLTV = 85%</span>
+                </div>
+
+                <h3>PITI &amp; PITIA</h3>
+                <div class="grid-2">
+                    <div class="tile">
+                        <h5>PITI</h5>
+                        <p><strong>P</strong>rincipal · <strong>I</strong>nterest · <strong>T</strong>axes · <strong>I</strong>nsurance</p>
+                    </div>
+                    <div class="tile">
+                        <h5>PITIA</h5>
+                        <p>PITI + <strong>A</strong>ssociation dues (HOA). Required when property is in a PUD or has HOA.</p>
+                    </div>
+                </div>
+
+                <h3>Debt-to-Income (DTI)</h3>
+                <div class="formula-box">
+                    <span class="label">Front-End / Housing Ratio</span>
+                    <span class="formula">PITIA ÷ Total Qualifying Income</span>
+                </div>
+                <div class="formula-box">
+                    <span class="label">Back-End / Total DTI</span>
+                    <span class="formula">(PITIA + All Other Monthly Debts) ÷ Total Qualifying Income</span>
+                </div>
+
+                <div class="computation-box">
+                    <div class="step">P&amp;I: $500</div>
+                    <div class="step">Property Taxes: $215</div>
+                    <div class="step">Homeowner's Insurance: $95</div>
+                    <div class="step">Mortgage Insurance: $63</div>
+                    <div class="step">HOA Dues: $25</div>
+                    <div class="step">Total PITIA = $500 + $215 + $95 + $63 + $25 = <strong>$898</strong></div>
+                    <div class="step">Other Monthly Debts: <strong>$1,200</strong></div>
+                    <div class="step">Total Qualifying Income: <strong>$4,750</strong></div>
+                    <div class="step">Back-End DTI: ($898 + $1,200) ÷ $4,750 = <strong>44%</strong></div>
+                    <span class="result">Front-End Ratio: $898 ÷ $4,750 = 18.91%</span>
+                </div>
+
+                <h3>Down Payment, Closing Costs &amp; Cash to Close</h3>
+                <div class="table-wrap">
+                    <table>
+                        <thead><tr><th>Term</th><th>Definition</th></tr></thead>
+                        <tbody>
+                            <tr><td><strong>Down Payment</strong></td><td>Difference between purchase price/payoff and new loan amount</td></tr>
+                            <tr><td><strong>Closing Costs</strong></td><td>Costs incurred to purchase or refinance real estate</td></tr>
+                            <tr><td><strong>Cash to Close</strong></td><td>Cash required to meet down payment + closing costs</td></tr>
+                            <tr><td><strong>Escrow / Impound Account</strong></td><td>Deposit account maintained by lender, funded by borrower, used to pay taxes &amp; insurance</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="computation-box">
+                    <div class="step"><strong>Purchase Example:</strong></div>
+                    <div class="step">Sales Price: $400,000 − Loan Amount: $340,000 = <strong>Down Payment $60,000</strong></div>
+                    <div class="step">Closing Costs: <strong>$12,000</strong></div>
+                    <div class="step">Cash to Close: $60,000 + $12,000 = <strong>$72,000</strong></div>
+                    <span class="result">Cash to Close = $72,000</span>
+                </div>
+
+                <div class="computation-box">
+                    <div class="step"><strong>Refinance Example:</strong></div>
+                    <div class="step">Payoff: $276,000 − Loan: $275,000 = <strong>Shortfall $1,000</strong></div>
+                    <div class="step">Closing Costs: <strong>$3,000</strong></div>
+                    <div class="step">Cash to Close: $1,000 + $3,000 = <strong>$4,000</strong></div>
+                    <span class="result">Cash to Close = $4,000</span>
+                </div>
+
+                <div class="note warning">
+                    <strong>Escrow Waiver:</strong> Borrower can waive escrow only if LTV ≤ 80% (20% down). Above 80%, escrow is required.
+                </div>
+
+                <h3>Government Loan Programs</h3>
+                <div class="grid-3">
+                    <div class="tile">
+                        <h5>FHA</h5>
+                        <p>Federal Housing Administration (within HUD). Two forms of MI: upfront fee + monthly premium.</p>
+                    </div>
+                    <div class="tile">
+                        <h5>VA</h5>
+                        <p>Veterans Affairs. No monthly MI, but may have upfront one-time funding fee.</p>
+                    </div>
+                    <div class="tile">
+                        <h5>USDA</h5>
+                        <p>Rural Development. Uses its own AUS: <strong>GUS</strong>.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ============ S1: LOAN CYCLE ============ -->
+            <section id="s1-3" class="card">
+                <h2>The Loan Cycle <span class="badge orange">Session 1</span></h2>
+
+                <div class="process-step"><span class="num">1</span><span class="desc"><strong>Loan Officer</strong> — Takes application, consults on programs, locks rate, completes 1003, pulls credit, structures loan.</span></div>
+                <div class="process-step"><span class="num">2</span><span class="desc"><strong>Loan Setup</strong> — Initial data entry into LOS. Orders flood certs, appraisals, title work.</span></div>
+                <div class="process-step"><span class="num">3</span><span class="desc"><strong>Loan Processor</strong> — Main point of contact for borrower and LO. Obtains missing docs, packages loan for underwriter.</span></div>
+                <div class="process-step"><span class="num">4</span><span class="desc"><strong>Underwriter</strong> — Analyzes overall risk, reviews all docs for accuracy, issues final decision.</span></div>
+                <div class="process-step"><span class="num">5</span><span class="desc"><strong>Closer</strong> — Prepares final closing disclosures and closing package. Wires funds to title company.</span></div>
+
+                <div class="note">
+                    <strong>🔄 Flow:</strong> Loan Officer → Loan Setup → Loan Processor → Underwriter → Closer → Funding
+                </div>
+            </section>
+
+            <!-- ============ S1: PROCESSOR DUTIES ============ -->
+            <section id="s1-4" class="card">
+                <h2>Loan Processor Duties <span class="badge orange">Session 1</span></h2>
+
+                <h3>Core Responsibilities</h3>
+                <ul>
+                    <li>Review all loan documents for accuracy and completeness</li>
+                    <li>Check all pages included, signatures present, legibility, inconsistencies</li>
+                    <li>Update loan application and loan notes with status updates</li>
+                    <li>Validate expiration dates — docs expire between 90–120 days, 180 days for new construction</li>
+                    <li>Order payoff statements and subordination agreements</li>
+                    <li>Monitor rate lock expiration dates</li>
+                    <li>Pipeline management</li>
+                    <li>Keep borrower informed about loan status</li>
+                    <li>Receive clear-to-close (CTC) and schedule closing</li>
+                </ul>
+
+                <h3>Recommended File Review Flow</h3>
+                <div class="process-step"><span class="num">1</span><span class="desc">Review <strong>1008</strong> and <strong>1003</strong></span></div>
+                <div class="process-step"><span class="num">2</span><span class="desc">Check <strong>Photo ID</strong> — name, DOB, address must match credit report</span></div>
+                <div class="process-step"><span class="num">3</span><span class="desc">Check <strong>Social Security card</strong> if available</span></div>
+                <div class="process-step"><span class="num">4</span><span class="desc">Review <strong>Credit Report</strong> — names, DOB, SSN, address, AKAs</span></div>
+                <div class="process-step"><span class="num">5</span><span class="desc">Review <strong>Sales Contract</strong> — purchase price, all pages, signatures</span></div>
+                <div class="process-step"><span class="num">6</span><span class="desc">Review <strong>Income</strong> and <strong>Assets</strong></span></div>
+                <div class="process-step"><span class="num">7</span><span class="desc">Review <strong>Appraisal</strong> if in file</span></div>
+                <div class="process-step"><span class="num">8</span><span class="desc">Review <strong>Disclosures</strong></span></div>
+
+                <div class="note success">
+                    <strong>💡 Pro tip:</strong> A processor certification or memo as a cover page for documentation can significantly reduce the number of conditions you receive from underwriting.
+                </div>
+            </section>
+
+            <!-- ============ S1: DOCUMENTATION ============ -->
+            <section id="s1-5" class="card">
+                <h2>Loan Documentation <span class="badge orange">Session 1</span></h2>
+
+                <div class="grid-2">
+                    <div class="tile">
+                        <h5>Core Forms</h5>
+                        <ul>
+                            <li>Loan Application (1003)</li>
+                            <li>Underwriting Transmittal (1008)</li>
+                            <li>Loan Estimate (LE)</li>
+                        </ul>
+                    </div>
+                    <div class="tile">
+                        <h5>Disclosures</h5>
+                        <ul>
+                            <li>Servicing Disclosure</li>
+                            <li>ECOA / Fair Lending Rights</li>
+                            <li>Copy of Appraisal</li>
+                            <li>Borrower's Authorization</li>
+                            <li>FACTA Disclosure</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3>Income Documentation</h3>
+                <div class="table-wrap">
+                    <table>
+                        <thead><tr><th>Document</th><th>Use</th></tr></thead>
+                        <tbody>
+                            <tr><td><strong>Pay Stubs</strong></td><td>W-2 employees with base, overtime, commission</td></tr>
+                            <tr><td><strong>W-2s</strong></td><td>Base pay employees</td></tr>
+                            <tr><td><strong>1099s</strong></td><td>Self-employed, contractors</td></tr>
+                            <tr><td><strong>VOE</strong></td><td>Verification of Employment — written or verbal</td></tr>
+                            <tr><td><strong>Tax Returns</strong></td><td>Self-employed or when required</td></tr>
+                            <tr><td><strong>Award Letters</strong></td><td>Social Security, pension, retirement</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Title Documentation</h3>
+                <ul>
+                    <li>Title Commitment</li>
+                    <li>Tax Certificate</li>
+                    <li>Wiring Instructions</li>
+                    <li>Closing Protection Letter</li>
+                    <li>Subordination Agreement</li>
+                    <li>Power of Attorney</li>
+                </ul>
+            </section>
+
+            <!-- ============ S1: BREAKING DOWN FORMS ============ -->
+            <section id="s1-6" class="card">
+                <h2>Breaking Down the Forms <span class="badge orange">Session 1</span></h2>
+
+                <h3>Fannie Mae Form 1003 — Loan Application</h3>
+                <p>Provides detailed information about the loan transaction and borrower's financial history. Requires 2-year address and employment history.</p>
+
+                <h3>Fannie Mae Form 1008 — Underwriting Transmittal</h3>
+                <p>Provides detailed loan characteristics: LTV, DTI, method of underwriting, agency used.</p>
+
+                <h3>Regulation B (ECOA)</h3>
+                <p>Prohibits lenders from discriminating against credit applicants due to race, religion, sex, and more.</p>
+
+                <h3>RESPA-TILA (Loan Estimate)</h3>
+                <p>Must be given to consumer within <strong>3 business days</strong> after submission of loan application. <span class="highlight">Binding — fees have almost no tolerance of moving.</span></p>
+
+                <div class="note">
+                    <strong>📌 Three disclosures within 3 days of application:</strong><br>
+                    1. TIL / Loan Estimate<br>
+                    2. RESPA-TILA<br>
+                    3. ECOA &amp; Servicing Disclosure
+                </div>
+            </section>
+
+            <!-- ============ S1 QUIZ ============ -->
+            <section id="s1-quiz" class="card">
+                <h2>Session 1 Practice Quiz <span class="badge orange">10 Questions</span></h2>
+
+                <div class="quiz-q"><p>1. What is the written promise to pay called?</p><div class="quiz-answer"><strong>Promissory Note</strong> (Mortgage Note)</div></div>
+                <div class="quiz-q"><p>2. Another name for a second mortgage is a what?</p><div class="quiz-answer"><strong>Subordinate Lien</strong></div></div>
+                <div class="quiz-q"><p>3. Name two types of refinances.</p><div class="quiz-answer"><strong>Rate-and-Term</strong> and <strong>Limited Cash-Out</strong> (also Cash-Out)</div></div>
+                <div class="quiz-q"><p>4. True or False — Mortgage insurance protects the borrower against default.</p><div class="quiz-answer"><strong>False.</strong> Protects the LENDER.</div></div>
+                <div class="quiz-q"><p>5. Another name for the housing ratio?</p><div class="quiz-answer"><strong>Front-End Ratio</strong></div></div>
+                <div class="quiz-q"><p>6. Who prepares final closing disclosures, closing package, and wires funds?</p><div class="quiz-answer"><strong>The Closer</strong></div></div>
+                <div class="quiz-q"><p>7. True or False — All documentation expires after 170 days.</p><div class="quiz-answer"><strong>False.</strong> 90–120 days; 180 for new construction.</div></div>
+                <div class="quiz-q"><p>8. After receiving a CTC, the processor submits the loan to which department?</p><div class="quiz-answer"><strong>Closing Department</strong></div></div>
+                <div class="quiz-q"><p>9. Which document discloses loan terms and estimates of closing costs?</p><div class="quiz-answer"><strong>Loan Estimate (LE)</strong></div></div>
+                <div class="quiz-q"><p>10. Initial disclosures must be delivered within how many days of application?</p><div class="quiz-answer"><strong>3 Days</strong></div></div>
+            </section>
+
+            <!-- ============ S2: TRID APPLICATION ============ -->
+            <section id="s2-1" class="card">
+                <h2>TRID Application <span class="badge blue">Session 2</span></h2>
+
+                <p>In <strong>October 2015</strong>, Dodd-Frank's TRID requirements were formally introduced.</p>
+
+                <h3>Six Items That Constitute an Application</h3>
+                <div class="process-step"><span class="num blue">1</span><span class="desc">Borrower's Name</span></div>
+                <div class="process-step"><span class="num blue">2</span><span class="desc">Social Security Number</span></div>
+                <div class="process-step"><span class="num blue">3</span><span class="desc">Income</span></div>
+                <div class="process-step"><span class="num blue">4</span><span class="desc">Loan Amount</span></div>
+                <div class="process-step"><span class="num blue">5</span><span class="desc">Property Address</span></div>
+                <div class="process-step"><span class="num blue">6</span><span class="desc">Estimated Property Value</span></div>
+
+                <div class="note">
+                    <strong>⏱️ The 3-day clock starts</strong> when the lender receives ALL six items.
+                </div>
+            </section>
+
+            <!-- ============ S2: LOAN ESTIMATE ============ -->
+            <section id="s2-2" class="card">
+                <h2>Loan Estimate (LE) <span class="badge blue">Session 2</span></h2>
+                <p>A <strong>3-page document</strong> given to borrower within 3 business days of application.</p>
+
+                <h3>Page 1 — Loan &amp; Payment Details</h3>
+                <div class="table-wrap">
+                    <table>
+                        <thead><tr><th>Section</th><th>Details</th></tr></thead>
+                        <tbody>
+                            <tr><td><strong>General Info</strong></td><td>Date issued, applicant name, property address, sales price</td></tr>
+                            <tr><td><strong>Loan Terms</strong></td><td>Loan amount, interest rate, monthly P&amp;I, prepayment penalty</td></tr>
+                            <tr><td><strong>Projected Payments</strong></td><td>PITI breakdown, taxes/insurance/assessments</td></tr>
+                            <tr><td><strong>Costs at Closing</strong></td><td>Estimated closing costs, estimated cash to close</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Page 2 — Closing Cost Details</h3>
+                <div class="table-wrap">
+                    <table>
+                        <thead><tr><th>Letter</th><th>Category</th></tr></thead>
+                        <tbody>
+                            <tr><td><strong>A</strong></td><td>Origination Charges</td></tr>
+                            <tr><td><strong>B</strong></td><td>Services You Cannot Shop For</td></tr>
+                            <tr><td><strong>C</strong></td><td>Services You Can Shop For</td></tr>
+                            <tr><td><strong>D</strong></td><td>Total Loan Costs (A + B + C)</td></tr>
+                            <tr><td><strong>E</strong></td><td>Taxes &amp; Other Government Fees</td></tr>
+                            <tr><td><strong>F</strong></td><td>Prepaids</td></tr>
+                            <tr><td><strong>G</strong></td><td>Initial Escrow Payment at Closing</td></tr>
+                            <tr><td><strong>H</strong></td><td>Other (owner's title policy)</td></tr>
+                            <tr><td><strong>I</strong></td><td>Total Other Costs (E + F + G + H)</td></tr>
+                            <tr><td><strong>J</strong></td><td>Total Closing Costs (D + I − lender credits)</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- ============ S2: CLOSING DISCLOSURE ============ -->
+            <section id="s2-3" class="card">
+                <h2>Closing Disclosure (CD) <span class="badge blue">Session 2</span></h2>
+                <p>In <strong>October 2015</strong>, the CD replaced the HUD-1 Settlement Agreement. It merged the HUD-1, GFE, and Truth in Lending into <strong>one 5-page document</strong>.</p>
+
+                <div class="note danger">
+                    <strong>🚨 Critical Rule:</strong> The CD must be delivered to the borrower <strong>at least 3 business days before loan closing</strong>. No exceptions.
+                </div>
+
+                <h3>Delivery Timing Example</h3>
+                <div class="computation-box">
+                    <div class="step">CD issued <strong>Friday, April 15</strong></div>
+                    <div class="step">Day 1: Friday (April 15)</div>
+                    <div class="step">Day 2: Saturday (April 16)</div>
+                    <div class="step">Day 3: Monday (April 18)</div>
+                    <span class="result">Earliest closing date: Tuesday, April 19</span>
+                </div>
+            </section>
+
+            <!-- ============ S2: CD PAGE BY PAGE ============ -->
+            <section id="s2-4" class="card">
+                <h2>CD Page by Page — Key Checkpoints <span class="badge blue">Session 2</span></h2>
+
+                <h3>Page 1 Checkpoints</h3>
+                <ul>
+                    <li>Date issued, closing date, disbursement date — <span class="highlight">these should never match</span></li>
+                    <li>Settlement agent info, file number</li>
+                    <li>Sales price must match LOS, 1008, 1003</li>
+                    <li>Borrower and seller info must match exactly</li>
+                    <li>HOA dues shown but NOT included in escrow</li>
+                </ul>
+
+                <h3>Page 2 Checkpoints</h3>
+                <ul>
+                    <li>Origination charges, underwriting fee, application fee</li>
+                    <li>Appraisal fee — often paid outside closing (POC)</li>
+                    <li>Services borrower did/didn't shop for</li>
+                    <li>Other costs: recording, transfer taxes, prepaids, escrow</li>
+                </ul>
+
+                <h3>Page 3 Checkpoints</h3>
+                <ul>
+                    <li>Cash to close comparison between LE and CD</li>
+                    <li>Summary of transactions — borrower side and seller side</li>
+                </ul>
+
+                <h3>Page 4 Checkpoints</h3>
+                <ul>
+                    <li>Assumability, demand feature, negative amortization</li>
+                    <li>Partial payments accepted?</li>
+                    <li>Escrow account — yes/no</li>
+                </ul>
+
+                <h3>Page 5 Checkpoints</h3>
+                <ul>
+                    <li>Loan calculations: total payments, finance charge, APR, TIP</li>
+                    <li>Contact information: lender, broker, agents, settlement agent</li>
+                    <li><strong>Confirm Receipt:</strong> Must be signed and dated</li>
+                </ul>
+            </section>
+
+            <!-- ============ S2 QUIZ ============ -->
+            <section id="s2-quiz" class="card">
+                <h2>Session 2 Practice Quiz <span class="badge blue">10 Questions</span></h2>
+
+                <div class="quiz-q"><p>1. True or False — Borrower name, SSN, income, loan amount, property address, and estimated value are required for an application.</p><div class="quiz-answer"><strong>True.</strong></div></div>
+                <div class="quiz-q"><p>2. What law was passed in October 2015 to trigger a date to disclose costs?</p><div class="quiz-answer"><strong>Dodd-Frank's TRID</strong></div></div>
+                <div class="quiz-q"><p>3. Fees on a Loan Estimate cannot change without an acceptable — A reason, B change in circumstance, or C disclosure?</p><div class="quiz-answer"><strong>B. Change in Circumstance</strong></div></div>
+                <div class="quiz-q"><p>4. Who is typically responsible for ensuring the LE fees are correct?</p><div class="quiz-answer"><strong>Loan Officer</strong></div></div>
+                <div class="quiz-q"><p>5. True or False — The LE must be dated within 5 business days of application.</p><div class="quiz-answer"><strong>False.</strong> <strong>3 business days</strong>.</div></div>
+                <div class="quiz-q"><p>6. What document did the Closing Disclosure replace?</p><div class="quiz-answer"><strong>HUD-1 Settlement Agreement</strong></div></div>
+                <div class="quiz-q"><p>7. True or False — The CD merged the HUD-1 and Truth in Lending disclosures.</p><div class="quiz-answer"><strong>True.</strong></div></div>
+                <div class="quiz-q"><p>8. The figures on the CD should match the figures on the — A LE, B GFE, or C HUD-1?</p><div class="quiz-answer"><strong>A. Loan Estimate</strong></div></div>
+                <div class="quiz-q"><p>9. True or False — The CD must be delivered 3 days after loan closing.</p><div class="quiz-answer"><strong>False.</strong> <strong>3 days PRIOR</strong> to closing.</div></div>
+                <div class="quiz-q"><p>10. True or False — When a borrower sells a home and uses proceeds as cash to close, the final CD can verify those funds.</p><div class="quiz-answer"><strong>True.</strong></div></div>
+            </section>
+
+            <!-- ============ S3: CREDIT REPORT ============ -->
+            <section id="s3-1" class="card">
+                <h2>Credit Report <span class="badge green">Session 3</span></h2>
+
+                <h3>Tri-Merge Credit Report</h3>
+                <div class="grid-3">
+                    <div class="tile"><h5>Equifax</h5></div>
+                    <div class="tile"><h5>Experian</h5></div>
+                    <div class="tile"><h5>TransUnion</h5></div>
+                </div>
+
+                <h3>Qualifying Credit Score</h3>
+                <div class="formula-box">
+                    <span class="label">Single Borrower</span>
+                    <span class="formula">Use the MIDDLE score of the three repositories</span>
+                </div>
+                <div class="formula-box">
+                    <span class="label">Multiple Borrowers</span>
+                    <span class="formula">Middle score for EACH borrower, then use the LOWEST of those</span>
+                </div>
+
+                <div class="computation-box">
+                    <div class="step"><strong>Example (Joint):</strong></div>
+                    <div class="step">Michael: 585, 637, 651 → middle = <strong>637</strong></div>
+                    <div class="step">Megan: 600, 645, 660 → middle = <strong>645</strong></div>
+                    <span class="result">Qualifying score: 637 (lower of the two)</span>
+                </div>
+
+                <h3>Payment History Grades</h3>
+                <div class="table-wrap">
+                    <table>
+                        <thead><tr><th>Code</th><th>Meaning</th></tr></thead>
+                        <tbody>
+                            <tr><td><strong>C</strong></td><td>Current</td></tr>
+                            <tr><td><strong>1</strong></td><td>30 days past due</td></tr>
+                            <tr><td><strong>2</strong></td><td>60 days past due</td></tr>
+                            <tr><td><strong>3</strong></td><td>90 days past due</td></tr>
+                            <tr><td><strong>4</strong></td><td>120 days past due</td></tr>
+                            <tr><td><strong>5</strong></td><td>150 days past due</td></tr>
+                            <tr><td><strong>6</strong></td><td>180+ days past due</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="note warning">
+                    <strong>⚠️ Rule:</strong> Any inquiries within <strong>90 days</strong> must be evaluated. Get a signed LOX for each.
+                </div>
+
+                <h3>Three Letters of Explanation Needed</h3>
+                <div class="process-step"><span class="num green">1</span><span class="desc"><strong>Inquiries</strong> — Explain each within 90 days.</span></div>
+                <div class="process-step"><span class="num green">2</span><span class="desc"><strong>Address Variations</strong> — Any within 24 months.</span></div>
+                <div class="process-step"><span class="num green">3</span><span class="desc"><strong>AKA Variations</strong> — Every AKA on the report.</span></div>
+            </section>
+
+            <!-- ============ S3: AUS ============ -->
+            <section id="s3-2" class="card">
+                <h2>Automated Underwriting Systems <span class="badge green">Session 3</span></h2>
+
+                <div class="table-wrap">
+                    <table>
+                        <thead><tr><th>Agency</th><th>System</th><th>Acronym</th></tr></thead>
+                        <tbody>
+                            <tr><td>Fannie Mae</td><td>Desktop Underwriter</td><td><strong>DU</strong></td></tr>
+                            <tr><td>Freddie Mac</td><td>Loan Product Advisor</td><td><strong>LPA</strong></td></tr>
+                            <tr><td>USDA Rural Housing</td><td>Guaranteed Underwriting System</td><td><strong>GUS</strong></td></tr>
+                            <tr><td>FHA</td><td>Technology Open to Approved Lenders</td><td><strong>Total Scorecard</strong></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>DU Recommendations</h3>
+                <div class="table-wrap">
+                    <table>
+                        <thead><tr><th>Recommendation</th><th>Meaning</th></tr></thead>
+                        <tbody>
+                            <tr><td><strong>Approve Eligible</strong></td><td>Meets credit risk AND loan eligibility</td></tr>
+                            <tr><td><strong>Approve Ineligible</strong></td><td>Meets credit risk but not eligibility</td></tr>
+                            <tr><td><strong>Refer with Caution</strong></td><td>Does not meet credit or eligibility</td></tr>
+                            <tr><td><strong>Out of Scope</strong></td><td>Unable to underwrite</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>LPA Recommendations</h3>
+                <div class="table-wrap">
+                    <table>
+                        <thead><tr><th>Recommendation</th><th>Meaning</th></tr></thead>
+                        <tbody>
+                            <tr><td><strong>Accept</strong></td><td>Meets Freddie Mac credit risk</td></tr>
+                            <tr><td><strong>Caution</strong></td><td>Layered risk; unlikely to meet</td></tr>
+                            <tr><td><strong>Streamlined Accept</strong></td><td>Allows reduced documentation</td></tr>
+                            <tr><td><strong>Standard</strong></td><td>Most comprehensive documentation</td></tr>
+                            <tr><td><strong>Ineligible/Incomplete/Invalid</strong></td><td>Unable to underwrite</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="note warning">
+                    <strong>FHA Special:</strong> <strong>Refer/Eligible</strong> means the loan can be manually underwritten.
+                </div>
+            </section>
+
+            <!-- ============ S3: VERIFICATIONS ============ -->
+            <section id="s3-3" class="card">
+                <h2>Verifications <span class="badge green">Session 3</span></h2>
+
+                <h3>Verification of Deposit (VOD)</h3>
+                <p>Used to verify assets, bank loan terms, and payment history. Must be fully completed — no blank sections.</p>
+
+                <h3>Verification of Employment (VOE)</h3>
+                <div class="grid-2">
+                    <div class="tile">
+                        <h5>Written VOE</h5>
+                        <p>Form completed by employer. Must be fully completed — circle needed fields.</p>
+                    </div>
+                    <div class="tile">
+                        <h5>Verbal VOE</h5>
+                        <p>Done at the end of the loan, within 10 days of closing.</p>
+                    </div>
+                </div>
+                <div class="note warning">
+                    <strong>⚠️ Don't forget:</strong> Borrower's Authorization must accompany all VOEs, VODs, and VORs.
+                </div>
+
+                <h3>Verification of Rent (VOR) / Mortgage (VOM)</h3>
+                <p>Used to verify housing payment terms and payment history over the most recent 12 months.</p>
+            </section>
+
+            <!-- ============ S3: PURCHASE CONTRACT ============ -->
+            <section id="s3-4" class="card">
+                <h2>Purchase Contract <span class="badge green">Session 3</span></h2>
+
+                <h3>Checklist</h3>
+                <ul>
+                    <li>Estimated close date — if expired, extension required</li>
+                    <li>All pages initialed and signed</li>
+                    <li>Selling authority — seller signature vs. vested owner on title</li>
+                    <li>Purchase price changes on addendums</li>
+                    <li>Seller credits for closing costs</li>
+                    <li>Borrowers on contract match those on 1003</li>
+                    <li>Address matches everywhere</li>
+                    <li>Legal description matches title</li>
+                    <li>FHA loans: realtor license numbers required</li>
+                </ul>
+
+                <div class="note warning">
+                    <strong>Seller Contribution Limits:</strong> FHA max 6% · Conventional 3% (based on LTV/occupancy)
+                </div>
+            </section>
+
+            <!-- ============ S3: SUBMITTING TO UW ============ -->
+            <section id="s3-5" class="card">
+                <h2>Submitting to Underwriting <span class="badge green">Session 3</span></h2>
+
+                <h3>Generally Accepted Document Order</h3>
+                <div class="process-step"><span class="num green">1</span><span class="desc">AUS Findings</span></div>
+                <div class="process-step"><span class="num green">2</span><span class="desc">1003 (Loan Application)</span></div>
+                <div class="process-step"><span class="num green">3</span><span class="desc">1008 (Underwriting Transmittal)</span></div>
+                <div class="process-step"><span class="num green">4</span><span class="desc">Credit Report</span></div>
+                <div class="process-step"><span class="num green">5</span><span class="desc">Income Documentation</span></div>
+                <div class="process-step"><span class="num green">6</span><span class="desc">Asset Documentation</span></div>
+                <div class="process-step"><span class="num green">7</span><span class="desc">Collateral (Appraisal)</span></div>
+
+                <div class="note success">
+                    <strong>💡 Processor certification:</strong> A memo explaining unclear items can significantly reduce conditions.
+                </div>
+            </section>
+
+            <!-- ============ S3 QUIZ ============ -->
+            <section id="s3-quiz" class="card">
+                <h2>Session 3 Practice Quiz <span class="badge green">10 Questions</span></h2>
+
+                <div class="quiz-q"><p>1. How many credit repositories on a tri-merge report?</p><div class="quiz-answer"><strong>Three:</strong> Experian, Equifax, TransUnion</div></div>
+                <div class="quiz-q"><p>2. Which credit score is used to qualify?</p><div class="quiz-answer"><strong>Median (middle)</strong> — for multiple borrowers, lowest of the middle scores</div></div>
+                <div class="quiz-q"><p>3. Borrower: 585, 637, 651. Co-borrower: 600, 645, 660. Qualifying?</p><div class="quiz-answer"><strong>637</strong></div></div>
+                <div class="quiz-q"><p>4. What section of the credit report are judgments found in?</p><div class="quiz-answer"><strong>Public Records</strong></div></div>
+                <div class="quiz-q"><p>5. Inquiries within how many days must be evaluated?</p><div class="quiz-answer"><strong>90 days</strong></div></div>
+                <div class="quiz-q"><p>6. The AUS for Fannie Mae is:</p><div class="quiz-answer"><strong>DU — Desktop Underwriter</strong></div></div>
+                <div class="quiz-q"><p>7. True or False — Collections is a non-credit risk factor.</p><div class="quiz-answer"><strong>False.</strong> Credit risk factor.</div></div>
+                <div class="quiz-q"><p>8. What verifies housing payment terms and history?</p><div class="quiz-answer"><strong>VOM — Verification of Mortgage</strong></div></div>
+                <div class="quiz-q"><p>9. A change in sales price is listed on an:</p><div class="quiz-answer"><strong>Addendum or Amendment</strong></div></div>
+                <div class="quiz-q"><p>10. The two types of VOE are:</p><div class="quiz-answer"><strong>Written and Verbal</strong></div></div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- ===== MODULE NAVIGATION ===== -->
+    <div class="module-nav">
+        <a href="index.html">
+            <span class="dir">← Back to</span>
+            <span class="label">All Modules</span>
+        </a>
+        <a href="module-2-advanced-processing.html" class="next">
+            <span class="dir">Next →</span>
+            <span class="label">Module 2: Advanced Loan Processing</span>
+        </a>
+    </div>
+
+    <p class="version-info">Module 1 · Version 1.0 · Part of the Certified Master Loan Processor Bootcamp</p>
+
+    <footer class="site-footer">
+        © 2025 Campus Mortgage · Certified Master Loan Processor Bootcamp
+        <br>
+        <a href="../about.html">About</a> · <a href="index.html">Bootcamp</a> · <a href="../reference/index.html">Reference</a>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>
