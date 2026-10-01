@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stage 4: Asset Verification · Checklists</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/checklists.css">
+</head>
+<body>
+
+    <div id="site-header"></div>
+
+    <section class="hero">
+        <span style="display:inline-block; background:#d97706; color:#fff; font-size:0.7rem; font-weight:800; padding:0.28rem 0.9rem; border-radius:30px; letter-spacing:0.06em; text-transform:uppercase; margin-bottom:0.7rem;">Stage 4</span>
+        <h1>Asset Verification</h1>
+        <p>Verify all funds to close and reserves with proper documentation. Source large deposits and gifts.</p>
+    </section>
+
+    <div class="app" style="grid-template-columns: 1fr; max-width: 1000px;">
+        <main class="main">
+
+            <section class="card">
+
+                <div class="checklist-progress">
+                    <div class="progress-header">
+                        <span class="label">📊 Asset Verification Progress</span>
+                        <span class="percent progress-percent">0%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                    </div>
+                </div>
+
+                <div class="checklist-toolbar">
+                    <button id="resetChecklist">🔄 Reset</button>
+                    <button id="printChecklist">🖨️ Print with Guides</button>
+                </div>
+
+                <!-- Bank Accounts -->
+                <div class="checklist-group">
+                    <div class="checklist-group-header">
+                        <span class="group-tag">Bank Accounts</span>
+                        Checking, savings, money market
+                    </div>
+                    <div class="checklist-group-body">
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-bank-statements">
+                            <label for="item-bank-statements">
+                                2 months bank statements (all pages) for each account used
+                                <div class="doc-meta">
+                                    <span class="tag required">Required</span>
+                                    <span class="tag">Module 2</span>
+                                </div>
+                            </label>
+                            <button class="info-btn" data-doc="bank-statement" aria-expanded="false" aria-label="Bank statement details">ⓘ</button>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-account-holder">
+                            <label for="item-account-holder">
+                                Account holder name matches borrower on all statements
+                                <div class="doc-meta"><span class="tag required">Required</span></div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-access-letter">
+                            <label for="item-access-letter">
+                                100% access letter if non-borrower on account
+                                <div class="doc-meta"><span class="tag conditional">Conditional</span></div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-payroll-deposits">
+                            <label for="item-payroll-deposits">
+                                Payroll deposits match pay stubs
+                                <div class="doc-meta"><span class="tag required">Required</span></div>
+                            </label>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Large Deposits -->
+                <div class="checklist-group">
+                    <div class="checklist-group-header">
+                        <span class="group-tag" style="background:#dc2626;">Large Deposits</span>
+                        Over 50% of monthly qualifying income
+                    </div>
+                    <div class="checklist-group-body">
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-large-deposits">
+                            <label for="item-large-deposits">
+                                Large deposits identified and sourced
+                                <div class="doc-meta">
+                                    <span class="tag required">Required</span>
+                                    <span class="tag">Module 2</span>
+                                </div>
+                            </label>
+                            <button class="info-btn" data-doc="large-deposit-test" aria-expanded="false" aria-label="Large deposit details">ⓘ</button>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-unsourced-deposit">
+                            <label for="item-unsourced-deposit">
+                                Unsourced portions backed out of available funds
+                                <div class="doc-meta"><span class="tag required">Required</span></div>
+                            </label>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Gift Funds -->
+                <div class="checklist-group">
+                    <div class="checklist-group-header">
+                        <span class="group-tag" style="background:#059669;">Gift Funds</span>
+                        If applicable
+                    </div>
+                    <div class="checklist-group-body">
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-gift-letter">
+                            <label for="item-gift-letter">
+                                Signed gift letter from donor
+                                <div class="doc-meta">
+                                    <span class="tag conditional">Conditional</span>
+                                    <span class="tag">Module 2</span>
+                                </div>
+                            </label>
+                            <button class="info-btn" data-doc="gift-letter" aria-expanded="false" aria-label="Gift letter details">ⓘ</button>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-donor-funds">
+                            <label for="item-donor-funds">
+                                Evidence of donor's ability to provide funds
+                                <div class="doc-meta"><span class="tag conditional">Conditional</span></div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-transfer-evidence">
+                            <label for="item-transfer-evidence">
+                                Evidence of transfer (cleared deposit or cashier's check)
+                                <div class="doc-meta"><span class="tag conditional">Conditional</span></div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-donor-eligibility">
+                            <label for="item-donor-eligibility">
+                                Donor is an eligible family member (no cousins)
+                                <div class="doc-meta"><span class="tag conditional">Conditional</span></div>
+                            </label>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Retirement & Investment Accounts -->
+                <div class="checklist-group">
+                    <div class="checklist-group-header">
+                        <span class="group-tag" style="background:#0284c7;">Retirement &amp; Investments</span>
+                        If used for funds or reserves
+                    </div>
+                    <div class="checklist-group-body">
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-retirement-accounts">
+                            <label for="item-retirement-accounts">
+                                Most recent retirement/investment account statements
+                                <div class="doc-meta">
+                                    <span class="tag conditional">Conditional</span>
+                                    <span class="tag">Module 2</span>
+                                </div>
+                            </label>
+                            <button class="info-btn" data-doc="retirement-account" aria-expanded="false" aria-label="Retirement details">ⓘ</button>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-withdrawal-terms">
+                            <label for="item-withdrawal-terms">
+                                Terms of withdrawal documented (if using for cash to close)
+                                <div class="doc-meta"><span class="tag conditional">Conditional</span></div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-stock-cert">
+                            <label for="item-stock-cert">
+                                Stock certificate + newspaper stock list (if stocks)
+                                <div class="doc-meta"><span class="tag conditional">Conditional</span></div>
+                            </label>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Earnest Money -->
+                <div class="checklist-group">
+                    <div class="checklist-group-header">
+                        <span class="group-tag" style="background:#7c3aed;">Earnest Money</span>
+                        Purchase transactions
+                    </div>
+                    <div class="checklist-group-body">
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-earnest-money">
+                            <label for="item-earnest-money">
+                                Earnest money deposit verified and sourced
+                                <div class="doc-meta">
+                                    <span class="tag conditional">Purchase Only</span>
+                                    <span class="tag">Module 2</span>
+                                </div>
+                            </label>
+                            <button class="info-btn" data-doc="earnest-money" aria-expanded="false" aria-label="Earnest money details">ⓘ</button>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-earnest-1pct">
+                            <label for="item-earnest-1pct">
+                                If over 1% of sales price (FHA/VA), source documented
+                                <div class="doc-meta"><span class="tag conditional">FHA/VA</span></div>
+                            </label>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Reserves -->
+                <div class="checklist-group">
+                    <div class="checklist-group-header">
+                        <span class="group-tag" style="background:#0f172a;">Reserves</span>
+                        If required by program
+                    </div>
+                    <div class="checklist-group-body">
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-reserves-required">
+                            <label for="item-reserves-required">
+                                Reserves required by program confirmed
+                                <div class="doc-meta"><span class="tag conditional">Conditional</span></div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-reserves-documented">
+                            <label for="item-reserves-documented">
+                                Reserves documented (≥90% of DU required)
+                                <div class="doc-meta"><span class="tag conditional">Conditional</span></div>
+                            </label>
+                        </div>
+
+                    </div>
+                </div>
+
+            </section>
+
+            <div class="stage-nav">
+                <a href="03-income-verification.html">
+                    <span class="dir">← Previous</span>
+                    <span class="label">Stage 3: Income Verification</span>
+                </a>
+                <a href="05-credit-liabilities.html" class="next">
+                    <span class="dir">Next →</span>
+                    <span class="label">Stage 5: Credit &amp; Liabilities</span>
+                </a>
+            </div>
+
+        </main>
+    </div>
+
+    <footer class="site-footer">
+        © 2025 Campus Mortgage · Certified Master Loan Processor Bootcamp
+        <br>
+        <a href="../about.html">About</a> · <a href="../modules/index.html">Bootcamp</a> · <a href="../reference/index.html">Reference</a>
+    </footer>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/nav.js"></script>
+    <script src="data/document-guides.js"></script>
+    <script src="js/tooltips.js"></script>
+    <script src="js/checklists.js"></script>
+</body>
+</html>
