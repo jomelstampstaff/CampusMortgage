@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stage 3: Income Verification · Checklists</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/checklists.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <a href="../index.html" class="brand">🎓 Certified Master Loan Processor</a>
+        <nav>
+            <a href="../index.html">Home</a>
+            <a href="../modules/index.html">Bootcamp</a>
+            <a href="../reference/index.html">Reference</a>
+            <a href="index.html" class="active">Checklists</a>
+            <a href="../about.html">About</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <span style="display:inline-block; background:#d97706; color:#fff; font-size:0.7rem; font-weight:800; padding:0.28rem 0.9rem; border-radius:30px; letter-spacing:0.06em; text-transform:uppercase; margin-bottom:0.7rem;">Stage 3</span>
+        <h1>Income Verification</h1>
+        <p>Verify all income sources with supporting documents and calculate the most conservative qualifying income.</p>
+    </section>
+
+    <div class="app" style="grid-template-columns: 1fr; max-width: 1000px;">
+        <main class="main">
+
+            <section class="card">
+
+                <!-- Progress + Toolbar -->
+                <div class="checklist-progress">
+                    <div class="progress-header">
+                        <span class="label">📊 Income Verification Progress</span>
+                        <span class="percent progress-percent">0%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                    </div>
+                </div>
+
+                <div class="checklist-toolbar">
+                    <button id="resetChecklist">🔄 Reset</button>
+                    <button id="printChecklist">🖨️ Print with Guides</button>
+                </div>
+
+                <!-- W-2 Employee Income -->
+                <div class="checklist-group">
+                    <div class="checklist-group-header">
+                        <span class="group-tag">W-2 Employee</span>
+                        Income documents for salaried/hourly borrowers
+                    </div>
+                    <div class="checklist-group-body">
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-paystub">
+                            <label for="item-paystub">
+                                Most recent 30 days of pay stubs
+                                <div class="doc-meta">
+                                    <span class="tag required">Required</span>
+                                    <span class="tag">Module 1 &amp; 2</span>
+                                </div>
+                            </label>
+                            <button class="info-btn" data-doc="pay-stub" aria-expanded="false" aria-label="Pay stub details">ⓘ</button>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-w2">
+                            <label for="item-w2">
+                                Last 2 years W-2s
+                                <div class="doc-meta">
+                                    <span class="tag required">Required</span>
+                                    <span class="tag">Module 1 &amp; 2</span>
+                                </div>
+                            </label>
+                            <button class="info-btn" data-doc="w2" aria-expanded="false" aria-label="W-2 details">ⓘ</button>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-voe-written">
+                            <label for="item-voe-written">
+                                Written VOE (if AUS requires)
+                                <div class="doc-meta">
+                                    <span class="tag conditional">Conditional</span>
+                                    <span class="tag">Module 2</span>
+                                </div>
+                            </label>
+                            <button class="info-btn" data-doc="voe-written" aria-expanded="false" aria-label="VOE details">ⓘ</button>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-ytd-calc">
+                            <label for="item-ytd-calc">
+                                YTD income calculation (2 methods compared)
+                                <div class="doc-meta">
+                                    <span class="tag required">Required</span>
+                                    <span class="tag">Module 2</span>
+                                </div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-bonus-calc">
+                            <label for="item-bonus-calc">
+                                Bonus/OT/commission calculation if applicable
+                                <div class="doc-meta">
+                                    <span class="tag conditional">Conditional</span>
+                                    <span class="tag">Module 2</span>
+                                </div>
+                            </label>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Self-Employment Income -->
+                <div class="checklist-group">
+                    <div class="checklist-group-header">
+                        <span class="group-tag" style="background:#059669;">Self-Employed</span>
+                        Income documents for business owners
+                    </div>
+                    <div class="checklist-group-body">
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-1040">
+                            <label for="item-1040">
+                                Personal tax returns (1 or 2 years per AUS)
+                                <div class="doc-meta">
+                                    <span class="tag conditional">Conditional</span>
+                                    <span class="tag">Module 2</span>
+                                </div>
+                            </label>
+                            <button class="info-btn" data-doc="tax-returns" aria-expanded="false" aria-label="Tax return details">ⓘ</button>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-schedc">
+                            <label for="item-schedc">
+                                Schedule C (sole proprietors)
+                                <div class="doc-meta">
+                                    <span class="tag conditional">Conditional</span>
+                                    <span class="tag">Module 2</span>
+                                </div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-1065">
+                            <label for="item-1065">
+                                Form 1065 + K1s (partnership)
+                                <div class="doc-meta">
+                                    <span class="tag conditional">Conditional</span>
+                                    <span class="tag">Module 2</span>
+                                </div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-1120s">
+                            <label for="item-1120s">
+                                Form 1120S + K1s (S-Corp)
+                                <div class="doc-meta">
+                                    <span class="tag conditional">Conditional</span>
+                                    <span class="tag">Module 2</span>
+                                </div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-cpa-letter">
+                            <label for="item-cpa-letter">
+                                CPA letter (or SOS verification) for self-employment
+                                <div class="doc-meta">
+                                    <span class="tag conditional">Conditional</span>
+                                    <span class="tag">Module 2</span>
+                                </div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-1084">
+                            <label for="item-1084">
+                                Form 1084 cash flow analysis completed
+                                <div class="doc-meta">
+                                    <span class="tag required">Required</span>
+                                    <span class="tag">Module 2</span>
+                                </div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-1088">
+                            <label for="item-1088">
+                                Form 1088 comparative income analysis (if business returns)
+                                <div class="doc-meta">
+                                    <span class="tag conditional">Conditional</span>
+                                    <span class="tag">Module 2</span>
+                                </div>
+                            </label>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Other Income Types -->
+                <div class="checklist-group">
+                    <div class="checklist-group-header">
+                        <span class="group-tag" style="background:#dc2626;">Other Income</span>
+                        SS, retirement, alimony, military
+                    </div>
+                    <div class="checklist-group-body">
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-award-letter">
+                            <label for="item-award-letter">
+                                Award letter (SS, pension, retirement)
+                                <div class="doc-meta">
+                                    <span class="tag conditional">Conditional</span>
+                                    <span class="tag">Module 2</span>
+                                </div>
+                            </label>
+                            <button class="info-btn" data-doc="award-letter" aria-expanded="false" aria-label="Award letter details">ⓘ</button>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-ss-grossup">
+                            <label for="item-ss-grossup">
+                                Social Security gross-up calculation (if non-taxable)
+                                <div class="doc-meta">
+                                    <span class="tag conditional">Conditional</span>
+                                    <span class="tag">Module 2</span>
+                                </div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-divorce-decree">
+                            <label for="item-divorce-decree">
+                                Divorce decree or separation agreement (alimony/child support)
+                                <div class="doc-meta">
+                                    <span class="tag conditional">Conditional</span>
+                                    <span class="tag">Module 2</span>
+                                </div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-3yr-continuance">
+                            <label for="item-3yr-continuance">
+                                3-year continuance verified (child support / family SS)
+                                <div class="doc-meta">
+                                    <span class="tag conditional">Conditional</span>
+                                    <span class="tag">Module 2</span>
+                                </div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-military-les">
+                            <label for="item-military-les">
+                                Military LES or ETS (if within 12 months of discharge)
+                                <div class="doc-meta">
+                                    <span class="tag conditional">Conditional</span>
+                                    <span class="tag">Module 2</span>
+                                </div>
+                            </label>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Final Checks -->
+                <div class="checklist-group">
+                    <div class="checklist-group-header">
+                        <span class="group-tag" style="background:#0f172a;">Final Checks</span>
+                        Before submitting to underwriting
+                    </div>
+                    <div class="checklist-group-body">
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-two-calcs">
+                            <label for="item-two-calcs">
+                                At least 2 calculations performed — most conservative used
+                                <div class="doc-meta">
+                                    <span class="tag required">Required</span>
+                                    <span class="tag">Module 2</span>
+                                </div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-income-stable">
+                            <label for="item-income-stable">
+                                Income stability confirmed (no declining trend or explanation documented)
+                                <div class="doc-meta">
+                                    <span class="tag required">Required</span>
+                                    <span class="tag">Module 2</span>
+                                </div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-matches-1003">
+                            <label for="item-matches-1003">
+                                Income on 1003 and 1008 matches verified documents
+                                <div class="doc-meta">
+                                    <span class="tag required">Required</span>
+                                </div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-aus-updated">
+                            <label for="item-aus-updated">
+                                AUS rerun with final income amounts
+                                <div class="doc-meta">
+                                    <span class="tag required">Required</span>
+                                </div>
+                            </label>
+                        </div>
+
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- Stage Navigation -->
+            <div class="stage-nav">
+                <a href="02-initial-review.html">
+                    <span class="dir">← Previous</span>
+                    <span class="label">Stage 2: Initial Review</span>
+                </a>
+                <a href="04-asset-verification.html" class="next">
+                    <span class="dir">Next →</span>
+                    <span class="label">Stage 4: Asset Verification</span>
+                </a>
+            </div>
+
+        </main>
+    </div>
+
+    <footer class="site-footer">
+        © 2025 Campus Mortgage · Certified Master Loan Processor Bootcamp
+        <br>
+        <a href="../about.html">About</a> · <a href="../modules/index.html">Bootcamp</a> · <a href="../reference/index.html">Reference</a>
+    </footer>
+
+    <script src="../js/script.js"></script>
+    <script src="data/document-guides.js"></script>
+    <script src="js/tooltips.js"></script>
+    <script src="js/checklists.js"></script>
+</body>
+</html>
