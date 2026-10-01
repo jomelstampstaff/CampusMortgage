@@ -480,4 +480,38 @@ const documentGuides = {
             "Rounding errors",
             "LE not dated within 3 business days",
             "FHA upfront MIP missing",
-            "Intent to
+            "Intent to Proceed missing but fees collected",
+            "Lender credits not matching 1003 Section J"
+        ],
+        crossCheck: ["1003", "1008", "LOS data"],
+        feedsInto: ["Fee tolerances", "Compliance", "Closing prep"]
+    },
+
+    "closing-disclosure": {
+        title: "Closing Disclosure (CD)",
+        lookFor: [
+            "Delivered at least 3 business days before closing",
+            "Loan terms match LE (or valid change of circumstance exists)",
+            "All sections A through J completed",
+            "APR and finance charge correct",
+            "Cash to close matches expected amount",
+            "Borrower and seller signatures present",
+            "Executed date matches delivery date",
+            "Confirmed receipt signed by borrower(s)"
+        ],
+        redFlags: [
+            "Delivered less than 3 business days before closing",
+            "APR differs from last LE",
+            "Fees increased beyond tolerance",
+            "Missing signatures or dates",
+            "Cash to close changed significantly",
+            "Loan product changed without new waiting period"
+        ],
+        crossCheck: ["Loan Estimate", "Settlement Statement", "Sales Contract"],
+        feedsInto: ["TRID compliance", "Closing", "Post-closing QC"]
+    }
+
+};
+
+/* Export to window for use by tooltips.js */
+window.documentGuides = documentGuides;
