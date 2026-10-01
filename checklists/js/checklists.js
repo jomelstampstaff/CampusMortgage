@@ -67,26 +67,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ---------- PRINT BUTTON ----------
-    const printBtn = document.getElementById('printChecklist');
-    if (printBtn) {
-        printBtn.addEventListener('click', () => {
-            // Expand all popovers so guides print inline
-            document.querySelectorAll('.checklist-item').forEach(item => {
-                const btn = item.querySelector('.info-btn');
-                if (!btn) return;
-                const existingPopover = item.querySelector('.doc-popover');
-                if (!existingPopover) {
-                    btn.click();
-                }
-                const popover = item.querySelector('.doc-popover');
-                if (popover) {
-                    popover.classList.add('print-visible');
-                }
-            });
-
-            window.print();
-        });
-    }
+const printBtn = document.getElementById('printChecklist');
+if (printBtn) {
+    printBtn.addEventListener('click', () => {
+        // Just print — the CSS hides the info buttons and popovers anyway
+        window.print();
+    });
+}
 
     // Initial progress calc
     updateProgress();
