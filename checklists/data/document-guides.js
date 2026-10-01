@@ -45,7 +45,7 @@ const documentGuides = {
             "Name variations without supporting documentation",
             "Address mismatch without LOX",
             "Blurry or illegible copy",
-            "Missing pages for passports (need both photo page and address page)"
+            "Missing pages for passports (need photo page + address page)"
         ],
         crossCheck: ["1003", "Credit Report", "SSN Verification", "W-2s"],
         feedsInto: ["Identity verification", "Borrower data integrity"]
@@ -68,9 +68,75 @@ const documentGuides = {
         feedsInto: ["Identity verification", "Credit report accuracy"]
     },
 
+    "aus-findings": {
+        title: "AUS Findings Report",
+        lookFor: [
+            "Recommendation: Approve/Eligible (DU) or Accept (LPA)",
+            "Case file ID matches current submission",
+            "All borrower names correct",
+            "Loan amount, LTV, and terms match 1003/1008",
+            "All verification messages listed",
+            "Data integrity messages reviewed"
+        ],
+        redFlags: [
+            "Refer with Caution or Ineligible findings",
+            "Red flag messages (excessive resubmissions, occupancy modified)",
+            "Data mismatch between AUS and file documents",
+            "Expired credit report warning"
+        ],
+        crossCheck: ["1003", "1008", "Credit Report", "Appraisal"],
+        feedsInto: ["Underwriting submission", "Documentation requirements"]
+    },
+
+    "sales-contract-intake": {
+        title: "Sales Contract — Purchase Agreement",
+        lookFor: [
+            "All pages present and initialed",
+            "Borrower names match 1003",
+            "Seller names match title commitment",
+            "Full property address matches appraisal and title",
+            "Sales price matches 1003 and 1008",
+            "Earnest money amount and holder stated",
+            "Closing date and possession terms",
+            "All addendums attached (per checkboxes)",
+            "Signed and dated by buyer and seller"
+        ],
+        redFlags: [
+            "Missing pages or addendums",
+            "Expired closing date without amendment",
+            "Seller not matching title",
+            "Unsigned pages",
+            "Sales price discrepancy with 1008 or 1003"
+        ],
+        crossCheck: ["Title Commitment", "Appraisal", "1003", "1008"],
+        feedsInto: ["LTV calculation", "Cash to close"]
+    },
+
+    "initial-disclosures": {
+        title: "Initial Disclosures Package",
+        lookFor: [
+            "Loan Estimate (LE) — dated within 3 business days of application",
+            "Servicing Disclosure",
+            "ECOA / Fair Lending Rights",
+            "Borrower's Authorization",
+            "FACTA Disclosure",
+            "Lender-specific disclosures",
+            "FHA/VA disclosures (if applicable)",
+            "Intent to Proceed executed"
+        ],
+        redFlags: [
+            "LE missing or dated too late",
+            "Intent to Proceed not executed but fees collected",
+            "Missing required disclosures",
+            "Disclosure date mismatches"
+        ],
+        crossCheck: ["1003", "1008"],
+        feedsInto: ["Compliance", "Fee tolerances"]
+    },
+
     /* ==================== INITIAL REVIEW ==================== */
-    "credit-report": {
-        title: "Tri-Merge Credit Report",
+    "credit-report-initial": {
+        title: "Credit Report — Initial Review",
         lookFor: [
             "Dated within 120 days of note date",
             "Three repositories present: TransUnion, Experian, Equifax",
@@ -78,8 +144,7 @@ const documentGuides = {
             "Applicant names match photo ID",
             "Address matches current address",
             "SSN matches SSA-89 or card",
-            "All trade lines reviewed and match 1003",
-            "No undisclosed debts or liabilities"
+            "All trade lines reviewed and match 1003"
         ],
         redFlags: [
             "Report older than 120 days",
@@ -88,14 +153,14 @@ const documentGuides = {
             "Inquiries within 90 days",
             "Undisclosed mortgage or rent payments",
             "Collections, judgments, or tax liens",
-            "Late payments within 24 months (check overlays)",
+            "Late payments within 24 months",
             "Frozen credit in one or more bureaus"
         ],
-        crossCheck: ["1003", "Photo ID", "SSN Verification", "LOXs"],
-        feedsInto: ["Credit score determination", "DTI calculation", "AUS submission"]
+        crossCheck: ["1003", "Photo ID", "SSN Verification"],
+        feedsInto: ["Credit score determination", "DTI calculation"]
     },
 
-    "1008": {
+    "1008-initial": {
         title: "1008 — Underwriting Transmittal",
         lookFor: [
             "Borrower name(s) match 1003",
@@ -107,8 +172,7 @@ const documentGuides = {
             "Total monthly income for all borrowers",
             "Proposed PITIA and monthly obligations",
             "Front-end and back-end ratios",
-            "LTV, CLTV, HLTV",
-            "Underwriter name and date"
+            "LTV, CLTV, HLTV"
         ],
         redFlags: [
             "Ratio inconsistencies vs. AUS findings",
@@ -118,141 +182,6 @@ const documentGuides = {
         ],
         crossCheck: ["1003", "AUS Findings", "Sales Contract", "Appraisal"],
         feedsInto: ["Underwriter review", "Loan file organization"]
-    },
-
-    /* ==================== INCOME VERIFICATION ==================== */
-    "pay-stub": {
-        title: "Pay Stubs — 30 Days Coverage",
-        lookFor: [
-            "Employee name matches ID",
-            "Company name and address present",
-            "Full pay period dates covering 30 days",
-            "YTD earnings included",
-            "Deductions shown (proves W-2 status)",
-            "Direct deposit notice matches bank statement",
-            "Hours, rate, and gross pay reconcile"
-        ],
-        redFlags: [
-            "Handwritten or altered amounts",
-            "Missing YTD column",
-            "Round/even numbers on every deduction",
-            "Pay stub older than 30 days",
-            "Deductions don't add up to gross-to-net difference",
-            "No company name or address",
-            "Consecutive pay stubs don't cover a full month"
-        ],
-        crossCheck: ["Bank Statement", "W-2", "VOE", "1003"],
-        feedsInto: ["Base pay calculation", "Variable hours averaging", "Bonus/OT/commission calc"]
-    },
-
-    "w2": {
-        title: "W-2 — Wage and Tax Statement",
-        lookFor: [
-            "Employer name and EIN present",
-            "Employee SSN matches file",
-            "Employee name matches ID",
-            "Correct tax year (typically last 2 years)",
-            "All 4 copies (Federal, State, City, Employee)",
-            "Box 1 (Wages) and Box 5 (Medicare) both shown",
-            "Consistent with pay stub YTD"
-        ],
-        redFlags: [
-            "Altered fonts or formatting",
-            "Missing boxes",
-            "YTD doesn't match pay stub",
-            "Mismatched wages between years without explanation",
-            "W-2 vs. tax return discrepancy"
-        ],
-        crossCheck: ["Pay Stubs", "Tax Returns", "VOE", "1003"],
-        feedsInto: ["Prior year income for averaging", "Income stability analysis"]
-    },
-
-    "voe-written": {
-        title: "Verification of Employment (Written)",
-        lookFor: [
-            "Company name, address, phone present",
-            "Employer completed all applicable fields",
-            "Base pay, OT, bonus, commission broken out",
-            "Start date and YTD earnings shown",
-            "Signed and dated by employer representative",
-            "Borrower authorization attached",
-            "Fully completed — no blank fields (N/A where needed)"
-        ],
-        redFlags: [
-            "Blanks left in critical fields",
-            "Missing signature or date",
-            "VOE numbers don't match pay stubs",
-            "No breakdown of income types",
-            "Employer signature stamp (some lenders don't allow)",
-            "Borrower authorization missing"
-        ],
-        crossCheck: ["Pay Stubs", "W-2s", "1003", "Bank Statement"],
-        feedsInto: ["Income qualifying analysis", "Employment verification"]
-    },
-
-    "verbal-voe": {
-        title: "Verbal VOE — Within 10 Days of Closing",
-        lookFor: [
-            "Completed within 10 business days of note date",
-            "Called directly to employer's HR or authorized rep",
-            "Confirmed borrower still employed",
-            "Confirmed position and start date",
-            "Documented date, time, contact name, and phone number",
-            "Signed by the processor who performed the VOE"
-        ],
-        redFlags: [
-            "VOE performed too early (outside 10-day window)",
-            "Unable to reach employer",
-            "Employment ended since application",
-            "Borrower no longer in the position"
-        ],
-        crossCheck: ["Written VOE", "Pay Stubs", "1003"],
-        feedsInto: ["Final employment verification", "Clear-to-close condition"]
-    },
-
-    "tax-returns": {
-        title: "Tax Returns — Personal (1040)",
-        lookFor: [
-            "Most recent 1 or 2 years (per AUS findings)",
-            "All schedules attached (Schedule C, E, etc.)",
-            "Signed and dated by borrower",
-            "IRS transcript matching returns if required",
-            "Consistent with W-2s and other income docs",
-            "YTD current year income trending",
-            "Any K-1s attached when applicable"
-        ],
-        redFlags: [
-            "Missing schedules",
-            "Unsigned returns",
-            "Tax transcript does not match return",
-            "Declining income trend without explanation",
-            "K-1s missing for partnerships or S-corps",
-            "Losses on schedule C with positive income claimed elsewhere"
-        ],
-        crossCheck: ["W-2s", "K-1s", "Business Tax Returns", "VOE"],
-        feedsInto: ["Self-employment income", "Income averaging", "1084/1088 analysis"]
-    },
-
-    "award-letter": {
-        title: "Award Letter — SS, Pension, Retirement",
-        lookFor: [
-            "Official letter from issuing organization",
-            "Borrower name matches ID",
-            "Monthly benefit amount clearly stated",
-            "Start date of benefits",
-            "Continuance of benefit indicated",
-            "SSN or claim number shown",
-            "Dated within last 12 months"
-        ],
-        redFlags: [
-            "Benefit amount doesn't match bank deposit",
-            "Letter older than 12 months",
-            "Continuance not stated",
-            "Non-taxable portion not documented (for gross-up)",
-            "Benefit ends within 3 years (for SS or family benefit)"
-        ],
-        crossCheck: ["Bank Statements", "Tax Returns", "1003"],
-        feedsInto: ["Non-employment income", "Social Security gross-up", "Retirement income"]
     },
 
     /* ==================== ASSET VERIFICATION ==================== */
@@ -329,6 +258,65 @@ const documentGuides = {
         feedsInto: ["Asset verification", "Funds to close", "Reserves"]
     },
 
+    "retirement-account": {
+        title: "Retirement Account Statement",
+        lookFor: [
+            "Account holder name matches borrower",
+            "Account type (IRA, 401k, etc.)",
+            "Vested balance clearly shown",
+            "Outstanding loans deducted if applicable",
+            "Most recent statement (within 90 days ideally)",
+            "All pages present"
+        ],
+        redFlags: [
+            "Only a portion vested",
+            "Outstanding loan not disclosed",
+            "Statements older than 90–120 days",
+            "Account does not allow withdrawals"
+        ],
+        crossCheck: ["1003 Asset Section", "Bank Statements"],
+        feedsInto: ["Reserves", "Funds to close (if liquidated)", "Asset depletion calculation"]
+    },
+
+    "earnest-money": {
+        title: "Earnest Money Deposit Verification",
+        lookFor: [
+            "Deposit amount matches sales contract",
+            "Copy of cancelled check or wire confirmation",
+            "Bank statement showing the deposit cleared",
+            "Source of funds documented if over 1% of sales price (FHA/VA)",
+            "Matches title company receipt"
+        ],
+        redFlags: [
+            "Deposit hasn't cleared",
+            "Amount doesn't match contract",
+            "Not documented in bank statements",
+            "Came from an interested party",
+            "Came from borrowed funds without documentation"
+        ],
+        crossCheck: ["Sales Contract", "Bank Statements", "Title Commitment"],
+        feedsInto: ["Funds to close", "Cash to close"]
+    },
+
+    "large-deposit-test": {
+        title: "Large Deposit Sourcing",
+        lookFor: [
+            "Any single deposit exceeding 50% of monthly qualifying income",
+            "Deposit matches documented source (payroll, tax refund, gift, etc.)",
+            "Paper trail from origin to current account",
+            "Consistent with borrower's customary banking"
+        ],
+        redFlags: [
+            "Deposit over 50% of income not documented",
+            "Deposit shows as 'cash' or 'misc'",
+            "Round-number deposits without source",
+            "Transfer from another institution without statements",
+            "Consistent large deposits but insufficient documentation"
+        ],
+        crossCheck: ["Bank Statements", "Pay Stubs", "Gift Letter", "Tax Returns"],
+        feedsInto: ["Large deposit test", "Funds to close"]
+    },
+
     /* ==================== CREDIT & LIABILITIES ==================== */
     "lox-inquiries": {
         title: "Letter of Explanation — Credit Inquiries",
@@ -382,6 +370,58 @@ const documentGuides = {
         ],
         crossCheck: ["Credit Report", "Photo ID", "Marriage Certificate"],
         feedsInto: ["Identity verification", "Fraud prevention"]
+    },
+
+    "undisclosed-debt-lox": {
+        title: "Letter of Explanation — Undisclosed Debt",
+        lookFor: [
+            "Signed and dated by borrower",
+            "Explains any new debt not on original 1003",
+            "States whether debt is being paid off or included in DTI",
+            "Terms of the new debt if applicable"
+        ],
+        redFlags: [
+            "New debt not disclosed until credit refresh",
+            "Undisclosed mortgage debt (can trigger manual downgrade)",
+            "Terms missing or vague"
+        ],
+        crossCheck: ["Credit Report", "1003 Liability Section", "Bank Statements"],
+        feedsInto: ["DTI calculation", "AUS resubmission"]
+    },
+
+    "collections-lox": {
+        title: "Letter of Explanation — Collections",
+        lookFor: [
+            "Signed and dated by borrower",
+            "Explains each collection account",
+            "States whether paid, in repayment, or disputed",
+            "For VA loans: reestablished satisfactory credit documented"
+        ],
+        redFlags: [
+            "Multiple unexplained collections",
+            "Recent collections within past 12 months",
+            "No reestablishment of credit after derogatory event",
+            "FHA non-medical collections over $2,000 not addressed"
+        ],
+        crossCheck: ["Credit Report", "Bank Statements"],
+        feedsInto: ["Credit risk analysis", "Manual underwrite decision"]
+    },
+
+    "credit-supplement": {
+        title: "Credit Supplement",
+        lookFor: [
+            "Rapid rescore or supplement from a credit bureau",
+            "Updated balance or payment info",
+            "Satisfactory mortgage payment history (0×30 in last 12 months)",
+            "Proof of payoff (for debts to be excluded from DTI)"
+        ],
+        redFlags: [
+            "Supplement older than 120 days",
+            "Doesn't match documentation provided by borrower",
+            "Doesn't resolve the issue it was ordered for"
+        ],
+        crossCheck: ["Credit Report", "Payoff Statements", "Bank Statements"],
+        feedsInto: ["DTI calculation", "AUS resubmission"]
     },
 
     /* ==================== PROPERTY & TITLE ==================== */
@@ -463,6 +503,28 @@ const documentGuides = {
         feedsInto: ["Closing prep", "Cash to close", "Payoff amounts"]
     },
 
+    "hoa-questionnaire": {
+        title: "HOA Questionnaire (Condo)",
+        lookFor: [
+            "Project name and address match subject property",
+            "Number of units total and owner-occupied percentage",
+            "HOA dues current on subject unit",
+            "Master insurance policy details",
+            "Budget and reserve status",
+            "Litigation status",
+            "Project approval status (FHA/VA approved list)"
+        ],
+        redFlags: [
+            "Project not on FHA/VA approved list",
+            "Pending litigation",
+            "High percentage of non-owner-occupied units",
+            "Insufficient reserves",
+            "Delinquent HOA dues on subject unit"
+        ],
+        crossCheck: ["Appraisal", "Sales Contract"],
+        feedsInto: ["Property acceptability", "Condo project approval"]
+    },
+
     /* ==================== DISCLOSURES & COMPLIANCE ==================== */
     "loan-estimate": {
         title: "Loan Estimate (LE)",
@@ -509,6 +571,140 @@ const documentGuides = {
         ],
         crossCheck: ["Loan Estimate", "Settlement Statement", "Sales Contract"],
         feedsInto: ["TRID compliance", "Closing", "Post-closing QC"]
+    },
+
+    /* ==================== INCOME (from earlier batches) ==================== */
+    "pay-stub": {
+        title: "Pay Stubs — 30 Days Coverage",
+        lookFor: [
+            "Employee name matches ID",
+            "Company name and address present",
+            "Full pay period dates covering 30 days",
+            "YTD earnings included",
+            "Deductions shown (proves W-2 status)",
+            "Direct deposit notice matches bank statement",
+            "Hours, rate, and gross pay reconcile"
+        ],
+        redFlags: [
+            "Handwritten or altered amounts",
+            "Missing YTD column",
+            "Round/even numbers on every deduction",
+            "Pay stub older than 30 days",
+            "Deductions don't add up to gross-to-net difference",
+            "No company name or address"
+        ],
+        crossCheck: ["Bank Statement", "W-2", "VOE", "1003"],
+        feedsInto: ["Base pay calculation", "Variable hours averaging", "Bonus/OT/commission calc"]
+    },
+
+    "w2": {
+        title: "W-2 — Wage and Tax Statement",
+        lookFor: [
+            "Employer name and EIN present",
+            "Employee SSN matches file",
+            "Employee name matches ID",
+            "Correct tax year (typically last 2 years)",
+            "All 4 copies (Federal, State, City, Employee)",
+            "Box 1 (Wages) and Box 5 (Medicare) both shown",
+            "Consistent with pay stub YTD"
+        ],
+        redFlags: [
+            "Altered fonts or formatting",
+            "Missing boxes",
+            "YTD doesn't match pay stub",
+            "Mismatched wages between years without explanation",
+            "W-2 vs. tax return discrepancy"
+        ],
+        crossCheck: ["Pay Stubs", "Tax Returns", "VOE", "1003"],
+        feedsInto: ["Prior year income for averaging", "Income stability analysis"]
+    },
+
+    "voe-written": {
+        title: "Verification of Employment (Written)",
+        lookFor: [
+            "Company name, address, phone present",
+            "Employer completed all applicable fields",
+            "Base pay, OT, bonus, commission broken out",
+            "Start date and YTD earnings shown",
+            "Signed and dated by employer representative",
+            "Borrower authorization attached",
+            "Fully completed — no blank fields"
+        ],
+        redFlags: [
+            "Blanks left in critical fields",
+            "Missing signature or date",
+            "VOE numbers don't match pay stubs",
+            "No breakdown of income types",
+            "Employer signature stamp (some lenders don't allow)",
+            "Borrower authorization missing"
+        ],
+        crossCheck: ["Pay Stubs", "W-2s", "1003", "Bank Statement"],
+        feedsInto: ["Income qualifying analysis", "Employment verification"]
+    },
+
+    "verbal-voe": {
+        title: "Verbal VOE — Within 10 Days of Closing",
+        lookFor: [
+            "Completed within 10 business days of note date",
+            "Called directly to employer's HR or authorized rep",
+            "Confirmed borrower still employed",
+            "Confirmed position and start date",
+            "Documented date, time, contact name, and phone number",
+            "Signed by the processor who performed the VOE"
+        ],
+        redFlags: [
+            "VOE performed too early (outside 10-day window)",
+            "Unable to reach employer",
+            "Employment ended since application",
+            "Borrower no longer in the position"
+        ],
+        crossCheck: ["Written VOE", "Pay Stubs", "1003"],
+        feedsInto: ["Final employment verification", "Clear-to-close condition"]
+    },
+
+    "tax-returns": {
+        title: "Tax Returns — Personal (1040)",
+        lookFor: [
+            "Most recent 1 or 2 years (per AUS findings)",
+            "All schedules attached (Schedule C, E, etc.)",
+            "Signed and dated by borrower",
+            "IRS transcript matching returns if required",
+            "Consistent with W-2s and other income docs",
+            "YTD current year income trending",
+            "Any K-1s attached when applicable"
+        ],
+        redFlags: [
+            "Missing schedules",
+            "Unsigned returns",
+            "Tax transcript does not match return",
+            "Declining income trend without explanation",
+            "K-1s missing for partnerships or S-corps",
+            "Losses on schedule C with positive income claimed elsewhere"
+        ],
+        crossCheck: ["W-2s", "K-1s", "Business Tax Returns", "VOE"],
+        feedsInto: ["Self-employment income", "Income averaging", "1084/1088 analysis"]
+    },
+
+    "award-letter": {
+        title: "Award Letter — SS, Pension, Retirement",
+        lookFor: [
+            "Official letter from issuing organization",
+            "Borrower name matches ID",
+            "Monthly benefit amount clearly stated",
+            "Start date of benefits",
+            "Continuance of benefit indicated",
+            "SSN or claim number shown",
+            "Dated within last 12 months"
+        ],
+        redFlags: [
+            "Benefit amount doesn't match bank deposit",
+            "Letter older than 12 months",
+            "Continuance not stated",
+            "Non-taxable portion not documented (for gross-up)",
+            "Benefit ends within 3 years"
+        ],
+        crossCheck: ["Bank Statements", "Tax Returns", "1003"],
+        feedsInto: ["Non-employment income", "Social Security gross-up", "Retirement income"]
     }
 
 };
