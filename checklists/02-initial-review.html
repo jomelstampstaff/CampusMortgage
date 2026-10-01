@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stage 2: Initial Review · Checklists</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/checklists.css">
+</head>
+<body>
+
+    <div id="site-header"></div>
+
+    <section class="hero">
+        <span style="display:inline-block; background:#d97706; color:#fff; font-size:0.7rem; font-weight:800; padding:0.28rem 0.9rem; border-radius:30px; letter-spacing:0.06em; text-transform:uppercase; margin-bottom:0.7rem;">Stage 2</span>
+        <h1>Initial Review</h1>
+        <p>Cross-check the 1003, 1008, photo ID, credit report, and AUS findings for consistency before proceeding.</p>
+    </section>
+
+    <div class="app" style="grid-template-columns: 1fr; max-width: 1000px;">
+        <main class="main">
+
+            <section class="card">
+
+                <div class="checklist-progress">
+                    <div class="progress-header">
+                        <span class="label">📊 Initial Review Progress</span>
+                        <span class="percent progress-percent">0%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                    </div>
+                </div>
+
+                <div class="checklist-toolbar">
+                    <button id="resetChecklist">🔄 Reset</button>
+                    <button id="printChecklist">🖨️ Print with Guides</button>
+                </div>
+
+                <!-- Identity Consistency -->
+                <div class="checklist-group">
+                    <div class="checklist-group-header">
+                        <span class="group-tag">Identity</span>
+                        Name, DOB, SSN, address match across documents
+                    </div>
+                    <div class="checklist-group-body">
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-name-match">
+                            <label for="item-name-match">
+                                Name matches across 1003, photo ID, and credit report
+                                <div class="doc-meta"><span class="tag required">Required</span></div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-dob-match">
+                            <label for="item-dob-match">
+                                Date of birth matches across documents
+                                <div class="doc-meta"><span class="tag required">Required</span></div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-ssn-match">
+                            <label for="item-ssn-match">
+                                SSN matches across 1003, SSA-89, and credit report
+                                <div class="doc-meta"><span class="tag required">Required</span></div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-address-match">
+                            <label for="item-address-match">
+                                Current address matches photo ID and credit report
+                                <div class="doc-meta"><span class="tag required">Required</span></div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-aka-variations">
+                            <label for="item-aka-variations">
+                                Review credit report for AKAs and address variations
+                                <div class="doc-meta"><span class="tag required">Required</span></div>
+                            </label>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Employment & Income Consistency -->
+                <div class="checklist-group">
+                    <div class="checklist-group-header">
+                        <span class="group-tag" style="background:#059669;">Employment</span>
+                        Matches 1003 to credit report and AUS
+                    </div>
+                    <div class="checklist-group-body">
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-employment-match">
+                            <label for="item-employment-match">
+                                1003 employment history matches credit report
+                                <div class="doc-meta"><span class="tag required">Required</span></div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-employment-gaps">
+                            <label for="item-employment-gaps">
+                                Employment gaps identified and addressed
+                                <div class="doc-meta"><span class="tag required">Required</span></div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-self-employed-check">
+                            <label for="item-self-employed-check">
+                                Self-employment check applied if applicable
+                                <div class="doc-meta"><span class="tag conditional">Conditional</span></div>
+                            </label>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Asset & Liability Consistency -->
+                <div class="checklist-group">
+                    <div class="checklist-group-header">
+                        <span class="group-tag" style="background:#dc2626;">Assets &amp; Liabilities</span>
+                        Matches 1003 to credit report
+                    </div>
+                    <div class="checklist-group-body">
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-liabilities-match">
+                            <label for="item-liabilities-match">
+                                All liabilities on 1003 match credit report
+                                <div class="doc-meta"><span class="tag required">Required</span></div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-asset-accounts">
+                            <label for="item-asset-accounts">
+                                Asset accounts on 1003 noted for verification
+                                <div class="doc-meta"><span class="tag required">Required</span></div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-mortgage-tradelines">
+                            <label for="item-mortgage-tradelines">
+                                All mortgage trade lines reviewed (rent vs. own)
+                                <div class="doc-meta"><span class="tag required">Required</span></div>
+                            </label>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- 1008 vs AUS Review -->
+                <div class="checklist-group">
+                    <div class="checklist-group-header">
+                        <span class="group-tag" style="background:#7c3aed;">1008 vs AUS</span>
+                        Key ratios and terms
+                    </div>
+                    <div class="checklist-group-body">
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-1008-aus-match">
+                            <label for="item-1008-aus-match">
+                                1008 matches AUS findings (loan amount, terms, ratios)
+                                <div class="doc-meta"><span class="tag required">Required</span></div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-ltv-match">
+                            <label for="item-ltv-match">
+                                LTV, CLTV, HLTV correct on 1008
+                                <div class="doc-meta"><span class="tag required">Required</span></div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-dti-match">
+                            <label for="item-dti-match">
+                                Front-end and back-end DTI match AUS findings
+                                <div class="doc-meta"><span class="tag required">Required</span></div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-declarations">
+                            <label for="item-declarations">
+                                All declarations on 1003 reviewed and answered
+                                <div class="doc-meta"><span class="tag required">Required</span></div>
+                            </label>
+                        </div>
+
+                    </div>
+                </div>
+
+            </section>
+
+            <div class="stage-nav">
+                <a href="01-file-intake.html">
+                    <span class="dir">← Previous</span>
+                    <span class="label">Stage 1: File Intake</span>
+                </a>
+                <a href="03-income-verification.html" class="next">
+                    <span class="dir">Next →</span>
+                    <span class="label">Stage 3: Income Verification</span>
+                </a>
+            </div>
+
+        </main>
+    </div>
+
+    <footer class="site-footer">
+        © 2025 Campus Mortgage · Certified Master Loan Processor Bootcamp
+        <br>
+        <a href="../about.html">About</a> · <a href="../modules/index.html">Bootcamp</a> · <a href="../reference/index.html">Reference</a>
+    </footer>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/nav.js"></script>
+    <script src="data/document-guides.js"></script>
+    <script src="js/tooltips.js"></script>
+    <script src="js/checklists.js"></script>
+</body>
+</html>
