@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 3: FHA &amp; VA Processing · Certified Master Loan Processor</title>
+    <meta name="description" content="Module 3 of the Certified Master Loan Processor Bootcamp — FHA and VA loan processing, from eligibility and MI to case numbers, appraisals, TRID, and compliance.">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <a href="../index.html" class="brand">🎓 Certified Master Loan Processor</a>
+        <nav>
+            <a href="../index.html">Home</a>
+            <a href="index.html" class="active">Bootcamp</a>
+            <a href="../reference/index.html">Reference</a>
+            <a href="../checklists/index.html">Checklists</a>
+            <a href="../about.html">About</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <span style="display:inline-block; background:#0284c7; color:#fff; font-size:0.7rem; font-weight:800; padding:0.28rem 0.9rem; border-radius:30px; letter-spacing:0.06em; text-transform:uppercase; margin-bottom:0.7rem;">Module 3</span>
+        <h1>FHA &amp; VA Processing</h1>
+        <p>Everything a mortgage processor needs to know about government-insured loans — from FHA mortgage insurance and program types to VA eligibility, entitlement, funding fees, and compliance.</p>
+    </section>
+
+    <div class="app">
+
+        <!-- ===== SIDEBAR ===== -->
+        <nav class="sidebar">
+            <h3>📘 Module 3 Sections</h3>
+
+            <div class="module-block" id="s1-block">
+                <div class="module-header" onclick="toggleModule('s1-block')">
+                    <span class="label"><span class="dot blue"></span> Session 1: FHA Fundamentals</span>
+                    <span class="chevron">▼</span>
+                </div>
+                <div class="module-body">
+                    <ul>
+                        <li><a href="#s1-1">1. What is FHA?</a></li>
+                        <li><a href="#s1-2">2. FHA Loan Benefits</a></li>
+                        <li><a href="#s1-3">3. UFMIP &amp; Annual MIP</a></li>
+                        <li><a href="#s1-4">4. FHA Annual MI Chart</a></li>
+                        <li><a href="#s1-5">5. FHA Program Types &amp; ADP Codes</a></li>
+                        <li><a href="#s1-6">6. HUD Addendum (92900A)</a></li>
+                        <li><a href="#s1-7">7. VA Form 26-1820</a></li>
+                        <li><a href="#s1-8">8. Eligible FHA Properties</a></li>
+                        <li><a href="#s1-9">9. Principal Residence Rules</a></li>
+                        <li><a href="#s1-10">10. Multiple FHA Loan Exceptions</a></li>
+                        <li><a href="#s1-11">11. Property Flipping Rules</a></li>
+                        <li><a href="#s1-12">12. Credit Score &amp; Total Scorecard</a></li>
+                        <li><a href="#s1-13">13. Manual Underwriting</a></li>
+                        <li><a href="#s1-quiz">Practice Quiz</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="module-block collapsed" id="s2-block">
+                <div class="module-header" onclick="toggleModule('s2-block')">
+                    <span class="label"><span class="dot green"></span> Session 2: VA Loans (Coming)</span>
+                    <span class="chevron">▼</span>
+                </div>
+                <div class="module-body">
+                    <ul>
+                        <li><a href="#s2-coming">Coming in Batch 3b</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="module-block collapsed" id="s3-block">
+                <div class="module-header" onclick="toggleModule('s3-block')">
+                    <span class="label"><span class="dot orange"></span> Session 3: Appraisals &amp; TRID (Coming)</span>
+                    <span class="chevron">▼</span>
+                </div>
+                <div class="module-body">
+                    <ul>
+                        <li><a href="#s3-coming">Coming in Batch 3c</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- ===== MAIN CONTENT ===== -->
+        <main class="main">
+
+            <!-- ============ 1. WHAT IS FHA ============ -->
+            <section id="s1-1" class="card">
+                <h2>1. What is FHA? <span class="badge blue">Module 3 · Session 1</span></h2>
+
+                <p><strong>FHA</strong> stands for the <strong>Federal Housing Administration</strong> — a government agency within the <strong>U.S. Department of Housing and Urban Development (HUD)</strong>, created by Congress in <strong>1934</strong>.</p>
+
+                <p>An <strong>FHA loan</strong> is a mortgage <em>insured</em> by the FHA. This insurance protects the lender from loss if the borrower defaults — which allows lenders to offer more flexible qualification guidelines than conventional loans.</p>
+
+                <div class="grid-3">
+                    <div class="tile">
+                        <h5>🏛️ Agency</h5>
+                        <p>Federal Housing Administration (within HUD)</p>
+                    </div>
+                    <div class="tile">
+                        <h5>📅 Created</h5>
+                        <p>1934 by U.S. Congress</p>
+                    </div>
+                    <div class="tile">
+                        <h5>🛡️ Purpose</h5>
+                        <p>Insure mortgages so lenders can offer more flexible terms</p>
+                    </div>
+                </div>
+
+                <div class="note">
+                    <strong>🔑 Key concept:</strong> The FHA does not lend money — it <em>insures</em> loans made by approved lenders. That's why FHA loans are called <strong>government-insured</strong> rather than government-funded.
+                </div>
+            </section>
+
+            <!-- ============ 2. FHA LOAN BENEFITS ============ -->
+            <section id="s1-2" class="card">
+                <h2>2. FHA Loan Benefits <span class="badge blue">Module 3 · Session 1</span></h2>
+
+                <div class="grid-3">
+                    <div class="tile">
+                        <h5>💰 Low Down Payment</h5>
+                        <p>As little as <strong>3.5%</strong> down payment</p>
+                    </div>
+                    <div class="tile">
+                        <h5>📊 Minimum Credit Score</h5>
+                        <p>As low as <strong>500</strong> (with restrictions)</p>
+                    </div>
+                    <div class="tile">
+                        <h5>📈 Higher DTI Allowed</h5>
+                        <p>Only if approved through FHA Total Scorecard (FHA's AUS)</p>
+                    </div>
+                </div>
+
+                <h3>Two Key Perks of FHA</h3>
+                <ul>
+                    <li><strong>Low 3.5% down payment</strong> — much lower than conventional loans</li>
+                    <li><strong>More flexible qualification guidelines</strong> — helpful for borrowers with lower credit scores or higher DTIs</li>
+                </ul>
+
+                <h3>Why Mortgage Insurance Premiums Matter</h3>
+                <p>FHA mortgage insurance premiums are <strong>based on LTV of the loan</strong>, not on credit scores. This makes FHA mortgage payments more predictable and often more affordable for many borrowers, since the government-backed insurance encourages lenders to offer these loans to a broader range of creditworthy borrowers.</p>
+
+                <div class="note">
+                    <strong>🔑 Remember:</strong> FHA MI is LTV-based, not credit-score-based. That's different from how conventional LLPAs work.
+                </div>
+            </section>
+
+            <!-- ============ 3. UFMIP & ANNUAL MIP ============ -->
+            <section id="s1-3" class="card">
+                <h2>3. UFMIP &amp; Annual MIP <span class="badge blue">Module 3 · Session 1</span></h2>
+
+                <p>Every FHA borrower pays <strong>two types of mortgage insurance premiums</strong>:</p>
+
+                <div class="grid-2">
+                    <div class="tile">
+                        <h5>1️⃣ Upfront Mortgage Insurance Premium (UFMIP)</h5>
+                        <ul>
+                            <li><strong>One-time fee</strong> paid on all FHA loans</li>
+                            <li><strong>1.75%</strong> of the base loan amount</li>
+                            <li>Normally <strong>financed into the loan</strong> (or paid in cash at closing)</li>
+                            <li>Must be <strong>either fully financed or fully paid in cash</strong> — no mixing</li>
+                        </ul>
+                    </div>
+                    <div class="tile">
+                        <h5>2️⃣ Annual Mortgage Insurance Premium (MIP)</h5>
+                        <ul>
+                            <li><strong>Paid monthly</strong> with the mortgage payment</li>
+                            <li>Based on <strong>LTV, loan term, and loan amount</strong></li>
+                            <li>Varies by borrower scenario</li>
+                            <li>Except: Hawaiian Homelands Section 247 loans — no annual MIP</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3>UFMIP Formula</h3>
+                <div class="formula-box">
+                    <span class="label">UFMIP Calculation</span>
+                    <span class="formula">UFMIP = Base Loan Amount × 1.75%</span>
+                </div>
+
+                <div class="computation-box">
+                    <div class="step"><strong>Example:</strong></div>
+                    <div class="step">Base Loan Amount: <strong>$300,000</strong></div>
+                    <div class="step">UFMIP: $300,000 × 1.75% = <strong>$5,250</strong></div>
+                    <div class="step">If financed, new loan amount: $300,000 + $5,250 = <strong>$305,250</strong></div>
+                    <span class="result">UFMIP = $5,250 (financed or paid in cash)</span>
+                </div>
+
+                <h3>Exceptions to the 1.75% UFMIP</h3>
+                <ul>
+                    <li><strong>Streamline refinances</strong> and <strong>simple refinances</strong> of FHA loans endorsed on or before <strong>May 31, 2009</strong> — different amounts</li>
+                    <li><strong>Hawaiian Homelands</strong> — different UFMIP amounts, no monthly MIP</li>
+                    <li><strong>Indian Lands FHA program</strong> — no UFMIP required</li>
+                </ul>
+
+                <h3>Disclosure Rules — Critical for Processors</h3>
+                <div class="note danger">
+                    <strong>🚨 UFMIP must be disclosed on the Loan Estimate for every FHA loan.</strong>
+                    <ul style="margin-top:0.5rem;">
+                        <li>Double-check it — sometimes the LO misses it</li>
+                        <li>If UFMIP is missed, the <strong>Annual MIP cannot be calculated correctly</strong></li>
+                        <li>Wrong UFMIP on the LE = <strong>costly compliance cures</strong></li>
+                        <li>Verify the correct UFMIP is on the LE <strong>AND</strong> the annual MIP is reflected in the total proposed monthly payment</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- ============ 4. FHA ANNUAL MI CHART ============ -->
+            <section id="s1-4" class="card">
+                <h2>4. FHA Annual MI Chart <span class="badge blue">Module 3 · Session 1</span></h2>
+
+                <p>There are <strong>two annual MI charts</strong> — one for loans <strong>greater than 15 years</strong> and one for loans <strong>equal to or less than 15 years</strong>. Find the right chart based on the loan term.</p>
+
+                <h3>Chart A — Loan Terms Greater Than 15 Years</h3>
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr><th>Base Loan Amount</th><th>LTV</th><th>Annual MIP (bps)</th><th>Duration</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>≤ $726,200</td><td>≤ 95%</td><td>50 bps (0.50%)</td><td>11 years</td></tr>
+                            <tr><td>≤ $726,200</td><td>&gt; 95%</td><td><strong>55 bps (0.55%)</strong></td><td>Mortgage term</td></tr>
+                            <tr><td>&gt; $726,200</td><td>≤ 95%</td><td>70 bps (0.70%)</td><td>11 years</td></tr>
+                            <tr><td>&gt; $726,200</td><td>&gt; 95%</td><td>75 bps (0.75%)</td><td>Mortgage term</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="note">
+                    <strong>💡 Most common scenario:</strong> Loan amounts less than $726,200 with LTV greater than 95% (3.5% down payment). Annual MI = <strong>0.55%</strong> for the duration of the mortgage term.
+                </div>
+
+                <h3>Chart B — Loan Terms Equal to or Less Than 15 Years</h3>
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr><th>Base Loan Amount</th><th>LTV</th><th>Annual MIP (bps)</th><th>Duration</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>≤ $726,200</td><td>≤ 90%</td><td>15 bps (0.15%)</td><td>11 years</td></tr>
+                            <tr><td>≤ $726,200</td><td>&gt; 90%</td><td>40 bps (0.40%)</td><td>Mortgage term</td></tr>
+                            <tr><td>&gt; $726,200</td><td>≤ 90%</td><td>15 bps (0.15%)</td><td>11 years</td></tr>
+                            <tr><td>&gt; $726,200</td><td>&gt; 90%</td><td>40 bps (0.40%)</td><td>Mortgage term</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="note warning">
+                    <strong>⚠️ Note the difference:</strong> For 15-year loans with 10%+ down payment (LTV ≤ 90%), the annual MIP drops to just <strong>0.15%</strong> — much lower than the 30-year rate.
+                </div>
+
+                <h3>Annual MIP Calculation Example</h3>
+                <div class="formula-box">
+                    <span class="label">Monthly MIP Calculation</span>
+                    <span class="formula">Monthly MIP = (Base Loan Amount × Annual MIP %) ÷ 12</span>
+                </div>
+
+                <div class="computation-box">
+                    <div class="step"><strong>Scenario:</strong> $300,000 base loan, 30-year, 3.5% down (LTV &gt; 95%)</div>
+                    <div class="step">Annual MIP rate: <strong>0.55%</strong> (from Chart A)</div>
+                    <div class="step">Annual MIP: $300,000 × 0.55% = <strong>$1,650/year</strong></div>
+                    <div class="step">Monthly MIP: $1,650 ÷ 12 = <strong>$137.50/month</strong></div>
+                    <span class="result">Monthly MIP = $137.50</span>
+                </div>
+
+                <div class="note danger">
+                    <strong>🚨 Critical:</strong> If the UFMIP is disclosed incorrectly, the annual MIP won't be calculated right. Both must be correct on the LE.
+                </div>
+            </section>
+
+            <!-- ============ 5. FHA PROGRAM TYPES ============ -->
+            <section id="s1-5" class="card">
+                <h2>5. FHA Program Types &amp; ADP Codes <span class="badge blue">Module 3 · Session 1</span></h2>
+
+                <p>FHA categorizes eligible mortgage programs by their <strong>section of the National Housing Act</strong>. These sections are the basis for the FHA case number's last three digits.</p>
+
+                <h3>Common FHA Program Sections</h3>
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr><th>Section of the Act</th><th>Program</th><th>Description</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><strong>203(b)</strong></td><td>Single Family</td><td>Standard purchase and refinance for 1-4 unit properties — including detached condos</td></tr>
+                            <tr><td><strong>203(k)</strong></td><td>Rehabilitation</td><td>Purchase/refi of a home that needs repairs or improvements</td></tr>
+                            <tr><td><strong>203(b) with Repair Escrow</strong></td><td>HUD REO</td><td>For HUD-owned properties needing minor repairs</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>ADP Code — The 3-Digit Code After the FHA Case Number</h3>
+                <p>The ADP code goes <strong>right after the FHA case number</strong> on all FHA-related forms:</p>
+                <ul>
+                    <li>FHA addendums</li>
+                    <li>Initial 1003</li>
+                    <li>Final 1003</li>
+                    <li>Appraisal reports</li>
+                    <li>Builder docs</li>
+                </ul>
+
+                <div class="note">
+                    <strong>🔑 Format:</strong> [10-digit FHA case number] – [3-digit ADP code]<br>
+                    <strong>Example:</strong> 123-4567890 – 703<br>
+                    Common ADP codes: <strong>703</strong> (purchase) · <strong>734</strong> (refinance)
+                </div>
+
+                <h3>Where the ADP Code Goes</h3>
+                <div class="process-step"><span class="num blue">1</span><span class="desc">On the 1003 borrower information page — after the FHA case number</span></div>
+                <div class="process-step"><span class="num blue">2</span><span class="desc">On the 1003 lender loan information page — after the FHA case number, under Mortgage Type: FHA</span></div>
+                <div class="process-step"><span class="num blue">3</span><span class="desc">On all FHA addendums and disclosures</span></div>
+                <div class="process-step"><span class="num blue">4</span><span class="desc">On appraisal reports and builder documents</span></div>
+
+                <h3>Proposed Housing Expense — Where MIP Goes on the 1003</h3>
+                <p>On the 1003's <strong>Proposed Housing Expense</strong> section:</p>
+                <ul>
+                    <li><strong>Mortgage Insurance</strong> line = monthly MIP amount</li>
+                    <li>This confirms the monthly MIP has been disclosed</li>
+                    <li>Line I = UFMIP (only if fully financed) — otherwise blank if paid in cash at closing</li>
+                </ul>
+
+                <div class="note warning">
+                    <strong>⚠️ UFMIP on Line I:</strong> If UFMIP is financed, enter the whole dollar amount on Line I. If this field is blank, that indicates the borrower is paying UFMIP in full at closing (as part of total cash to close).
+                </div>
+            </section>
+
+            <!-- ============ 6. HUD ADDENDUM ============ -->
+            <section id="s1-6" class="card">
+                <h2>6. HUD Addendum — Form 92900A <span class="badge blue">Module 3 · Session 1</span></h2>
+
+                <p>The <strong>HUD 92900A</strong> is the <em>Addendum to the Uniform Residential Loan Application</em> for FHA loans. It is now <strong>FHA-only</strong> — FHA and VA stopped sharing this form as of 2021/2023.</p>
+
+                <h3>Timeline of the Current Form</h3>
+                <ul>
+                    <li>Lenders could start using it: <strong>December 2020</strong></li>
+                    <li>Mandatory: FHA case numbers assigned on or after <strong>March 22, 2021</strong></li>
+                </ul>
+
+                <h3>What the Form Captures</h3>
+                <div class="process-step"><span class="num blue">1</span><span class="desc"><strong>Part 1: Identifying information</strong> — FHA case number, mortgage info, sponsor/agent info, borrower name/address, property address, TPO info if applicable</span></div>
+                <div class="process-step"><span class="num blue">2</span><span class="desc"><strong>Part 2: Borrower's consent to verify SSN</strong> — must be signed by each borrower, used to pull FHA case number assignment</span></div>
+                <div class="process-step"><span class="num blue">3</span><span class="desc"><strong>Part 3: Borrower notices/acknowledgement</strong> — borrowers must read and sign the bottom of page 2</span></div>
+                <div class="process-step"><span class="num blue">4</span><span class="desc"><strong>Page 3: DE Underwriter's approval method &amp; appraisal acceptance</strong> — top paragraph for AUS-approved loans; bottom paragraph for manual underwrite; Section B completed by DE underwriter when appraisal is on file</span></div>
+                <div class="process-step"><span class="num blue">5</span><span class="desc"><strong>Page 4: Lender certification</strong> — signed by an authorized lender representative (or closer, insurer, or other authorized rep). No longer requires borrower signature.</span></div>
+
+                <h3>New in This Version — Nice Features</h3>
+                <ul>
+                    <li><strong>Borrower name and FHA case number</strong> printed at the top of each page — helps identify pages if they get separated from the file</li>
+                    <li><strong>Fewer borrower signatures</strong> required</li>
+                    <li><strong>Clearer layout</strong> with consolidated sections</li>
+                </ul>
+
+                <h3>When to Complete</h3>
+                <div class="note">
+                    <strong>FHA requires:</strong>
+                    <ul>
+                        <li>Initial 92900A completed at application and dated by borrower — <strong>before</strong> the loan is underwritten</li>
+                        <li>Final 92900A signed and dated at closing</li>
+                    </ul>
+                </div>
+
+                <div class="note success">
+                    <strong>💡 Mortgagee Letter 2020-49</strong> in your handouts details all changes to the 92900A and lists which FHA disclosures were renewed. Review it to ensure you're using the current forms.
+                </div>
+            </section>
+
+            <!-- ============ 7. VA FORM 26-1820 ============ -->
+            <section id="s1-7" class="card">
+                <h2>7. VA Form 26-1820 <span class="badge blue">Module 3 · Session 1</span></h2>
+
+                <p>The <strong>VA Form 26-1820</strong> is the new VA addendum. As of <strong>2023</strong>, VA no longer uses the combination of the 92900A (pages 1–2) and VA Form 26-1802a.</p>
+
+                <h3>Replaces</h3>
+                <ul>
+                    <li>Expired HUD 92900F</li>
+                    <li>VA Form 26-1802a</li>
+                </ul>
+
+                <h3>What the Form Captures</h3>
+                <ul>
+                    <li><strong>Loan number and borrower information</strong></li>
+                    <li><strong>Section 1:</strong> Purpose, amount, terms, and security of the loan</li>
+                    <li><strong>Section 2:</strong> Lender information (with signature and date)</li>
+                    <li><strong>Section 3:</strong> Veteran's certifications</li>
+                    <li><strong>Veteran's information and signature/date</strong>, plus any cosigner</li>
+                </ul>
+
+                <div class="note">
+                    <strong>🔑 Autopopulated from LOS:</strong> Most of this form pulls automatically from data entered into your Loan Origination System. Verify all applicable fields are complete and accurate.
+                </div>
+
+                <div class="note warning">
+                    <strong>⚠️ Timing for VA:</strong> VA does not specify exactly when this form must be signed. But it should be provided to the borrower(s) at application along with all required VA disclosures.
+                </div>
+            </section>
+
+            <!-- ============ 8. ELIGIBLE PROPERTIES ============ -->
+            <section id="s1-8" class="card">
+                <h2>8. Eligible FHA Properties <span class="badge blue">Module 3 · Session 1</span></h2>
+
+                <p>FHA insures mortgages on <strong>real property secured by 1-4 units</strong>. The property must be:</p>
+
+                <h3>Eligible Property Types</h3>
+                <ul>
+                    <li>Detached or semi-detached dwellings</li>
+                    <li>Manufactured housing</li>
+                    <li>Townhouses or row houses</li>
+                    <li>Individual units within FHA-approved condo projects</li>
+                    <li>Properties in Planned Unit Developments (PUDs) — treated as SFR, assuming not also a condo or manufactured home</li>
+                </ul>
+
+                <h3>Property Location</h3>
+                <div class="note">
+                    <strong>Property must be located in:</strong>
+                    <ul>
+                        <li>The United States</li>
+                        <li>Puerto Rico</li>
+                        <li>Guam</li>
+                        <li>U.S. Virgin Islands</li>
+                        <li>Commonwealth of the Northern Mariana Islands</li>
+                        <li>American Samoa</li>
+                    </ul>
+                </div>
+
+                <h3>1-4 Units — Occupancy Rule</h3>
+                <div class="note warning">
+                    <strong>⚠️ One unit must be borrower-occupied as their primary residence.</strong> The appraiser must complete the appraisal as a <strong>primary residence appraisal</strong> — not an income-based appraisal.
+                </div>
+
+                <h3>Appraisal Responsibility</h3>
+                <p>The mortgagee is responsible for obtaining an appraisal to:</p>
+                <ul>
+                    <li>Verify the value of the property</li>
+                    <li>Verify compliance with HUD's Minimum Property Standards (MPS)</li>
+                </ul>
+
+                <h3>Condos</h3>
+                <p>FHA has an <strong>approved condo list</strong>. If the project isn't approved, some lenders can do a <strong>single-unit approval</strong> for the individual unit. Check both before moving forward.</p>
+            </section>
+
+            <!-- ============ 9. PRINCIPAL RESIDENCE ============ -->
+            <section id="s1-9" class="card">
+                <h2>9. Principal Residence Rules <span class="badge blue">Module 3 · Session 1</span></h2>
+
+                <p>A <strong>principal residence</strong> is a dwelling where the borrower maintains or will maintain their <strong>permanent place of residency</strong>, and typically occupies for the majority of the calendar year.</p>
+
+                <div class="note danger">
+                    <strong>🚨 FHA Rule:</strong> A borrower may have <strong>only one principal residence at any time</strong>.
+                </div>
+
+                <h3>Secondary Residences — Not Permitted Without Approval</h3>
+                <p>Secondary residences are NOT permitted for FHA unless written approval is obtained from the jurisdictional <strong>HOC</strong> (Homeownership Center) after they determine:</p>
+
+                <div class="process-step"><span class="num blue">1</span><span class="desc">Borrower has <strong>no other secondary residence</strong></span></div>
+                <div class="process-step"><span class="num blue">2</span><span class="desc">The secondary residence <strong>won't be a vacation home</strong> or used primarily for recreational purposes</span></div>
+                <div class="process-step"><span class="num blue">3</span><span class="desc">Commuting distance to the borrower's workplace creates an <strong>undue hardship</strong></span></div>
+                <div class="process-step"><span class="num blue">4</span><span class="desc">There is <strong>no affordable rental housing</strong> meeting the borrower's needs within 100 miles of the workplace</span></div>
+                <div class="process-step"><span class="num blue">5</span><span class="desc">Maximum mortgage amount is <strong>85%</strong> of the lesser of appraised value or sales price</span></div>
+
+                <h3>Required Documentation for Second Home</h3>
+                <ul>
+                    <li>Verification of lack of affordable housing in the applicable area</li>
+                    <li>Satisfactory explanation of the need for a secondary residence</li>
+                    <li>Written evidence from a local real estate professional verifying lack of acceptable housing</li>
+                </ul>
+
+                <div class="note">
+                    <strong>💡 Example scenario:</strong> A borrower regularly travels and spends part of each month in a small town for work. The town has no reasonable rental properties — so purchasing a second home makes more sense than continuing to pay for hotels. This is a valid basis for a second home approval.
+                </div>
+            </section>
+
+            <!-- ============ 10. MULTIPLE FHA LOAN EXCEPTIONS ============ -->
+            <section id="s1-10" class="card">
+                <h2>10. Multiple FHA Loan Exceptions <span class="badge blue">Module 3 · Session 1</span></h2>
+
+                <div class="note danger">
+                    <strong>🚨 FHA Rule:</strong> A borrower can only have <strong>one FHA-insured loan at a time</strong>.
+                </div>
+
+                <p>But there are <strong>four exceptions</strong> that allow a second FHA-insured mortgage:</p>
+
+                <h3>Exception 1 — Relocation</h3>
+                <div class="note">
+                    <strong>Borrower may obtain another FHA-insured mortgage without selling the existing property</strong> if:
+                    <ul>
+                        <li>Relocating or relocated for an <strong>employment-related reason</strong></li>
+                        <li>Established new principal residence in an area <strong>more than 100 miles</strong> from the current principal residence</li>
+                        <li>Relocation must be <strong>employer-mandated</strong> (not voluntary)</li>
+                    </ul>
+                    <strong>Documentation:</strong> Relocation agreement, offer letter if needed
+                </div>
+
+                <h3>Exception 2 — Increase in Family Size</h3>
+                <div class="note">
+                    <strong>Borrower may be eligible for another FHA-insured mortgage</strong> if:
+                    <ul>
+                        <li>Satisfactory evidence that borrower has had an <strong>increase in legal dependents</strong></li>
+                        <li>The current property now fails to meet family needs</li>
+                        <li>LTV on current principal residence is <strong>equal to or less than 75%</strong>, or paid down to that amount</li>
+                    </ul>
+                    <strong>Documentation:</strong> Birth certificate (new baby), adoption papers, college transcripts (student returning home), appraisal showing ≥25% equity in current home
+                </div>
+
+                <h3>Exception 3 — Vacating a Jointly Owned Property</h3>
+                <div class="note">
+                    <strong>Borrower is vacating with no intent to return</strong>, and the property will remain occupied by an existing co-borrower:
+                    <ul>
+                        <li>Common in divorce situations — divorce decree awards home to ex-spouse who stays</li>
+                        <li>Borrower vacating cannot afford large down payment or credit doesn't support conventional</li>
+                        <li>Final signed divorce decree required (signed by all parties including the judge)</li>
+                    </ul>
+                    <strong>Documentation:</strong> Final divorce decree signed by judge
+                </div>
+
+                <h3>Exception 4 — Non-Occupying Co-Borrower</h3>
+                <div class="note">
+                    <strong>Non-occupying co-borrower on an existing FHA-insured mortgage</strong> may qualify for a new FHA-insured mortgage on their own primary residence:
+                    <ul>
+                        <li>Example: Parent signed a note/deed of trust for their son as a non-occupying co-borrower</li>
+                        <li>Parent's credit shows FHA loan, but parent doesn't live there</li>
+                        <li>Parent now wants to buy their own primary residence</li>
+                    </ul>
+                    <strong>Documentation:</strong> Copy of note, deed of trust, documents showing borrower was non-occupying co-borrower
+                </div>
+
+                <div class="note success">
+                    <strong>💡 Processor tip:</strong> Always do a <strong>processor certification</strong> that clearly identifies which exception you're using. This helps anyone picking up the file understand the borrower's qualification path.
+                </div>
+            </section>
+
+            <!-- ============ 11. PROPERTY FLIPPING RULES ============ -->
+            <section id="s1-11" class="card">
+                <h2>11. Property Flipping Rules <span class="badge blue">Module 3 · Session 1</span></h2>
+
+                <p>FHA has <strong>strict rules on property resales</strong> to prevent fraud and inflated values on flipped properties.</p>
+
+                <h3>Seller Must Be Owner of Record</h3>
+                <p>The title commitment and sales contract are used to determine the home is being sold by the <strong>legal owner</strong>.</p>
+
+                <h3>Resale Time Restrictions</h3>
+
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr><th>Resale Period</th><th>FHA Eligibility</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>90 days or fewer</strong> from seller's acquisition date</td>
+                                <td>❌ <strong>Not eligible</strong> for FHA-insured mortgage</td>
+                            </tr>
+                            <tr>
+                                <td><strong>91–180 days</strong> after acquisition</td>
+                                <td>✅ Eligible <strong>with restrictions</strong> (see below)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>More than 180 days</strong></td>
+                                <td>✅ Eligible with no restrictions</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>91–180 Day Resale Rules</h3>
+                <div class="note warning">
+                    <strong>⚠️ Second appraisal required</strong> if:
+                    <ul>
+                        <li>Resale occurs between 91–180 days after seller's acquisition</li>
+                        <li>AND resale price is <strong>100% or more</strong> over the price paid by the seller</li>
+                    </ul>
+                </div>
+
+                <h3>Which Date to Use</h3>
+                <div class="formula-box">
+                    <span class="label">Seller's Acquisition Date</span>
+                    <span class="formula">= Date on the warranty deed (not the HUD-1 / CD date)</span>
+                </div>
+
+                <h3>Flipping Example</h3>
+                <div class="computation-box">
+                    <div class="step"><strong>Scenario:</strong> Seller acquired property 95 days prior to new sales contract</div>
+                    <div class="step">Seller paid: <strong>$50,000</strong></div>
+                    <div class="step">Seller now listing at: <strong>$125,000</strong></div>
+                    <div class="step">Increase: ($125,000 − $50,000) ÷ $50,000 = <strong>150%</strong></div>
+                    <div class="step">150% &gt; 100% threshold</div>
+                    <span class="result">Second appraisal required to support value</span>
+                </div>
+
+                <h3>What If the Second Appraisal Comes in Lower?</h3>
+                <div class="note">
+                    If the second appraisal is more than <strong>5% lower</strong> than the first appraisal:
+                    <ul>
+                        <li>The <strong>lower value must be used</strong> for determining property value</li>
+                        <li>The cost of the second appraisal <strong>cannot be charged to the borrower</strong> — commonly paid by the seller or covered by the lender</li>
+                    </ul>
+                </div>
+
+                <div class="note warning">
+                    <strong>⚠️ Important date check:</strong> Both the <strong>sales contract AND the FHA case number assignment</strong> must be dated after the 91st day of seller acquisition.
+                </div>
+
+                <h3>Exceptions to Time Restrictions</h3>
+                <p>The following are exempt from the 90-day resale restriction:</p>
+                <ul>
+                    <li>Properties acquired by an <strong>employer or relocation agency</strong> in connection with employee relocation</li>
+                    <li>Resales by <strong>HUD under its REO program</strong></li>
+                    <li>Sales by other <strong>U.S. government agencies</strong> of single-family properties pursuant to agency programs</li>
+                    <li>Sales of properties by <strong>nonprofits approved to purchase HUD-owned properties</strong> at a discount with resale restrictions</li>
+                    <li>Properties acquired by the seller <strong>by inheritance</strong></li>
+                    <li>Properties by <strong>state and federally chartered financial institutions</strong> and GSEs</li>
+                    <li>Properties being sold by <strong>local and state government agencies</strong></li>
+                    <li>Sales of properties within <strong>PDMDAs</strong> (Presidentially Declared Major Disaster Areas) only with a notice of exception from HUD</li>
+                    <li><strong>Builders</strong> — new construction loans based on new purchase contracts from builders</li>
+                </ul>
+            </section>
+
+            <!-- ============ 12. CREDIT SCORE & TOTAL SCORECARD ============ -->
+            <section id="s1-12" class="card">
+                <h2>12. Credit Score &amp; Total Scorecard <span class="badge blue">Module 3 · Session 1</span></h2>
+
+                <h3>FHA Credit Score Tiers</h3>
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr><th>Credit Score</th><th>Maximum LTV</th><th>Notes</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><strong>500–579</strong></td><td>90%</td><td>Limited maximum LTV; check lender overlays</td></tr>
+                            <tr><td><strong>580+</strong></td><td>96.5%</td><td>Maximum financing (3.5% down)</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="note warning">
+                    <strong>⚠️ Lender overlays may be stricter!</strong> Even though FHA allows 500–579, your particular lender or investor may not. Always verify:
+                    <ul>
+                        <li>Investor accepts FICO scores between 500–579</li>
+                        <li>LTV is properly set to 90% for those scores</li>
+                    </ul>
+                </div>
+
+                <h3>FHA Total Scorecard</h3>
+                <p>FHA's AUS is the <strong>Total Mortgage Scorecard</strong>, accessed via <strong>DU or LPA</strong>. It provides a feedback certificate or findings report documenting credit risk evaluation.</p>
+
+                <h3>Feedback Certificate Recommendations</h3>
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr><th>Recommendation</th><th>Meaning</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><strong>Accept Eligible</strong></td><td>May be eligible for FHA insurance — validate all supporting documents</td></tr>
+                            <tr><td><strong>Accept Ineligible</strong></td><td>May not be eligible — typically requires correction of AUS errors (e.g., insufficient funds, excessive LTV)</td></tr>
+                            <tr><td><strong>Refer</strong></td><td>Requires manual underwrite; must meet FHA manual guidelines</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Data Integrity Review</h3>
+                <p>FHA requires verifying data integrity for the Total Scorecard to be valid. Review:</p>
+                <div class="grid-3">
+                    <div class="tile"><h5>Credit Report</h5><p>All tradelines, public records</p></div>
+                    <div class="tile"><h5>Liabilities &amp; Debts</h5><p>All disclosed debts counted</p></div>
+                    <div class="tile"><h5>Effective Income</h5><p>Verified and documented</p></div>
+                    <div class="tile"><h5>Assets &amp; Reserves</h5><p>Properly categorized (gift, own funds, etc.)</p></div>
+                    <div class="tile"><h5>Adjusted Value</h5><p>Appraised value used correctly</p></div>
+                    <div class="tile"><h5>Mortgage Payment</h5><p>Full PITIA including HOA, flood insurance if applicable</p></div>
+                </div>
+
+                <div class="note warning">
+                    <strong>⚠️ Common AUS error:</strong> Mislabeling assets. If part of the down payment is a gift, ensure it's entered as <strong>gift funds</strong> in the AUS — not as savings. This can change findings from Approve to Refer.
+                </div>
+            </section>
+
+            <!-- ============ 13. MANUAL UNDERWRITING ============ -->
+            <section id="s1-13" class="card">
+                <h2>13. Manual Underwriting Ratios <span class="badge blue">Module 3 · Session 1</span></h2>
+
+                <p>When the AUS returns a <strong>Refer</strong>, the loan must be manually underwritten. Manual underwriting has <strong>specific DTI and compensating factor requirements</strong> based on credit score.</p>
+
+                <h3>Manual Downgrade Triggers</h3>
+                <div class="note danger">
+                    <strong>🚨 Loans must be manually downgraded if any of these apply:</strong>
+                    <ul>
+                        <li>Disputed derogatory accounts <strong>≥ $1,000</strong> (or multiple totaling $1,000+)</li>
+                        <li>Loan does not meet FHA's <strong>significant derogatory event seasoning</strong> requirements</li>
+                        <li>Late mortgage payment history</li>
+                        <li><strong>Undisclosed mortgage debt</strong> (e.g., seller financing not on credit report)</li>
+                        <li>Self-employed income reflecting a decline of <strong>20% or more</strong> over the most recent 2 years</li>
+                    </ul>
+                </div>
+
+                <h3>Manual Underwrite Ratios by Credit Score</h3>
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr><th>Credit Score</th><th>Max Ratios</th><th>Compensating Factors Required</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Below 580</strong></td>
+                                <td>31/43</td>
+                                <td>None (cannot exceed, even with comp factors)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Below 580</strong> (Energy Efficient Mortgage)</td>
+                                <td>33/45</td>
+                                <td>Must use proceeds for energy efficient improvements</td>
+                            </tr>
+                            <tr>
+                                <td><strong>580+</strong></td>
+                                <td>31/43</td>
+                                <td>None</td>
+                            </tr>
+                            <tr>
+                                <td><strong>580+</strong></td>
+                                <td>37/47</td>
+                                <td><strong>1</strong> compensating factor required</td>
+                            </tr>
+                            <tr>
+                                <td><strong>580+</strong></td>
+                                <td>40/40</td>
+                                <td>No discretionary debt — mortgage must be the only open debt</td>
+                            </tr>
+                            <tr>
+                                <td><strong>580+</strong></td>
+                                <td>40/50</td>
+                                <td><strong>2</strong> compensating factors required</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Compensating Factors</h3>
+                <div class="grid-2">
+                    <div class="tile">
+                        <h5>Cash Reserves</h5>
+                        <p>Verified with borrower's own funds:<br>
+                        • <strong>3 months PITIA</strong> for 1-unit properties<br>
+                        • <strong>6 months PITIA</strong> for 2-4 unit properties</p>
+                    </div>
+                    <div class="tile">
+                        <h5>Minimal Increase in Housing Payment</h5>
+                        <p>The housing payment is increasing by the lesser of:<br>
+                        • <strong>$100</strong>, or<br>
+                        • <strong>5%</strong></p>
+                    </div>
+                    <div class="tile">
+                        <h5>Residual Income</h5>
+                        <p>Calculated the same way as VA loans (detailed in VA section)</p>
+                    </div>
+                    <div class="tile">
+                        <h5>Significant Additional Income</h5>
+                        <p>Overtime, bonus, or second job income <strong>not reflected in effective income</strong>. Must be for a borrower <strong>on the loan</strong> — not a non-borrower spouse.</p>
+                    </div>
+                </div>
+
+                <div class="note danger">
+                    <strong>🚨 Absolute maximum:</strong> <strong>50% back-end ratio</strong> for any manually approved FHA loan, even with compensating factors.
+                </div>
+
+                <h3>Manual vs. AUS Underwriting — Key Difference</h3>
+                <div class="note">
+                    An <strong>AUS approval</strong> (Accept Eligible) and a <strong>manual underwrite</strong> are <strong>completely different</strong>:
+                    <ul>
+                        <li>AUS approvals can go up to higher DTIs based on the algorithm</li>
+                        <li>Manual underwriting has hard ratio caps by credit score</li>
+                        <li>Manual requires documented compensating factors for higher ratios</li>
+                    </ul>
+                    <strong>Processors:</strong> Do due diligence <em>before</em> submitting to underwriting. If your file will trigger a manual downgrade, prepare the compensating factors first.
+                </div>
+            </section>
+
+            <!-- ============ SESSION 1 QUIZ ============ -->
+            <section id="s1-quiz" class="card">
+                <h2>Session 1 Practice Quiz <span class="badge blue">10 Questions</span></h2>
+
+                <div class="quiz-q">
+                    <p>1. All FHA borrowers pay two types of mortgage insurance premiums. What are they?</p>
+                    <div class="quiz-answer"><strong>Upfront Mortgage Insurance Premium (UFMIP)</strong> and <strong>Annual MIP</strong> (paid monthly).</div>
+                </div>
+
+                <div class="quiz-q">
+                    <p>2. What section of the Act covers single-family homes?</p>
+                    <div class="quiz-answer"><strong>Section 203(b)</strong></div>
+                </div>
+
+                <div class="quiz-q">
+                    <p>3. True or False — Manufactured homes are not insured by FHA.</p>
+                    <div class="quiz-answer"><strong>False.</strong> FHA does insure manufactured homes (up to maximum financing, subject to guidelines).</div>
+                </div>
+
+                <div class="quiz-q">
+                    <p>4. Name one exception to the FHA rule regarding number of mortgages per borrower.</p>
+                    <div class="quiz-answer">Any of the four exceptions: <strong>Relocation</strong>, <strong>Increase in family size</strong>, <strong>Vacating a jointly owned property</strong>, or <strong>Non-occupying co-borrower</strong>.</div>
+                </div>
+
+                <div class="quiz-q">
+                    <p>5. A property resold within ___ days or fewer is not eligible for FHA financing.</p>
+                    <div class="quiz-answer"><strong>90 days</strong></div>
+                </div>
+
+                <div class="quiz-q">
+                    <p>6. Data integrity review includes what five things?</p>
+                    <div class="quiz-answer">The <strong>credit report</strong>, <strong>debts</strong>, <strong>income</strong>, <strong>assets</strong>, and <strong>value of the property</strong>.</div>
+                </div>
+
+                <div class="quiz-q">
+                    <p>7. What certificate does a lender obtain to verify veteran eligibility?</p>
+                    <div class="quiz-answer"><strong>Certificate of Eligibility (COE)</strong></div>
+                </div>
+
+                <div class="quiz-q">
+                    <p>8. What is the basic VA entitlement dollar amount?</p>
+                    <div class="quiz-answer"><strong>$36,000</strong> (basic entitlement; bonus entitlement available for higher loan amounts).</div>
+                </div>
+
+                <div class="quiz-q">
+                    <p>9. True or False — The VA funding fee is 2.75% of the loan.</p>
+                    <div class="quiz-answer"><strong>False.</strong> The VA funding fee depends on the down payment and the type of veteran. Unlike FHA's flat 1.75% UFMIP, VA funding fees vary.</div>
+                </div>
+
+                <div class="quiz-q">
+                    <p>10. A ___ veteran does not pay a VA funding fee.</p>
+                    <div class="quiz-answer"><strong>Exempt</strong> — one who is exempt from the funding fee (shown on the COE). Non-exempt = pays. Some COEs show "Contact RLC" — meaning additional info needed.</div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- ===== MODULE NAV ===== -->
+    <div class="module-nav">
+        <a href="module-2-advanced-processing.html">
+            <span class="dir">← Previous</span>
+            <span class="label">Module 2: Advanced Loan Processing</span>
+        </a>
+        <a href="index.html" class="next">
+            <span class="dir">Back to →</span>
+            <span class="label">All Modules</span>
+        </a>
+    </div>
+
+    <p class="version-info">Module 3 · Session 1 of 3 · Version 0.5 (Session 2 &amp; 3 coming)</p>
+
+    <footer class="site-footer">
+        © 2025 Campus Mortgage · Certified Master Loan Processor Bootcamp
+        <br>
+        <a href="../about.html">About</a> · <a href="index.html">Bootcamp</a> · <a href="../reference/index.html">Reference</a>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>
