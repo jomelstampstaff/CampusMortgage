@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stage 1: File Intake · Checklists</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/checklists.css">
+</head>
+<body>
+
+    <div id="site-header"></div>
+
+    <section class="hero">
+        <span style="display:inline-block; background:#d97706; color:#fff; font-size:0.7rem; font-weight:800; padding:0.28rem 0.9rem; border-radius:30px; letter-spacing:0.06em; text-transform:uppercase; margin-bottom:0.7rem;">Stage 1</span>
+        <h1>File Intake</h1>
+        <p>What must arrive from the loan officer or setup team before you can start reviewing the file.</p>
+    </section>
+
+    <div class="app" style="grid-template-columns: 1fr; max-width: 1000px;">
+        <main class="main">
+
+            <section class="card">
+
+                <div class="checklist-progress">
+                    <div class="progress-header">
+                        <span class="label">📊 File Intake Progress</span>
+                        <span class="percent progress-percent">0%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                    </div>
+                </div>
+
+                <div class="checklist-toolbar">
+                    <button id="resetChecklist">🔄 Reset</button>
+                    <button id="printChecklist">🖨️ Print with Guides</button>
+                </div>
+
+                <!-- Core Application Package -->
+                <div class="checklist-group">
+                    <div class="checklist-group-header">
+                        <span class="group-tag">Core Package</span>
+                        Loan application and identity documents
+                    </div>
+                    <div class="checklist-group-body">
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-1003">
+                            <label for="item-1003">
+                                Loan Application (1003)
+                                <div class="doc-meta">
+                                    <span class="tag required">Required</span>
+                                    <span class="tag">Module 1 &amp; 3</span>
+                                </div>
+                            </label>
+                            <button class="info-btn" data-doc="loan-application" aria-expanded="false" aria-label="1003 details">ⓘ</button>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-photo-id">
+                            <label for="item-photo-id">
+                                Photo ID — Government Issued
+                                <div class="doc-meta">
+                                    <span class="tag required">Required</span>
+                                    <span class="tag">Module 1</span>
+                                </div>
+                            </label>
+                            <button class="info-btn" data-doc="photo-id" aria-expanded="false" aria-label="Photo ID details">ⓘ</button>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-ssn">
+                            <label for="item-ssn">
+                                SSN Verification (SSA-89 or Social Security Card)
+                                <div class="doc-meta">
+                                    <span class="tag conditional">Conditional</span>
+                                    <span class="tag">Module 1</span>
+                                </div>
+                            </label>
+                            <button class="info-btn" data-doc="ssn-verification" aria-expanded="false" aria-label="SSN verification details">ⓘ</button>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-1008">
+                            <label for="item-1008">
+                                Underwriting Transmittal (1008)
+                                <div class="doc-meta">
+                                    <span class="tag required">Required</span>
+                                    <span class="tag">Module 1</span>
+                                </div>
+                            </label>
+                            <button class="info-btn" data-doc="1008-initial" aria-expanded="false" aria-label="1008 details">ⓘ</button>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-aus">
+                            <label for="item-aus">
+                                AUS Findings Report
+                                <div class="doc-meta">
+                                    <span class="tag required">Required</span>
+                                    <span class="tag">Module 1 &amp; 2</span>
+                                </div>
+                            </label>
+                            <button class="info-btn" data-doc="aus-findings" aria-expanded="false" aria-label="AUS findings details">ⓘ</button>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Disclosures & Compliance -->
+                <div class="checklist-group">
+                    <div class="checklist-group-header">
+                        <span class="group-tag" style="background:#0284c7;">Disclosures</span>
+                        Initial disclosure package
+                    </div>
+                    <div class="checklist-group-body">
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-disclosures">
+                            <label for="item-disclosures">
+                                Initial Disclosure Package (LE, servicing, ECOA, etc.)
+                                <div class="doc-meta">
+                                    <span class="tag required">Required</span>
+                                    <span class="tag">Module 1 &amp; 2</span>
+                                </div>
+                            </label>
+                            <button class="info-btn" data-doc="initial-disclosures" aria-expanded="false" aria-label="Disclosure details">ⓘ</button>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-intent">
+                            <label for="item-intent">
+                                Intent to Proceed (signed and dated)
+                                <div class="doc-meta">
+                                    <span class="tag required">Required</span>
+                                    <span class="tag">TRID</span>
+                                </div>
+                            </label>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Property Documents (Purchase Only) -->
+                <div class="checklist-group">
+                    <div class="checklist-group-header">
+                        <span class="group-tag" style="background:#059669;">Property</span>
+                        Purchase transactions
+                    </div>
+                    <div class="checklist-group-body">
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-sales-contract">
+                            <label for="item-sales-contract">
+                                Fully Executed Sales Contract with Addendums
+                                <div class="doc-meta">
+                                    <span class="tag conditional">Purchase Only</span>
+                                    <span class="tag">Module 2</span>
+                                </div>
+                            </label>
+                            <button class="info-btn" data-doc="sales-contract-intake" aria-expanded="false" aria-label="Sales contract details">ⓘ</button>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- FHA/VA Specific -->
+                <div class="checklist-group">
+                    <div class="checklist-group-header">
+                        <span class="group-tag" style="background:#7c3aed;">Gov Loans</span>
+                        FHA &amp; VA file extras
+                    </div>
+                    <div class="checklist-group-body">
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-case-number">
+                            <label for="item-case-number">
+                                FHA Case Number (with ADP code) or VA COE
+                                <div class="doc-meta">
+                                    <span class="tag conditional">FHA/VA Only</span>
+                                    <span class="tag">Module 3</span>
+                                </div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-gov-disclosures">
+                            <label for="item-gov-disclosures">
+                                Government Loan Disclosures (FHA/VA addendums)
+                                <div class="doc-meta">
+                                    <span class="tag conditional">FHA/VA Only</span>
+                                    <span class="tag">Module 3</span>
+                                </div>
+                            </label>
+                        </div>
+
+                    </div>
+                </div>
+
+            </section>
+
+            <div class="stage-nav">
+                <a href="index.html">
+                    <span class="dir">← Back to</span>
+                    <span class="label">All Checklists</span>
+                </a>
+                <a href="02-initial-review.html" class="next">
+                    <span class="dir">Next →</span>
+                    <span class="label">Stage 2: Initial Review</span>
+                </a>
+            </div>
+
+        </main>
+    </div>
+
+    <footer class="site-footer">
+        © 2025 Campus Mortgage · Certified Master Loan Processor Bootcamp
+        <br>
+        <a href="../about.html">About</a> · <a href="../modules/index.html">Bootcamp</a> · <a href="../reference/index.html">Reference</a>
+    </footer>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/nav.js"></script>
+    <script src="data/document-guides.js"></script>
+    <script src="js/tooltips.js"></script>
+    <script src="js/checklists.js"></script>
+</body>
+</html>
