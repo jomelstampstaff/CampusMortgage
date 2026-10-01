@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stage 5: Credit &amp; Liabilities · Checklists</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/checklists.css">
+</head>
+<body>
+
+    <div id="site-header"></div>
+
+    <section class="hero">
+        <span style="display:inline-block; background:#d97706; color:#fff; font-size:0.7rem; font-weight:800; padding:0.28rem 0.9rem; border-radius:30px; letter-spacing:0.06em; text-transform:uppercase; margin-bottom:0.7rem;">Stage 5</span>
+        <h1>Credit &amp; Liabilities</h1>
+        <p>Full credit report review, letters of explanation, and ensuring all debts are correctly captured for DTI.</p>
+    </section>
+
+    <div class="app" style="grid-template-columns: 1fr; max-width: 1000px;">
+        <main class="main">
+
+            <section class="card">
+
+                <div class="checklist-progress">
+                    <div class="progress-header">
+                        <span class="label">📊 Credit &amp; Liabilities Progress</span>
+                        <span class="percent progress-percent">0%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                    </div>
+                </div>
+
+                <div class="checklist-toolbar">
+                    <button id="resetChecklist">🔄 Reset</button>
+                    <button id="printChecklist">🖨️ Print with Guides</button>
+                </div>
+
+                <!-- Credit Report Review -->
+                <div class="checklist-group">
+                    <div class="checklist-group-header">
+                        <span class="group-tag">Credit Report</span>
+                        Full review of tradelines and public records
+                    </div>
+                    <div class="checklist-group-body">
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-credit-report">
+                            <label for="item-credit-report">
+                                Full credit report reviewed (all 3 repositories)
+                                <div class="doc-meta">
+                                    <span class="tag required">Required</span>
+                                    <span class="tag">Module 2</span>
+                                </div>
+                            </label>
+                            <button class="info-btn" data-doc="credit-report-initial" aria-expanded="false" aria-label="Credit report details">ⓘ</button>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-late-payments">
+                            <label for="item-late-payments">
+                                Late payments reviewed against overlays (24 months)
+                                <div class="doc-meta"><span class="tag required">Required</span></div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-mortgage-history">
+                            <label for="item-mortgage-history">
+                                Mortgage payment history (0×30 in last 12 months)
+                                <div class="doc-meta"><span class="tag required">Required</span></div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-disputed-accounts">
+                            <label for="item-disputed-accounts">
+                                Disputed accounts identified and reviewed
+                                <div class="doc-meta"><span class="tag required">Required</span></div>
+                            </label>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Letters of Explanation -->
+                <div class="checklist-group">
+                    <div class="checklist-group-header">
+                        <span class="group-tag" style="background:#dc2626;">Letters of Explanation</span>
+                        Required LOXs
+                    </div>
+                    <div class="checklist-group-body">
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-lox-inquiries">
+                            <label for="item-lox-inquiries">
+                                LOX for all inquiries within 90 days
+                                <div class="doc-meta">
+                                    <span class="tag required">Required</span>
+                                    <span class="tag">Module 2</span>
+                                </div>
+                            </label>
+                            <button class="info-btn" data-doc="lox-inquiries" aria-expanded="false" aria-label="Inquiry LOX details">ⓘ</button>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-lox-address">
+                            <label for="item-lox-address">
+                                LOX for address variations within 24 months
+                                <div class="doc-meta">
+                                    <span class="tag required">Required</span>
+                                    <span class="tag">Module 2</span>
+                                </div>
+                            </label>
+                            <button class="info-btn" data-doc="lox-address" aria-expanded="false" aria-label="Address LOX details">ⓘ</button>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-lox-aka">
+                            <label for="item-lox-aka">
+                                LOX for AKA variations on credit report
+                                <div class="doc-meta">
+                                    <span class="tag required">Required</span>
+                                    <span class="tag">Module 2</span>
+                                </div>
+                            </label>
+                            <button class="info-btn" data-doc="lox-aka" aria-expanded="false" aria-label="AKA LOX details">ⓘ</button>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-lox-derogatory">
+                            <label for="item-lox-derogatory">
+                                LOX for derogatory items (collections, judgments, etc.)
+                                <div class="doc-meta"><span class="tag required">Required</span></div>
+                            </label>
+                            <button class="info-btn" data-doc="collections-lox" aria-expanded="false" aria-label="Collections LOX details">ⓘ</button>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-lox-undisclosed">
+                            <label for="item-lox-undisclosed">
+                                LOX for any undisclosed debts on credit report
+                                <div class="doc-meta"><span class="tag required">Required</span></div>
+                            </label>
+                            <button class="info-btn" data-doc="undisclosed-debt-lox" aria-expanded="false" aria-label="Undisclosed debt LOX details">ⓘ</button>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Debt Verification & Payoffs -->
+                <div class="checklist-group">
+                    <div class="checklist-group-header">
+                        <span class="group-tag" style="background:#059669;">Debt Verification</span>
+                        Payoffs, supplements, updates
+                    </div>
+                    <div class="checklist-group-body">
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-payoff-statements">
+                            <label for="item-payoff-statements">
+                                Payoff statements for debts to be paid at closing
+                                <div class="doc-meta"><span class="tag conditional">Conditional</span></div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-credit-supplement">
+                            <label for="item-credit-supplement">
+                                Credit supplement ordered (if needed)
+                                <div class="doc-meta">
+                                    <span class="tag conditional">Conditional</span>
+                                    <span class="tag">Module 2</span>
+                                </div>
+                            </label>
+                            <button class="info-btn" data-doc="credit-supplement" aria-expanded="false" aria-label="Credit supplement details">ⓘ</button>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-debts-in-dti">
+                            <label for="item-debts-in-dti">
+                                All debts correctly entered in DTI calculation
+                                <div class="doc-meta"><span class="tag required">Required</span></div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-cosigned-debts">
+                            <label for="item-cosigned-debts">
+                                Co-signed debts verified (borrower or other party paying)
+                                <div class="doc-meta"><span class="tag conditional">Conditional</span></div>
+                            </label>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Special Considerations -->
+                <div class="checklist-group">
+                    <div class="checklist-group-header">
+                        <span class="group-tag" style="background:#7c3aed;">Special Cases</span>
+                        Additional items to review
+                    </div>
+                    <div class="checklist-group-body">
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-student-loans">
+                            <label for="item-student-loans">
+                                Student loans: payment verified or 1%/0.5% calculated
+                                <div class="doc-meta"><span class="tag required">Required</span></div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-30day-accounts">
+                            <label for="item-30day-accounts">
+                                30-day charge accounts handled per guidelines
+                                <div class="doc-meta"><span class="tag conditional">Conditional</span></div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-heloc-full-line">
+                            <label for="item-heloc-full-line">
+                                HELOC full line limit used for HCLTV calculation
+                                <div class="doc-meta"><span class="tag conditional">Conditional</span></div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-timeshare">
+                            <label for="item-timeshare">
+                                Timeshares handled per program guidelines
+                                <div class="doc-meta"><span class="tag conditional">Conditional</span></div>
+                            </label>
+                        </div>
+
+                    </div>
+                </div>
+
+            </section>
+
+            <div class="stage-nav">
+                <a href="04-asset-verification.html">
+                    <span class="dir">← Previous</span>
+                    <span class="label">Stage 4: Asset Verification</span>
+                </a>
+                <a href="06-property-title.html" class="next">
+                    <span class="dir">Next →</span>
+                    <span class="label">Stage 6: Property &amp; Title</span>
+                </a>
+            </div>
+
+        </main>
+    </div>
+
+    <footer class="site-footer">
+        © 2025 Campus Mortgage · Certified Master Loan Processor Bootcamp
+        <br>
+        <a href="../about.html">About</a> · <a href="../modules/index.html">Bootcamp</a> · <a href="../reference/index.html">Reference</a>
+    </footer>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/nav.js"></script>
+    <script src="data/document-guides.js"></script>
+    <script src="js/tooltips.js"></script>
+    <script src="js/checklists.js"></script>
+</body>
+</html>
