@@ -1,0 +1,531 @@
+/* ==========================================================
+   Checklists — Stage checklists + hover guide tooltips
+   ========================================================== */
+
+/* ---------- PROGRESS BAR ---------- */
+.checklist-progress {
+    background: #f8fafc;
+    border-radius: 14px;
+    padding: 1.1rem 1.4rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid #e2e8f0;
+}
+
+.progress-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.6rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.progress-header .label {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.progress-header .percent {
+    font-size: 0.9rem;
+    font-weight: 800;
+    color: #7c3aed;
+    font-family: 'Courier New', monospace;
+}
+
+.progress-bar {
+    background: #e2e8f0;
+    border-radius: 30px;
+    height: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #7c3aed 0%, #059669 100%);
+    border-radius: 30px;
+    width: 0%;
+    transition: width 0.35s ease;
+}
+
+/* ---------- CHECKLIST GROUPS ---------- */
+.checklist-group {
+    background: #ffffff;
+    border-radius: 14px;
+    border: 1px solid #e9eef3;
+    margin-bottom: 1.2rem;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.checklist-group-header {
+    background: #f8fafc;
+    padding: 0.9rem 1.2rem;
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: #0f172a;
+    border-bottom: 1px solid #e9eef3;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.checklist-group-header .group-tag {
+    background: #7c3aed;
+    color: #fff;
+    font-size: 0.65rem;
+    font-weight: 700;
+    padding: 0.2rem 0.6rem;
+    border-radius: 30px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.checklist-group-body {
+    padding: 0.5rem 0;
+}
+
+/* ---------- CHECKLIST ITEM ---------- */
+.checklist-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.7rem;
+    padding: 0.7rem 1.2rem;
+    border-bottom: 1px solid #f1f5f9;
+    transition: background 0.15s ease;
+    position: relative;
+}
+
+.checklist-item:last-child { border-bottom: none; }
+
+.checklist-item:hover {
+    background: #f8fafc;
+}
+
+.checklist-item input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #cbd5e1;
+    border-radius: 6px;
+    cursor: pointer;
+    flex-shrink: 0;
+    margin-top: 2px;
+    position: relative;
+    transition: all 0.15s ease;
+    background: #ffffff;
+}
+
+.checklist-item input[type="checkbox"]:hover {
+    border-color: #7c3aed;
+}
+
+.checklist-item input[type="checkbox"]:checked {
+    background: #7c3aed;
+    border-color: #7c3aed;
+}
+
+.checklist-item input[type="checkbox"]:checked::after {
+    content: "✓";
+    position: absolute;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 800;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.checklist-item input[type="checkbox"]:focus-visible {
+    outline: 2px solid #7c3aed;
+    outline-offset: 2px;
+}
+
+.checklist-item label {
+    flex-grow: 1;
+    font-size: 0.9rem;
+    color: #334155;
+    cursor: pointer;
+    line-height: 1.5;
+    transition: all 0.15s ease;
+}
+
+.checklist-item.checked label {
+    color: #94a3b8;
+    text-decoration: line-through;
+}
+
+.checklist-item .doc-meta {
+    display: flex;
+    gap: 0.4rem;
+    margin-top: 0.3rem;
+    flex-wrap: wrap;
+}
+
+.checklist-item .doc-meta .tag {
+    font-size: 0.68rem;
+    font-weight: 600;
+    padding: 0.15rem 0.5rem;
+    border-radius: 30px;
+    background: #f1f5f9;
+    color: #475569;
+}
+
+.checklist-item .doc-meta .tag.required {
+    background: #fef2f2;
+    color: #b91c1c;
+}
+
+.checklist-item .doc-meta .tag.conditional {
+    background: #fffbeb;
+    color: #b45309;
+}
+
+/* ---------- INFO BUTTON + POPOVER ---------- */
+.info-btn {
+    background: transparent;
+    border: 1.5px solid #cbd5e1;
+    color: #64748b;
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 0.75rem;
+    font-weight: 700;
+    flex-shrink: 0;
+    transition: all 0.15s ease;
+    font-family: 'Courier New', monospace;
+    margin-top: 1px;
+}
+
+.info-btn:hover,
+.info-btn:focus-visible {
+    background: #7c3aed;
+    border-color: #7c3aed;
+    color: #ffffff;
+    outline: none;
+}
+
+.info-btn.active {
+    background: #7c3aed;
+    border-color: #7c3aed;
+    color: #ffffff;
+}
+
+/* The popover itself */
+.doc-popover {
+    display: none;
+    position: absolute;
+    z-index: 100;
+    width: min(460px, calc(100vw - 2rem));
+    background: #ffffff;
+    border-radius: 14px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 20px 40px -10px rgba(15, 23, 42, 0.25),
+                0 8px 16px -6px rgba(15, 23, 42, 0.1);
+    padding: 0;
+    font-size: 0.86rem;
+    top: 100%;
+    right: 1rem;
+    margin-top: 0.5rem;
+    animation: popIn 0.2s ease;
+    overflow: hidden;
+}
+
+.doc-popover.show {
+    display: block;
+}
+
+@keyframes popIn {
+    from { opacity: 0; transform: translateY(-6px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.doc-popover-header {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    color: #ffffff;
+    padding: 0.85rem 1.1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0.6rem;
+}
+
+.doc-popover-header h4 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.3;
+    margin: 0;
+}
+
+.doc-popover-header .close-btn {
+    background: transparent;
+    border: none;
+    color: #cbd5e1;
+    font-size: 1.1rem;
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+    flex-shrink: 0;
+    transition: color 0.15s ease;
+}
+
+.doc-popover-header .close-btn:hover {
+    color: #ffffff;
+}
+
+.doc-popover-body {
+    padding: 1rem 1.1rem;
+    max-height: 65vh;
+    overflow-y: auto;
+}
+
+.doc-popover-body::-webkit-scrollbar { width: 6px; }
+.doc-popover-body::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 10px;
+}
+
+.doc-popover-section {
+    margin-bottom: 1rem;
+}
+
+.doc-popover-section:last-child {
+    margin-bottom: 0;
+}
+
+.doc-popover-section h5 {
+    font-size: 0.78rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #7c3aed;
+    margin-bottom: 0.4rem;
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.doc-popover-section ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.doc-popover-section li {
+    font-size: 0.85rem;
+    color: #334155;
+    padding: 0.25rem 0 0.25rem 1rem;
+    position: relative;
+    line-height: 1.5;
+}
+
+.doc-popover-section li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #94a3b8;
+    font-weight: 700;
+}
+
+.doc-popover-section.lookfor h5 { color: #059669; }
+.doc-popover-section.lookfor li::before { color: #059669; }
+
+.doc-popover-section.redflags h5 { color: #dc2626; }
+.doc-popover-section.redflags li::before { color: #dc2626; }
+
+.doc-popover-section.crosscheck h5 { color: #0284c7; }
+.doc-popover-section.crosscheck li::before { color: #0284c7; }
+
+.doc-popover-section.feedsinto h5 { color: #d97706; }
+.doc-popover-section.feedsinto li::before { color: #d97706; }
+
+.doc-popover-section .pill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    padding: 0;
+}
+
+.doc-popover-section .pill-list li {
+    padding: 0.25rem 0.65rem;
+    background: #f1f5f9;
+    border-radius: 30px;
+    font-size: 0.78rem;
+    color: #334155;
+}
+
+.doc-popover-section .pill-list li::before {
+    display: none;
+}
+
+/* ---------- STAGE NAVIGATION (Prev/Next) ---------- */
+.stage-nav {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.stage-nav a {
+    flex: 1;
+    min-width: 220px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 1rem 1.4rem;
+    text-decoration: none;
+    color: #0f172a;
+    font-weight: 600;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    transition: all 0.15s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.stage-nav a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08);
+    border-color: #7c3aed;
+}
+
+.stage-nav a .dir {
+    font-size: 0.72rem;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 700;
+}
+
+.stage-nav a.next {
+    text-align: right;
+    align-items: flex-end;
+}
+
+.stage-nav a .label {
+    color: #7c3aed;
+    font-size: 0.95rem;
+}
+
+/* ---------- TOOLBAR (Reset + Print) ---------- */
+.checklist-toolbar {
+    display: flex;
+    gap: 0.6rem;
+    justify-content: flex-end;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.checklist-toolbar button {
+    background: #ffffff;
+    border: 1.5px solid #e2e8f0;
+    color: #334155;
+    border-radius: 10px;
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    font-family: inherit;
+}
+
+.checklist-toolbar button:hover {
+    border-color: #7c3aed;
+    color: #7c3aed;
+}
+
+/* ---------- PRINT STYLES ---------- */
+@media print {
+    .site-header,
+    .site-footer,
+    .sidebar,
+    .hero,
+    .checklist-toolbar,
+    .info-btn,
+    .stage-nav,
+    .doc-popover {
+        display: none !important;
+    }
+
+    body {
+        padding: 0;
+        background: #ffffff;
+    }
+
+    .app {
+        display: block;
+        max-width: 100%;
+    }
+
+    .card {
+        box-shadow: none;
+        border: none;
+        padding: 0;
+    }
+
+    .checklist-item {
+        padding: 0.4rem 0;
+    }
+
+    .checklist-item.checked label {
+        color: #94a3b8;
+    }
+
+    .checklist-group {
+        page-break-inside: avoid;
+        border: 1px solid #e2e8f0;
+        margin-bottom: 1rem;
+    }
+
+    /* Show all hover content inline when printing */
+    .doc-popover.print-visible {
+        display: block !important;
+        position: static;
+        width: 100%;
+        box-shadow: none;
+        border: 1px solid #e2e8f0;
+        margin: 0.5rem 0;
+        animation: none;
+    }
+
+    .doc-popover-header {
+        background: #f1f5f9 !important;
+        color: #0f172a !important;
+    }
+
+    .doc-popover-header h4 {
+        color: #0f172a !important;
+    }
+
+    .doc-popover-header .close-btn {
+        display: none;
+    }
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 700px) {
+    .doc-popover {
+        position: fixed;
+        top: auto;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        max-height: 75vh;
+        border-radius: 20px 20px 0 0;
+        margin-top: 0;
+    }
+
+    .doc-popover-header {
+        border-radius: 20px 20px 0 0;
+    }
+}
