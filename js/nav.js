@@ -4,15 +4,14 @@
    ========================================================== */
 
 (function () {
-    // ---------- CONFIG: edit nav here, updates everywhere ----------
     const NAV_ITEMS = [
-    { label: 'Home',       href: 'index.html',             match: 'home' },
-    { label: 'Bootcamp',   href: 'modules/index.html',     match: 'modules' },
-    { label: 'Summaries',  href: 'summaries/index.html',   match: 'summaries' },
-    { label: 'Reference',  href: 'reference/index.html',   match: 'reference' },
-    { label: 'Checklists', href: 'checklists/index.html',  match: 'checklists' },
-    { label: 'About',      href: 'about.html',             match: 'about' }
-];
+        { label: 'Home',       href: 'index.html',              match: 'home' },
+        { label: 'Bootcamp',   href: 'modules/index.html',      match: 'modules' },
+        { label: 'Summaries',  href: 'summaries/index.html',    match: 'summaries' },
+        { label: 'Reference',  href: 'reference/index.html',    match: 'reference' },
+        { label: 'Checklists', href: 'checklists/index.html',   match: 'checklists' },
+        { label: 'About',      href: 'about.html',              match: 'about' }
+    ];
 
     const BRAND_TEXT = '🎓 Certified Master Loan Processor';
     const BRAND_HREF = 'index.html';
@@ -21,13 +20,12 @@
     const path = window.location.pathname;
     const segments = path.split('/').filter(Boolean);
 
-    // Remove trailing filename (e.g. "index.html")
+    // Remove trailing filename (e.g., "index.html")
     if (segments[segments.length - 1]?.includes('.')) {
         segments.pop();
     }
 
     // Remove the repo name if we're on a GitHub Pages project site
-    // (repo is "bootcamp", so the first segment will be "bootcamp")
     if (segments[0] === 'bootcamp') {
         segments.shift();
     }
@@ -42,6 +40,7 @@
 
     const activeSection =
         firstFolder === 'modules'    ? 'modules' :
+        firstFolder === 'summaries'  ? 'summaries' :
         firstFolder === 'reference'  ? 'reference' :
         firstFolder === 'checklists' ? 'checklists' :
         isAboutPage                  ? 'about' :
@@ -50,15 +49,14 @@
     // ---------- BUILD HEADER HTML ----------
     const linksHTML = NAV_ITEMS.map(item => {
         const isActive = item.match === activeSection ? ' class="active"' : '';
-        return `<a href="${prefix}${item.href}"${isActive}>${item.label}</a>`;
+        return '<a href="' + prefix + item.href + '"' + isActive + '>' + item.label + '</a>';
     }).join('');
 
-    const headerHTML = `
-        <header class="site-header">
-            <a href="${prefix}${BRAND_HREF}" class="brand">${BRAND_TEXT}</a>
-            <nav>${linksHTML}</nav>
-        </header>
-    `;
+    const headerHTML =
+        '<header class="site-header">' +
+            '<a href="' + prefix + BRAND_HREF + '" class="brand">' + BRAND_TEXT + '</a>' +
+            '<nav>' + linksHTML + '</nav>' +
+        '</header>';
 
     // ---------- INJECT ----------
     const placeholder = document.getElementById('site-header');
