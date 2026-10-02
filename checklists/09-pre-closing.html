@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stage 9: Pre-Closing · Checklists</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/checklists.css">
+</head>
+<body>
+
+    <div id="site-header"></div>
+
+    <section class="hero">
+        <span style="display:inline-block; background:#d97706; color:#fff; font-size:0.7rem; font-weight:800; padding:0.28rem 0.9rem; border-radius:30px; letter-spacing:0.06em; text-transform:uppercase; margin-bottom:0.7rem;">Stage 9</span>
+        <h1>Pre-Closing</h1>
+        <p>Final verification before the closing date — verbal VOE, insurance, final title, CD delivery, and clear-to-close coordination.</p>
+    </section>
+
+    <div class="app" style="grid-template-columns: 1fr; max-width: 1000px;">
+        <main class="main">
+
+            <section class="card">
+
+                <div class="checklist-progress">
+                    <div class="progress-header">
+                        <span class="label">📊 Pre-Closing Progress</span>
+                        <span class="percent progress-percent">0%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                    </div>
+                </div>
+
+                <div class="checklist-toolbar">
+                    <button id="resetChecklist">🔄 Reset</button>
+                    <button id="printChecklist">🖨️ Print Checklist</button>
+                </div>
+
+                <!-- Clear-to-Close -->
+                <div class="checklist-group">
+                    <div class="checklist-group-header">
+                        <span class="group-tag">Clear to Close</span>
+                        Underwriter's final approval
+                    </div>
+                    <div class="checklist-group-body">
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-ctc-received">
+                            <label for="item-ctc-received">
+                                Clear-to-close (CTC) received from underwriter
+                                <div class="doc-meta"><span class="tag required">Required</span></div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-conditions-cleared">
+                            <label for="item-conditions-cleared">
+                                All approval conditions cleared
+                                <div class="doc-meta"><span class="tag required">Required</span></div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-aus-final-check">
+                            <label for="item-aus-final-check">
+                                Final AUS run confirms Approve/Eligible
+                                <div class="doc-meta"><span class="tag required">Required</span></div>
+                            </label>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Final Verifications -->
+                <div class="checklist-group">
+                    <div class="checklist-group-header">
+                        <span class="group-tag" style="background:#059669;">Final Verifications</span>
+                        Within 10 days of closing
+                    </div>
+                    <div class="checklist-group-body">
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-verbal-voe">
+                            <label for="item-verbal-voe">
+                                Verbal VOE completed (within 10 business days of note date)
+                                <div class="doc-meta">
+                                    <span class="tag required">Required</span>
+                                    <span class="tag">Module 1 &amp; 2</span>
+                                </div>
+                            </label>
+                            <button class="info-btn" data-doc="voe-verbal-preclose" aria-expanded="false" aria-label="Verbal VOE details">ⓘ</button>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-insurance-final">
+                            <label for="item-insurance-final">
+                                Homeowner's insurance binder received and reviewed
+                                <div class="doc-meta"><span class="tag required">Required</span></div>
+                            </label>
+                            <button class="info-btn" data-doc="insurance-binder" aria-expanded="false" aria-label="Insurance details">ⓘ</button>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-flood-final">
+                            <label for="item-flood-final">
+                                Flood insurance confirmed (if required)
+                                <div class="doc-meta"><span class="tag conditional">Conditional</span></div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-title-final">
+                            <label for="item-title-final">
+                                Final title policy ordered / cleared
+                                <div class="doc-meta">
+                                    <span class="tag required">Required</span>
+                                    <span class="tag">Module 2</span>
+                                </div>
+                            </label>
+                            <button class="info-btn" data-doc="final-title" aria-expanded="false" aria-label="Final title details">ⓘ</button>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- CD Delivery -->
+                <div class="checklist-group">
+                    <div class="checklist-group-header">
+                        <span class="group-tag" style="background:#dc2626;">CD Delivery</span>
+                        TRID timing
+                    </div>
+                    <div class="checklist-group-body">
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-cd-final">
+                            <label for="item-cd-final">
+                                Final CD prepared and reviewed
+                                <div class="doc-meta"><span class="tag required">Required</span></div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-cd-3day">
+                            <label for="item-cd-3day">
+                                CD delivered at least 3 business days before consummation
+                                <div class="doc-meta"><span class="tag required">Required</span></div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-cd-revisions-final">
+                            <label for="item-cd-revisions-final">
+                                No CD revisions triggered after delivery
+                                <div class="doc-meta"><span class="tag required">Required</span></div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-cd-acknowledged">
+                            <label for="item-cd-acknowledged">
+                                Borrower acknowledged receipt of CD
+                                <div class="doc-meta"><span class="tag required">Required</span></div>
+                            </label>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Closing Coordination -->
+                <div class="checklist-group">
+                    <div class="checklist-group-header">
+                        <span class="group-tag" style="background:#0284c7;">Coordination</span>
+                        Logistics with title and closing
+                    </div>
+                    <div class="checklist-group-body">
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-closing-scheduled">
+                            <label for="item-closing-scheduled">
+                                Closing date confirmed with all parties
+                                <div class="doc-meta"><span class="tag required">Required</span></div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-wire-info">
+                            <label for="item-wire-info">
+                                Wire instructions verified (verbal confirmation with title)
+                                <div class="doc-meta"><span class="tag required">Required</span></div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-payoffs-ordered">
+                            <label for="item-payoffs-ordered">
+                                Payoff statements ordered for existing liens
+                                <div class="doc-meta"><span class="tag conditional">Conditional</span></div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-subordination">
+                            <label for="item-subordination">
+                                Subordination agreement obtained (if second lien remains)
+                                <div class="doc-meta"><span class="tag conditional">Conditional</span></div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-borrower-notified">
+                            <label for="item-borrower-notified">
+                                Borrower notified of closing date, time, location
+                                <div class="doc-meta"><span class="tag required">Required</span></div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-cash-to-close">
+                            <label for="item-cash-to-close">
+                                Borrower notified of cash to close (wire or cashier's check)
+                                <div class="doc-meta"><span class="tag required">Required</span></div>
+                            </label>
+                        </div>
+
+                    </div>
+                </div>
+
+            </section>
+
+            <div class="stage-nav">
+                <a href="08-submission-underwriting.html">
+                    <span class="dir">← Previous</span>
+                    <span class="label">Stage 8: Submission to Underwriting</span>
+                </a>
+                <a href="10-post-closing.html" class="next">
+                    <span class="dir">Next →</span>
+                    <span class="label">Stage 10: Post-Closing</span>
+                </a>
+            </div>
+
+        </main>
+    </div>
+
+    <footer class="site-footer">
+        © 2025 Campus Mortgage · Certified Master Loan Processor Bootcamp
+        <br>
+        <a href="../about.html">About</a> · <a href="../modules/index.html">Bootcamp</a> · <a href="../reference/index.html">Reference</a>
+    </footer>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/nav.js"></script>
+    <script src="data/document-guides.js"></script>
+    <script src="js/tooltips.js"></script>
+    <script src="js/checklists.js"></script>
+</body>
+</html>
