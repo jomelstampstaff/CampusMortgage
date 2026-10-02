@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stage 8: Submission to Underwriting · Checklists</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/checklists.css">
+</head>
+<body>
+
+    <div id="site-header"></div>
+
+    <section class="hero">
+        <span style="display:inline-block; background:#d97706; color:#fff; font-size:0.7rem; font-weight:800; padding:0.28rem 0.9rem; border-radius:30px; letter-spacing:0.06em; text-transform:uppercase; margin-bottom:0.7rem;">Stage 8</span>
+        <h1>Submission to Underwriting</h1>
+        <p>Assemble a clean, organized file with all verification docs, a processor memo, and correct document order before submitting to the underwriter.</p>
+    </section>
+
+    <div class="app" style="grid-template-columns: 1fr; max-width: 1000px;">
+        <main class="main">
+
+            <section class="card">
+
+                <div class="checklist-progress">
+                    <div class="progress-header">
+                        <span class="label">📊 Submission Progress</span>
+                        <span class="percent progress-percent">0%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                    </div>
+                </div>
+
+                <div class="checklist-toolbar">
+                    <button id="resetChecklist">🔄 Reset</button>
+                    <button id="printChecklist">🖨️ Print Checklist</button>
+                </div>
+
+                <!-- Document Assembly -->
+                <div class="checklist-group">
+                    <div class="checklist-group-header">
+                        <span class="group-tag">Assembly</span>
+                        Package the file in standard order
+                    </div>
+                    <div class="checklist-group-body">
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-aus-final">
+                            <label for="item-aus-final">
+                                AUS findings (most recent submission)
+                                <div class="doc-meta">
+                                    <span class="tag required">Required</span>
+                                    <span class="tag">Module 1 &amp; 2</span>
+                                </div>
+                            </label>
+                            <button class="info-btn" data-doc="aus-final" aria-expanded="false" aria-label="AUS final details">ⓘ</button>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-1003-final">
+                            <label for="item-1003-final">
+                                1003 (initial signed + final, if updated)
+                                <div class="doc-meta"><span class="tag required">Required</span></div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-1008">
+                            <label for="item-1008">
+                                1008 Underwriting Transmittal
+                                <div class="doc-meta"><span class="tag required">Required</span></div>
+                            </label>
+                            <button class="info-btn" data-doc="1008-initial" aria-expanded="false" aria-label="1008 details">ⓘ</button>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-credit-report">
+                            <label for="item-credit-report">
+                                Credit report (all repositories)
+                                <div class="doc-meta"><span class="tag required">Required</span></div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-income-docs">
+                            <label for="item-income-docs">
+                                Income documentation
+                                <div class="doc-meta"><span class="tag required">Required</span></div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-asset-docs">
+                            <label for="item-asset-docs">
+                                Asset documentation
+                                <div class="doc-meta"><span class="tag required">Required</span></div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-collateral">
+                            <label for="item-collateral">
+                                Collateral (appraisal, title, insurance)
+                                <div class="doc-meta"><span class="tag required">Required</span></div>
+                            </label>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Processor Memo & Certifications -->
+                <div class="checklist-group">
+                    <div class="checklist-group-header">
+                        <span class="group-tag" style="background:#059669;">Processor Memo</span>
+                        Cover documents with explanation
+                    </div>
+                    <div class="checklist-group-body">
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-processor-memo">
+                            <label for="item-processor-memo">
+                                Processor memo / certification included
+                                <div class="doc-meta">
+                                    <span class="tag required">Required</span>
+                                    <span class="tag">Module 1</span>
+                                </div>
+                            </label>
+                            <button class="info-btn" data-doc="processor-memo" aria-expanded="false" aria-label="Processor memo details">ⓘ</button>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-loan-notes">
+                            <label for="item-loan-notes">
+                                Loan notes updated with status and key communications
+                                <div class="doc-meta"><span class="tag required">Required</span></div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-conditions-prep">
+                            <label for="item-conditions-prep">
+                                Anticipated conditions documented and pre-addressed
+                                <div class="doc-meta"><span class="tag conditional">Conditional</span></div>
+                            </label>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- File Cleanup -->
+                <div class="checklist-group">
+                    <div class="checklist-group-header">
+                        <span class="group-tag" style="background:#dc2626;">Cleanup</span>
+                        Before submission
+                    </div>
+                    <div class="checklist-group-body">
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-duplicates">
+                            <label for="item-duplicates">
+                                Duplicate documents removed
+                                <div class="doc-meta"><span class="tag required">Required</span></div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-doc-order">
+                            <label for="item-doc-order">
+                                Document order follows standard stacking
+                                <div class="doc-meta"><span class="tag required">Required</span></div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-red-flags-addressed">
+                            <label for="item-red-flags-addressed">
+                                All red flags addressed in memo or LOX
+                                <div class="doc-meta"><span class="tag required">Required</span></div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-data-integrity">
+                            <label for="item-data-integrity">
+                                Data integrity confirmed (AUS matches file)
+                                <div class="doc-meta"><span class="tag required">Required</span></div>
+                            </label>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Government Loan Extras -->
+                <div class="checklist-group">
+                    <div class="checklist-group-header">
+                        <span class="group-tag" style="background:#7c3aed;">Gov Loans</span>
+                        FHA / VA specific
+                    </div>
+                    <div class="checklist-group-body">
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-fha-case-binder">
+                            <label for="item-fha-case-binder">
+                                FHA: Final Total Scorecard in case binder
+                                <div class="doc-meta"><span class="tag conditional">FHA</span></div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-va-case-binder">
+                            <label for="item-va-case-binder">
+                                VA: COE, NOV, and VA loan summary in binder
+                                <div class="doc-meta"><span class="tag conditional">VA</span></div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-caivrs">
+                            <label for="item-caivrs">
+                                CAIVRS result included
+                                <div class="doc-meta"><span class="tag conditional">FHA/VA</span></div>
+                            </label>
+                        </div>
+
+                    </div>
+                </div>
+
+            </section>
+
+            <div class="stage-nav">
+                <a href="07-disclosures-compliance.html">
+                    <span class="dir">← Previous</span>
+                    <span class="label">Stage 7: Disclosures &amp; Compliance</span>
+                </a>
+                <a href="09-pre-closing.html" class="next">
+                    <span class="dir">Next →</span>
+                    <span class="label">Stage 9: Pre-Closing</span>
+                </a>
+            </div>
+
+        </main>
+    </div>
+
+    <footer class="site-footer">
+        © 2025 Campus Mortgage · Certified Master Loan Processor Bootcamp
+        <br>
+        <a href="../about.html">About</a> · <a href="../modules/index.html">Bootcamp</a> · <a href="../reference/index.html">Reference</a>
+    </footer>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/nav.js"></script>
+    <script src="data/document-guides.js"></script>
+    <script src="js/tooltips.js"></script>
+    <script src="js/checklists.js"></script>
+</body>
+</html>
