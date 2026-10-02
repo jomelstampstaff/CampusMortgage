@@ -6,12 +6,13 @@
 (function () {
     // ---------- CONFIG: edit nav here, updates everywhere ----------
     const NAV_ITEMS = [
-        { label: 'Home',       href: 'index.html',             match: 'home' },
-        { label: 'Bootcamp',   href: 'modules/index.html',     match: 'modules' },
-        { label: 'Reference',  href: 'reference/index.html',   match: 'reference' },
-        { label: 'Checklists', href: 'checklists/index.html',  match: 'checklists' },
-        { label: 'About',      href: 'about.html',             match: 'about' }
-    ];
+    { label: 'Home',       href: 'index.html',             match: 'home' },
+    { label: 'Bootcamp',   href: 'modules/index.html',     match: 'modules' },
+    { label: 'Summaries',  href: 'summaries/index.html',   match: 'summaries' },
+    { label: 'Reference',  href: 'reference/index.html',   match: 'reference' },
+    { label: 'Checklists', href: 'checklists/index.html',  match: 'checklists' },
+    { label: 'About',      href: 'about.html',             match: 'about' }
+];
 
     const BRAND_TEXT = '🎓 Certified Master Loan Processor';
     const BRAND_HREF = 'index.html';
