@@ -1,19 +1,21 @@
 /* ==========================================================
-   Tooltips — Popover logic for hover/tap document guides
-   Includes auto-flip (top/bottom) + edge detection
+   Tooltips — Fixed-position popovers for document guides
+   Uses position: fixed to avoid parent overflow clipping
    ========================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
 
     const guides = window.documentGuides || {};
 
+    // Only ONE popover exists at a time — reused across all buttons
+    let activePopover = null;
+    let activeBtn = null;
+    let closeTimer = null;
+
     // ---------- BUILD POPOVER HTML ----------
-    function buildPopover(docKey) {
+    function buildPopoverContent(docKey) {
         const guide = guides[docKey];
         if (!guide) return null;
-
-        const popover = document.createElement('div');
-        popover.className = 'doc-popover';
 
         let html = `
             <div class="doc-popover-header">
@@ -52,33 +54,155 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         html += `</div>`;
-        popover.innerHTML = html;
-
-        return popover;
+        return html;
     }
 
-    // ---------- POSITION POPOVER ----------
-    function positionPopover(popover, btn) {
-        // Reset position classes
-        popover.classList.remove('pos-bottom', 'pos-top');
+    // ---------- CREATE / REUSE THE POPOVER ELEMENT ----------
+    function getPopover() {
+        if (activePopover) return activePopover;
 
-        // Mobile: always use bottom-sheet mode (handled by CSS media query)
+        // Create a fresh popover appended to <body> — nowhere to clip from
+        activePopover = document.createElement('div');
+        activePopover.className = 'doc-popover';
+        document.body.appendChild(activePopover);
+
+        // Close button handler (delegated)
+        activePopover.addEventListener('click', (e) => {
+            if (e.target.closest('.close-btn')) {
+                e.stopPropagation();
+                hidePopover();
+            }
+        });
+
+        // Hover keeps it open (desktop)
+        activePopover.addEventListener('mouseenter', () => {
+            clearTimeout(closeTimer);
+        });
+        activePopover.addEventListener('mouseleave', () => {
+            if (window.matchMedia('(min-width: 701px)').matches) {
+                closeTimer = setTimeout(hidePopover, 250);
+            }
+        });
+
+        return activePopover;
+    }
+
+    // ---------- POSITION THE POPOVER ----------
+    function positionPopover(popover, btn) {
+        // Mobile: fixed bottom sheet — CSS handles it
         if (window.matchMedia('(max-width: 700px)').matches) {
+            popover.style.top = '';
+            popover.style.left = '';
+            popover.style.right = '';
+            popover.style.bottom = '';
             return;
         }
 
-        // Measure
-        const btnRect = btn.getBoundingClientRect();
-        const popoverHeight = popover.offsetHeight || 400; // fallback estimate
-        const spaceBelow = window.innerHeight - btnRect.bottom;
-        const spaceAbove = btnRect.top;
+        // Reset for measurement
+        popover.style.top = '0px';
+        popover.style.left = '0px';
+        popover.style.right = 'auto';
+        popover.style.bottom = 'auto';
 
-        // If not enough space below but enough above, flip to top
-        if (spaceBelow < popoverHeight + 40 && spaceAbove > spaceBelow) {
-            popover.classList.add('pos-top');
-        } else {
-            popover.classList.add('pos-bottom');
+        const btnRect = btn.getBoundingClientRect();
+        const popWidth = popover.offsetWidth;
+        const popHeight = popover.offsetHeight;
+        const viewportWidth = window.innerWidth;
+        const viewportHeight = window.innerHeight;
+        const gutter = 16;
+        const gap = 8;
+
+        // ---------- Horizontal placement ----------
+        // Prefer aligning popover's right edge with the button's right edge
+        let left = btnRect.right - popWidth;
+
+        // If it goes off the left edge, shift right
+        if (left < gutter) left = gutter;
+
+        // If it goes off the right edge, shift left
+        if (left + popWidth > viewportWidth - gutter) {
+            left = viewportWidth - popWidth - gutter;
         }
+
+        // ---------- Vertical placement ----------
+        const spaceBelow = viewportHeight - btnRect.bottom - gap;
+        const spaceAbove = btnRect.top - gap;
+
+        let top;
+        let placement; // 'bottom' or 'top'
+
+        if (spaceBelow >= popHeight || spaceBelow >= spaceAbove) {
+            // Place below button
+            top = btnRect.bottom + gap;
+            placement = 'bottom';
+
+            // If it still overflows the bottom, clamp to viewport
+            if (top + popHeight > viewportHeight - gutter) {
+                top = viewportHeight - popHeight - gutter;
+                // If clamping pushes it above the button, mark as flipped
+                if (top < btnRect.top) placement = 'flipped';
+            }
+        } else {
+            // Place above button
+            top = btnRect.top - popHeight - gap;
+            placement = 'top';
+
+            // If it overflows the top, clamp
+            if (top < gutter) top = gutter;
+        }
+
+        // Apply position
+        popover.style.top = top + 'px';
+        popover.style.left = left + 'px';
+        popover.style.right = 'auto';
+        popover.style.bottom = 'auto';
+
+        // Track placement as data attribute for potential arrow
+        popover.dataset.placement = placement;
+    }
+
+    // ---------- SHOW / HIDE ----------
+    function showPopover(docKey, btn) {
+        const popover = getPopover();
+        const content = buildPopoverContent(docKey);
+        if (!content) return;
+
+        // Update content
+        popover.innerHTML = content;
+
+        // Show (must be visible to measure)
+        popover.classList.add('show');
+        popover.style.visibility = 'hidden';
+        popover.style.display = 'block';
+
+        // Force reflow so measurements are accurate
+        void popover.offsetHeight;
+
+        // Position
+        positionPopover(popover, btn);
+
+        // Reveal
+        popover.style.visibility = 'visible';
+
+        // Track state
+        if (activeBtn && activeBtn !== btn) {
+            activeBtn.classList.remove('active');
+            activeBtn.setAttribute('aria-expanded', 'false');
+        }
+        activeBtn = btn;
+        btn.classList.add('active');
+        btn.setAttribute('aria-expanded', 'true');
+    }
+
+    function hidePopover() {
+        if (!activePopover) return;
+        activePopover.classList.remove('show');
+        activePopover.style.display = 'none';
+        if (activeBtn) {
+            activeBtn.classList.remove('active');
+            activeBtn.setAttribute('aria-expanded', 'false');
+        }
+        activeBtn = null;
     }
 
     // ---------- ATTACH HANDLERS ----------
@@ -88,66 +212,17 @@ document.addEventListener('DOMContentLoaded', () => {
         const docKey = btn.getAttribute('data-doc');
         if (!docKey || !guides[docKey]) return;
 
-        let popover = null;
-        let closeTimer = null;
-
-        function showPopover() {
-            // Close all other popovers
-            document.querySelectorAll('.doc-popover.show').forEach(p => {
-                p.classList.remove('show');
-            });
-            document.querySelectorAll('.info-btn.active').forEach(b => {
-                b.classList.remove('active');
-            });
-
-            if (!popover) {
-                popover = buildPopover(docKey);
-                btn.closest('.checklist-item').appendChild(popover);
-
-                // Close button
-                popover.querySelector('.close-btn').addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    hidePopover();
-                });
-
-                // Hover on popover itself keeps it open
-                popover.addEventListener('mouseenter', () => {
-                    clearTimeout(closeTimer);
-                });
-                popover.addEventListener('mouseleave', () => {
-                    if (window.matchMedia('(min-width: 701px)').matches) {
-                        closeTimer = setTimeout(hidePopover, 300);
-                    }
-                });
-            }
-
-            popover.classList.add('show');
-            btn.classList.add('active');
-            btn.setAttribute('aria-expanded', 'true');
-
-            // Position after it's visible so we can measure height
-            requestAnimationFrame(() => {
-                positionPopover(popover, btn);
-            });
-        }
-
-        function hidePopover() {
-            if (popover) popover.classList.remove('show');
-            btn.classList.remove('active');
-            btn.setAttribute('aria-expanded', 'false');
-        }
-
         // Desktop: hover
         btn.addEventListener('mouseenter', () => {
             if (window.matchMedia('(min-width: 701px)').matches) {
                 clearTimeout(closeTimer);
-                showPopover();
+                showPopover(docKey, btn);
             }
         });
 
         btn.addEventListener('mouseleave', () => {
             if (window.matchMedia('(min-width: 701px)').matches) {
-                closeTimer = setTimeout(hidePopover, 300);
+                closeTimer = setTimeout(hidePopover, 250);
             }
         });
 
@@ -158,7 +233,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (btn.classList.contains('active')) {
                 hidePopover();
             } else {
-                showPopover();
+                showPopover(docKey, btn);
             }
         });
 
@@ -166,7 +241,7 @@ document.addEventListener('DOMContentLoaded', () => {
         btn.addEventListener('keydown', (e) => {
             if (e.key === 'Enter' || e.key === ' ') {
                 e.preventDefault();
-                showPopover();
+                showPopover(docKey, btn);
             }
             if (e.key === 'Escape') {
                 hidePopover();
@@ -174,35 +249,28 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Close on outside click (mobile)
+    // Close on outside click
     document.addEventListener('click', (e) => {
-        if (!e.target.closest('.checklist-item')) {
-            document.querySelectorAll('.doc-popover.show').forEach(p => {
-                p.classList.remove('show');
-            });
-            document.querySelectorAll('.info-btn.active').forEach(b => {
-                b.classList.remove('active');
-            });
+        if (!e.target.closest('.info-btn') && !e.target.closest('.doc-popover')) {
+            hidePopover();
         }
     });
 
     // Close on Escape
     document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-            document.querySelectorAll('.doc-popover.show').forEach(p => {
-                p.classList.remove('show');
-            });
-            document.querySelectorAll('.info-btn.active').forEach(b => {
-                b.classList.remove('active');
-            });
-        }
+        if (e.key === 'Escape') hidePopover();
     });
 
-    // Reposition on scroll/resize when popover is open
+    // Reposition on scroll/resize
+    window.addEventListener('scroll', () => {
+        if (activeBtn && activePopover && activePopover.classList.contains('show')) {
+            positionPopover(activePopover, activeBtn);
+        }
+    }, { passive: true });
+
     window.addEventListener('resize', () => {
-        document.querySelectorAll('.doc-popover.show').forEach(p => {
-            const btn = p.closest('.checklist-item')?.querySelector('.info-btn');
-            if (btn) positionPopover(p, btn);
-        });
+        if (activeBtn && activePopover && activePopover.classList.contains('show')) {
+            positionPopover(activePopover, activeBtn);
+        }
     });
 });
