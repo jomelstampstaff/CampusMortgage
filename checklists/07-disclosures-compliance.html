@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stage 7: Disclosures &amp; Compliance · Checklists</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/checklists.css">
+</head>
+<body>
+
+    <div id="site-header"></div>
+
+    <section class="hero">
+        <span style="display:inline-block; background:#d97706; color:#fff; font-size:0.7rem; font-weight:800; padding:0.28rem 0.9rem; border-radius:30px; letter-spacing:0.06em; text-transform:uppercase; margin-bottom:0.7rem;">Stage 7</span>
+        <h1>Disclosures &amp; Compliance</h1>
+        <p>Verify all TRID disclosures, tolerance buckets, and delivery timelines before the file moves to underwriting.</p>
+    </section>
+
+    <div class="app" style="grid-template-columns: 1fr; max-width: 1000px;">
+        <main class="main">
+
+            <section class="card">
+
+                <div class="checklist-progress">
+                    <div class="progress-header">
+                        <span class="label">📊 Disclosures &amp; Compliance Progress</span>
+                        <span class="percent progress-percent">0%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                    </div>
+                </div>
+
+                <div class="checklist-toolbar">
+                    <button id="resetChecklist">🔄 Reset</button>
+                    <button id="printChecklist">🖨️ Print Checklist</button>
+                </div>
+
+                <!-- Loan Estimate Review -->
+                <div class="checklist-group">
+                    <div class="checklist-group-header">
+                        <span class="group-tag">Loan Estimate</span>
+                        Initial and revised LEs
+                    </div>
+                    <div class="checklist-group-body">
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-le">
+                            <label for="item-le">
+                                Loan Estimate received and reviewed
+                                <div class="doc-meta">
+                                    <span class="tag required">Required</span>
+                                    <span class="tag">TRID</span>
+                                </div>
+                            </label>
+                            <button class="info-btn" data-doc="loan-estimate" aria-expanded="false" aria-label="LE details">ⓘ</button>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-le-date">
+                            <label for="item-le-date">
+                                LE dated within 3 business days of application
+                                <div class="doc-meta"><span class="tag required">Required</span></div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-le-fees">
+                            <label for="item-le-fees">
+                                All fees in correct buckets (A–J) on the LE
+                                <div class="doc-meta"><span class="tag required">Required</span></div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-le-ufmip">
+                            <label for="item-le-ufmip">
+                                FHA: UFMIP + monthly MIP disclosed on LE
+                                <div class="doc-meta"><span class="tag conditional">FHA</span></div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-le-funding-fee">
+                            <label for="item-le-funding-fee">
+                                VA: funding fee disclosed on LE
+                                <div class="doc-meta"><span class="tag conditional">VA</span></div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-le-revised">
+                            <label for="item-le-revised">
+                                Any revised LE delivered within 3 business days of change
+                                <div class="doc-meta"><span class="tag conditional">Conditional</span></div>
+                            </label>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Closing Disclosure -->
+                <div class="checklist-group">
+                    <div class="checklist-group-header">
+                        <span class="group-tag" style="background:#059669;">Closing Disclosure</span>
+                        Delivered 3 business days before closing
+                    </div>
+                    <div class="checklist-group-body">
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-cd">
+                            <label for="item-cd">
+                                Closing Disclosure prepared and reviewed
+                                <div class="doc-meta">
+                                    <span class="tag required">Required</span>
+                                    <span class="tag">TRID</span>
+                                </div>
+                            </label>
+                            <button class="info-btn" data-doc="closing-disclosure" aria-expanded="false" aria-label="CD details">ⓘ</button>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-cd-delivery">
+                            <label for="item-cd-delivery">
+                                CD delivered at least 3 business days before consummation
+                                <div class="doc-meta"><span class="tag required">Required</span></div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-cd-terms-match">
+                            <label for="item-cd-terms-match">
+                                CD terms match final LE (or valid change of circumstance)
+                                <div class="doc-meta"><span class="tag required">Required</span></div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-cd-apr">
+                            <label for="item-cd-apr">
+                                APR and finance charge correct
+                                <div class="doc-meta"><span class="tag required">Required</span></div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-cd-signatures">
+                            <label for="item-cd-signatures">
+                                Borrower(s) signatures and dates present
+                                <div class="doc-meta"><span class="tag required">Required</span></div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-cd-revision">
+                            <label for="item-cd-revision">
+                                Any CD revisions trigger new 3-day wait if required
+                                <div class="doc-meta"><span class="tag conditional">Conditional</span></div>
+                            </label>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Tolerance Buckets -->
+                <div class="checklist-group">
+                    <div class="checklist-group-header">
+                        <span class="group-tag" style="background:#dc2626;">Tolerances</span>
+                        Fee tolerance review
+                    </div>
+                    <div class="checklist-group-body">
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-zero-tolerance">
+                            <label for="item-zero-tolerance">
+                                0% tolerance fees reviewed (lender/broker charges, transfer taxes)
+                                <div class="doc-meta"><span class="tag required">Required</span></div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-10-percent">
+                            <label for="item-10-percent">
+                                10% cumulative tolerance reviewed (recording, unaffiliated 3rd party)
+                                <div class="doc-meta"><span class="tag required">Required</span></div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-no-tolerance">
+                            <label for="item-no-tolerance">
+                                No-tolerance fees verified (prepaids, escrow, insurance)
+                                <div class="doc-meta"><span class="tag required">Required</span></div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-cure">
+                            <label for="item-cure">
+                                Any tolerance violations cured before or after closing
+                                <div class="doc-meta"><span class="tag conditional">Conditional</span></div>
+                            </label>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Compliance Disclosures -->
+                <div class="checklist-group">
+                    <div class="checklist-group-header">
+                        <span class="group-tag" style="background:#0284c7;">Compliance</span>
+                        Required federal disclosures
+                    </div>
+                    <div class="checklist-group-body">
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-servicing">
+                            <label for="item-servicing">
+                                Servicing Disclosure delivered
+                                <div class="doc-meta"><span class="tag required">Required</span></div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-ecoa">
+                            <label for="item-ecoa">
+                                ECOA / Fair Lending Rights delivered
+                                <div class="doc-meta"><span class="tag required">Required</span></div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-home-loan-toolkit">
+                            <label for="item-home-loan-toolkit">
+                                Home Loan Toolkit delivered (first-lien purchase only)
+                                <div class="doc-meta"><span class="tag conditional">Purchase</span></div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-appraisal-copy">
+                            <label for="item-appraisal-copy">
+                                Copy of appraisal provided to borrower
+                                <div class="doc-meta"><span class="tag required">Required</span></div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-fha-va-disclosures">
+                            <label for="item-fha-va-disclosures">
+                                FHA/VA required disclosures delivered
+                                <div class="doc-meta"><span class="tag conditional">FHA/VA</span></div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-ssn-authorization">
+                            <label for="item-ssn-authorization">
+                                SSN authorization on file (1003 Part 2 for FHA)
+                                <div class="doc-meta"><span class="tag conditional">FHA</span></div>
+                            </label>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Government Loan Compliance -->
+                <div class="checklist-group">
+                    <div class="checklist-group-header">
+                        <span class="group-tag" style="background:#7c3aed;">Gov Compliance</span>
+                        FHA/VA specific items
+                    </div>
+                    <div class="checklist-group-body">
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-case-number-disclosed">
+                            <label for="item-case-number-disclosed">
+                                FHA case number with ADP code on all forms
+                                <div class="doc-meta"><span class="tag conditional">FHA</span></div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-nov">
+                            <label for="item-nov">
+                                VA Notice of Value (NOV) received from underwriter
+                                <div class="doc-meta"><span class="tag conditional">VA</span></div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-va-child-care">
+                            <label for="item-va-child-care">
+                                VA Child Care letter on file (required for all VA loans)
+                                <div class="doc-meta"><span class="tag conditional">VA</span></div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-caivrs">
+                            <label for="item-caivrs">
+                                CAIVRS result on file (required for all gov loans)
+                                <div class="doc-meta"><span class="tag conditional">FHA/VA</span></div>
+                            </label>
+                        </div>
+
+                    </div>
+                </div>
+
+            </section>
+
+            <div class="stage-nav">
+                <a href="06-property-title.html">
+                    <span class="dir">← Previous</span>
+                    <span class="label">Stage 6: Property &amp; Title</span>
+                </a>
+                <a href="08-submission-underwriting.html" class="next">
+                    <span class="dir">Next →</span>
+                    <span class="label">Stage 8: Submission to Underwriting</span>
+                </a>
+            </div>
+
+        </main>
+    </div>
+
+    <footer class="site-footer">
+        © 2025 Campus Mortgage · Certified Master Loan Processor Bootcamp
+        <br>
+        <a href="../about.html">About</a> · <a href="../modules/index.html">Bootcamp</a> · <a href="../reference/index.html">Reference</a>
+    </footer>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/nav.js"></script>
+    <script src="data/document-guides.js"></script>
+    <script src="js/tooltips.js"></script>
+    <script src="js/checklists.js"></script>
+</body>
+</html>
