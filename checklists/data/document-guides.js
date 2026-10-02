@@ -795,6 +795,133 @@ const documentGuides = {
         feedsInto: ["DTI calculation (PITIA)", "Condo project approval"]
     },
 
+       /* ==================== SUBMISSION TO UNDERWRITING (new) ==================== */
+    "processor-memo": {
+        title: "Processor Memo / Certification",
+        lookFor: [
+            "Cover page summarizing the file",
+            "Explains any unusual items (employment gaps, large deposits, credit inquiries)",
+            "States which AUS findings used",
+            "Confirms all documentation verified",
+            "Identifies any conditions expected from underwriter",
+            "Signed and dated by processor"
+        ],
+        redFlags: [
+            "Missing explanation for known red flags",
+            "Conflicting information left unresolved",
+            "No signature or date",
+            "No reference to AUS version or submission number"
+        ],
+        crossCheck: ["1003", "1008", "AUS Findings", "Credit Report"],
+        feedsInto: ["Underwriter review", "Reduces follow-up conditions"]
+    },
+
+    "aus-final": {
+        title: "AUS Findings — Final Submission",
+        lookFor: [
+            "Most recent submission number",
+            "Approve/Eligible (DU) or Accept (LPA)",
+            "All borrower names and property address correct",
+            "Loan amount, LTV, and terms match final 1003",
+            "All verification messages reviewed",
+            "Data integrity confirmed against file documents"
+        ],
+        redFlags: [
+            "Refer with Caution or Ineligible",
+            "Red flag messages (excessive resubmissions, occupancy modified)",
+            "Data in AUS doesn't match file documents",
+            "Out-of-scope findings",
+            "Expired documents"
+        ],
+        crossCheck: ["1003", "1008", "Credit Report", "Appraisal"],
+        feedsInto: ["Final underwriting decision", "Compliance file"]
+    },
+
+    /* ==================== PRE-CLOSING (new) ==================== */
+    "voe-verbal-preclose": {
+        title: "Verbal VOE — Within 10 Days of Closing",
+        lookFor: [
+            "Completed within 10 business days of note date",
+            "Called directly to employer's HR or authorized rep",
+            "Confirmed borrower still employed",
+            "Confirmed position and start date",
+            "Documented date, time, contact name, and phone number",
+            "Signed by the processor who performed the VOE"
+        ],
+        redFlags: [
+            "VOE performed too early (outside 10-day window)",
+            "Unable to reach employer",
+            "Employment ended since application",
+            "Borrower no longer in the position"
+        ],
+        crossCheck: ["Written VOE", "Pay Stubs", "1003"],
+        feedsInto: ["Final employment verification", "Clear-to-close condition"]
+    },
+
+    "final-title": {
+        title: "Final Title Policy",
+        lookFor: [
+            "Final policy issued after closing",
+            "Matches preliminary title commitment",
+            "Lender's policy + owner's policy (if purchased)",
+            "Legal description matches subject property",
+            "All liens and encumbrances addressed",
+            "Signed by title company"
+        ],
+        redFlags: [
+            "New liens appeared between commitment and closing",
+            "Discrepancies between preliminary and final policy",
+            "Missing owner's policy when required",
+            "Name mismatch with borrower"
+        ],
+        crossCheck: ["Title Commitment", "Sales Contract", "Closing Disclosure"],
+        feedsInto: ["Post-closing file", "Loan delivery to investor"]
+    },
+
+    /* ==================== POST-CLOSING (new) ==================== */
+    "final-closing-package": {
+        title: "Final Closing Package",
+        lookFor: [
+            "Final signed and dated Note",
+            "Final signed Mortgage / Deed of Trust",
+            "Final signed Closing Disclosure",
+            "Executed Initial and Final 1003",
+            "Any recorded documents (returned by title company)",
+            "Title policy issued",
+            "All required exhibits and addendums signed"
+        ],
+        redFlags: [
+            "Missing borrower signatures on any document",
+            "Documents dated incorrectly (e.g., Note dated before CD)",
+            "Loan amount on Note doesn't match CD",
+            "Missing exhibits",
+            "Notary block incomplete"
+        ],
+        crossCheck: ["Closing Disclosure", "Title Policy", "Sales Contract"],
+        feedsInto: ["Loan delivery", "Post-closing QC", "Investor delivery"]
+    },
+
+    "qc-review": {
+        title: "Post-Closing QC Review",
+        lookFor: [
+            "Random file sample pulled for review (per lender policy)",
+            "All required documents present in file",
+            "Signatures, dates, and notarizations correct",
+            "Disclosures compliant with TRID",
+            "Data integrity confirmed against source docs",
+            "Any corrective action documented"
+        ],
+        redFlags: [
+            "Missing signatures or dates",
+            "Tolerance violations not cured",
+            "Disclosures delivered late",
+            "Data discrepancies between documents",
+            "Missing required forms"
+        ],
+        crossCheck: ["Full loan file", "AUS findings", "Disclosures"],
+        feedsInto: ["Compliance file", "Investor delivery", "Future audits"]
+    },
+
 };
 
 /* Export to window for use by tooltips.js */
