@@ -705,7 +705,95 @@ const documentGuides = {
         ],
         crossCheck: ["Bank Statements", "Tax Returns", "1003"],
         feedsInto: ["Non-employment income", "Social Security gross-up", "Retirement income"]
-    }
+    },
+
+       /* ==================== PROPERTY & TITLE (new) ==================== */
+    "flood-cert": {
+        title: "Flood Certification (Flood Cert)",
+        lookFor: [
+            "Subject property address matches file",
+            "Flood zone determination shown (Zone A, AE, X, etc.)",
+            "Community panel number present",
+            "Map effective date current",
+            "Lender name matches",
+            "If in Special Flood Hazard Area (SFHA), flood insurance required"
+        ],
+        redFlags: [
+            "Property in SFHA but no flood insurance ordered",
+            "Address mismatch with sales contract or appraisal",
+            "Flood zone determination is outdated",
+            "Flood insurance premium not disclosed on LE/CD"
+        ],
+        crossCheck: ["Sales Contract", "Appraisal", "Insurance Binder"],
+        feedsInto: ["Flood insurance requirement", "Escrow calculation", "TRID disclosure"]
+    },
+
+    "insurance-binder": {
+        title: "Homeowner's Insurance Binder",
+        lookFor: [
+            "Named insured matches borrower exactly",
+            "Property address matches subject property",
+            "Coverage amount ≥ replacement cost or loan amount (per lender)",
+            "Effective date on or before closing date",
+            "Lender listed as mortgagee",
+            "Annual premium documented",
+            "1-year policy term minimum"
+        ],
+        redFlags: [
+            "Coverage amount less than required",
+            "Effective date after closing",
+            "Borrower name misspelled",
+            "Lender not listed as mortgagee",
+            "Property is in a flood zone but no flood insurance included",
+            "Policy expired or about to expire before closing"
+        ],
+        crossCheck: ["Flood Cert", "Appraisal", "Sales Contract"],
+        feedsInto: ["Prepaids (escrow)", "Cash to close", "Loan Estimate Section F"]
+    },
+
+    "flood-insurance": {
+        title: "Flood Insurance Policy",
+        lookFor: [
+            "Property address matches subject property",
+            "Borrower name matches 1003",
+            "Lender listed as mortgagee/loss payee",
+            "Coverage amount meets lender requirements",
+            "Effective date on or before closing",
+            "Deductible is reasonable (typically ≤ $5,000)",
+            "Annual premium documented"
+        ],
+        redFlags: [
+            "Required but not obtained (property in SFHA)",
+            "Coverage too low",
+            "Effective date after closing",
+            "Not listed as loss payee for lender",
+            "Insurer not on approved list"
+        ],
+        crossCheck: ["Flood Cert", "Insurance Binder", "1003"],
+        feedsInto: ["Escrow calculation", "Prepaids", "Loan Estimate Section F"]
+    },
+
+    "hoa-cert": {
+        title: "HOA Certificate / Condo Certification",
+        lookFor: [
+            "Project name matches subject property",
+            "Unit owner name matches borrower",
+            "Current monthly HOA dues amount",
+            "HOA dues paid current",
+            "Litigation status disclosed",
+            "Master insurance policy details if condo",
+            "Reserve account status if condo"
+        ],
+        redFlags: [
+            "HOA dues delinquent on subject unit",
+            "Pending litigation not disclosed",
+            "HOA dues not included in DTI",
+            "Project not on FHA/VA approved list (for gov loans)",
+            "Special assessments pending"
+        ],
+        crossCheck: ["Appraisal", "Sales Contract", "Title Commitment"],
+        feedsInto: ["DTI calculation (PITIA)", "Condo project approval"]
+    },
 
 };
 
