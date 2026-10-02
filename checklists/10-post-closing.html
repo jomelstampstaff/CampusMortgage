@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stage 10: Post-Closing · Checklists</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/checklists.css">
+</head>
+<body>
+
+    <div id="site-header"></div>
+
+    <section class="hero">
+        <span style="display:inline-block; background:#d97706; color:#fff; font-size:0.7rem; font-weight:800; padding:0.28rem 0.9rem; border-radius:30px; letter-spacing:0.06em; text-transform:uppercase; margin-bottom:0.7rem;">Stage 10</span>
+        <h1>Post-Closing</h1>
+        <p>Final documents, QC review, and file retention after the loan funds and closes.</p>
+    </section>
+
+    <div class="app" style="grid-template-columns: 1fr; max-width: 1000px;">
+        <main class="main">
+
+            <section class="card">
+
+                <div class="checklist-progress">
+                    <div class="progress-header">
+                        <span class="label">📊 Post-Closing Progress</span>
+                        <span class="percent progress-percent">0%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                    </div>
+                </div>
+
+                <div class="checklist-toolbar">
+                    <button id="resetChecklist">🔄 Reset</button>
+                    <button id="printChecklist">🖨️ Print Checklist</button>
+                </div>
+
+                <!-- Final Documents -->
+                <div class="checklist-group">
+                    <div class="checklist-group-header">
+                        <span class="group-tag">Final Documents</span>
+                        Signed and recorded documents
+                    </div>
+                    <div class="checklist-group-body">
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-final-package">
+                            <label for="item-final-package">
+                                Final closing package received and reviewed
+                                <div class="doc-meta">
+                                    <span class="tag required">Required</span>
+                                    <span class="tag">Module 1</span>
+                                </div>
+                            </label>
+                            <button class="info-btn" data-doc="final-closing-package" aria-expanded="false" aria-label="Final package details">ⓘ</button>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-note">
+                            <label for="item-note">
+                                Signed and dated Note
+                                <div class="doc-meta"><span class="tag required">Required</span></div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-security-instrument">
+                            <label for="item-security-instrument">
+                                Signed Mortgage / Deed of Trust
+                                <div class="doc-meta"><span class="tag required">Required</span></div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-final-cd">
+                            <label for="item-final-cd">
+                                Final signed Closing Disclosure
+                                <div class="doc-meta"><span class="tag required">Required</span></div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-final-1003">
+                            <label for="item-final-1003">
+                                Final 1003 signed at closing
+                                <div class="doc-meta"><span class="tag required">Required</span></div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-recorded-docs">
+                            <label for="item-recorded-docs">
+                                Recorded documents returned from title
+                                <div class="doc-meta"><span class="tag required">Required</span></div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-final-title-policy">
+                            <label for="item-final-title-policy">
+                                Final title policy issued
+                                <div class="doc-meta"><span class="tag required">Required</span></div>
+                            </label>
+                            <button class="info-btn" data-doc="final-title" aria-expanded="false" aria-label="Final title policy details">ⓘ</button>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Delivery to Investor -->
+                <div class="checklist-group">
+                    <div class="checklist-group-header">
+                        <span class="group-tag" style="background:#059669;">Delivery</span>
+                        Shipping the loan file
+                    </div>
+                    <div class="checklist-group-body">
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-ucc">
+                            <label for="item-ucc">
+                                UCC / final certifications completed
+                                <div class="doc-meta"><span class="tag conditional">Conditional</span></div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-trailing-docs">
+                            <label for="item-trailing-docs">
+                                Trailing documents tracked and delivered
+                                <div class="doc-meta"><span class="tag conditional">Conditional</span></div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-investor-delivery">
+                            <label for="item-investor-delivery">
+                                Loan delivered to investor (per lender timeline)
+                                <div class="doc-meta"><span class="tag required">Required</span></div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-appraisal-delivery">
+                            <label for="item-appraisal-delivery">
+                                UCDP / SSR successful submission (conventional)
+                                <div class="doc-meta"><span class="tag conditional">Conventional</span></div>
+                            </label>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- QC Review -->
+                <div class="checklist-group">
+                    <div class="checklist-group-header">
+                        <span class="group-tag" style="background:#dc2626;">Quality Control</span>
+                        Post-closing review
+                    </div>
+                    <div class="checklist-group-body">
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-qc-review">
+                            <label for="item-qc-review">
+                                File selected for QC review (per lender policy)
+                                <div class="doc-meta">
+                                    <span class="tag conditional">Conditional</span>
+                                    <span class="tag">Module 1</span>
+                                </div>
+                            </label>
+                            <button class="info-btn" data-doc="qc-review" aria-expanded="false" aria-label="QC review details">ⓘ</button>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-doc-review">
+                            <label for="item-doc-review">
+                                All documents reviewed for accuracy and completeness
+                                <div class="doc-meta"><span class="tag required">Required</span></div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-tolerance-review">
+                            <label for="item-tolerance-review">
+                                Tolerance violations reviewed and cured if needed
+                                <div class="doc-meta"><span class="tag required">Required</span></div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-cure-refund">
+                            <label for="item-cure-refund">
+                                Any required refunds sent to borrower
+                                <div class="doc-meta"><span class="tag conditional">Conditional</span></div>
+                            </label>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- File Retention -->
+                <div class="checklist-group">
+                    <div class="checklist-group-header">
+                        <span class="group-tag" style="background:#0284c7;">Retention</span>
+                        Compliance file storage
+                    </div>
+                    <div class="checklist-group-body">
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-file-storage">
+                            <label for="item-file-storage">
+                                Loan file stored per retention policy
+                                <div class="doc-meta"><span class="tag required">Required</span></div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-audit-trail">
+                            <label for="item-audit-trail">
+                                Audit trail complete (notes, dates, signatures)
+                                <div class="doc-meta"><span class="tag required">Required</span></div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-servicer-transfer">
+                            <label for="item-servicer-transfer">
+                                Servicer transfer documented
+                                <div class="doc-meta"><span class="tag conditional">Conditional</span></div>
+                            </label>
+                        </div>
+
+                    </div>
+                </div>
+
+            </section>
+
+            <div class="stage-nav">
+                <a href="09-pre-closing.html">
+                    <span class="dir">← Previous</span>
+                    <span class="label">Stage 9: Pre-Closing</span>
+                </a>
+                <a href="index.html" class="next">
+                    <span class="dir">Back to →</span>
+                    <span class="label">All Checklists</span>
+                </a>
+            </div>
+
+        </main>
+    </div>
+
+    <footer class="site-footer">
+        © 2025 Campus Mortgage · Certified Master Loan Processor Bootcamp
+        <br>
+        <a href="../about.html">About</a> · <a href="../modules/index.html">Bootcamp</a> · <a href="../reference/index.html">Reference</a>
+    </footer>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/nav.js"></script>
+    <script src="data/document-guides.js"></script>
+    <script src="js/tooltips.js"></script>
+    <script src="js/checklists.js"></script>
+</body>
+</html>
