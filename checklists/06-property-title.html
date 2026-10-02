@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stage 6: Property &amp; Title · Checklists</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/checklists.css">
+</head>
+<body>
+
+    <div id="site-header"></div>
+
+    <section class="hero">
+        <span style="display:inline-block; background:#d97706; color:#fff; font-size:0.7rem; font-weight:800; padding:0.28rem 0.9rem; border-radius:30px; letter-spacing:0.06em; text-transform:uppercase; margin-bottom:0.7rem;">Stage 6</span>
+        <h1>Property &amp; Title</h1>
+        <p>Review sales contract, appraisal, title commitment, insurance, and HOA — ensuring everything lines up before underwriting submission.</p>
+    </section>
+
+    <div class="app" style="grid-template-columns: 1fr; max-width: 1000px;">
+        <main class="main">
+
+            <section class="card">
+
+                <div class="checklist-progress">
+                    <div class="progress-header">
+                        <span class="label">📊 Property &amp; Title Progress</span>
+                        <span class="percent progress-percent">0%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                    </div>
+                </div>
+
+                <div class="checklist-toolbar">
+                    <button id="resetChecklist">🔄 Reset</button>
+                    <button id="printChecklist">🖨️ Print Checklist</button>
+                </div>
+
+                <!-- Sales Contract -->
+                <div class="checklist-group">
+                    <div class="checklist-group-header">
+                        <span class="group-tag">Sales Contract</span>
+                        Purchase transaction documents
+                    </div>
+                    <div class="checklist-group-body">
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-sales-contract">
+                            <label for="item-sales-contract">
+                                Fully executed sales contract with all addendums
+                                <div class="doc-meta">
+                                    <span class="tag required">Required</span>
+                                    <span class="tag">Module 1 &amp; 2</span>
+                                </div>
+                            </label>
+                            <button class="info-btn" data-doc="sales-contract" aria-expanded="false" aria-label="Sales contract details">ⓘ</button>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-contract-seller-match">
+                            <label for="item-contract-seller-match">
+                                Seller on contract matches title commitment
+                                <div class="doc-meta"><span class="tag required">Required</span></div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-contract-price-match">
+                            <label for="item-contract-price-match">
+                                Sales price matches 1003, 1008, and appraisal
+                                <div class="doc-meta"><span class="tag required">Required</span></div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-contract-addendums">
+                            <label for="item-contract-addendums">
+                                All checked addendums attached
+                                <div class="doc-meta"><span class="tag required">Required</span></div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-contract-executed-date">
+                            <label for="item-contract-executed-date">
+                                Executed date completed for buyer and seller
+                                <div class="doc-meta"><span class="tag required">Required</span></div>
+                            </label>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Appraisal -->
+                <div class="checklist-group">
+                    <div class="checklist-group-header">
+                        <span class="group-tag" style="background:#059669;">Appraisal</span>
+                        Property valuation and condition
+                    </div>
+                    <div class="checklist-group-body">
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-appraisal">
+                            <label for="item-appraisal">
+                                Appraisal report received and reviewed
+                                <div class="doc-meta">
+                                    <span class="tag required">Required</span>
+                                    <span class="tag">Module 2</span>
+                                </div>
+                            </label>
+                            <button class="info-btn" data-doc="appraisal" aria-expanded="false" aria-label="Appraisal details">ⓘ</button>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-appraisal-address">
+                            <label for="item-appraisal-address">
+                                Property address on appraisal matches contract
+                                <div class="doc-meta"><span class="tag required">Required</span></div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-appraisal-legal">
+                            <label for="item-appraisal-legal">
+                                Legal description matches title
+                                <div class="doc-meta"><span class="tag required">Required</span></div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-appraisal-as-is">
+                            <label for="item-appraisal-as-is">
+                                "As-is" value stated and supports sales price
+                                <div class="doc-meta"><span class="tag required">Required</span></div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-appraisal-license">
+                            <label for="item-appraisal-license">
+                                Appraiser license valid on effective date
+                                <div class="doc-meta"><span class="tag required">Required</span></div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-appraisal-utilities">
+                            <label for="item-appraisal-utilities">
+                                Utilities on and functioning (FHA requires)
+                                <div class="doc-meta"><span class="tag conditional">FHA</span></div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-appraisal-attic">
+                            <label for="item-appraisal-attic">
+                                Head-and-shoulders attic inspection noted (FHA)
+                                <div class="doc-meta"><span class="tag conditional">FHA</span></div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-appraisal-case">
+                            <label for="item-appraisal-case">
+                                FHA case number on each page (FHA loans)
+                                <div class="doc-meta"><span class="tag conditional">FHA</span></div>
+                            </label>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Title -->
+                <div class="checklist-group">
+                    <div class="checklist-group-header">
+                        <span class="group-tag" style="background:#dc2626;">Title</span>
+                        Title commitment and legal ownership
+                    </div>
+                    <div class="checklist-group-body">
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-title-commitment">
+                            <label for="item-title-commitment">
+                                Title commitment received and reviewed
+                                <div class="doc-meta">
+                                    <span class="tag required">Required</span>
+                                    <span class="tag">Module 2</span>
+                                </div>
+                            </label>
+                            <button class="info-btn" data-doc="title-commitment" aria-expanded="false" aria-label="Title commitment details">ⓘ</button>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-title-effective">
+                            <label for="item-title-effective">
+                                Effective date within 60–90 days of closing
+                                <div class="doc-meta"><span class="tag required">Required</span></div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-title-owner-match">
+                            <label for="item-title-owner-match">
+                                Owner of record matches seller on sales contract
+                                <div class="doc-meta"><span class="tag required">Required</span></div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-title-legal-match">
+                            <label for="item-title-legal-match">
+                                Legal description matches sales contract and appraisal
+                                <div class="doc-meta"><span class="tag required">Required</span></div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-title-liens">
+                            <label for="item-title-liens">
+                                All liens identified and payoff planned
+                                <div class="doc-meta"><span class="tag required">Required</span></div>
+                            </label>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Insurance & Flood -->
+                <div class="checklist-group">
+                    <div class="checklist-group-header">
+                        <span class="group-tag" style="background:#0284c7;">Insurance &amp; Flood</span>
+                        Property insurance requirements
+                    </div>
+                    <div class="checklist-group-body">
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-flood-cert">
+                            <label for="item-flood-cert">
+                                Flood certification received
+                                <div class="doc-meta">
+                                    <span class="tag required">Required</span>
+                                    <span class="tag">Module 2</span>
+                                </div>
+                            </label>
+                            <button class="info-btn" data-doc="flood-cert" aria-expanded="false" aria-label="Flood cert details">ⓘ</button>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-flood-insurance">
+                            <label for="item-flood-insurance">
+                                Flood insurance obtained (if in SFHA)
+                                <div class="doc-meta">
+                                    <span class="tag conditional">Conditional</span>
+                                    <span class="tag">Module 2</span>
+                                </div>
+                            </label>
+                            <button class="info-btn" data-doc="flood-insurance" aria-expanded="false" aria-label="Flood insurance details">ⓘ</button>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-hazard-insurance">
+                            <label for="item-hazard-insurance">
+                                Homeowner's insurance binder received
+                                <div class="doc-meta">
+                                    <span class="tag required">Required</span>
+                                    <span class="tag">Module 2</span>
+                                </div>
+                            </label>
+                            <button class="info-btn" data-doc="insurance-binder" aria-expanded="false" aria-label="Insurance binder details">ⓘ</button>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-insurance-mortgagee">
+                            <label for="item-insurance-mortgagee">
+                                Lender listed as mortgagee on policy
+                                <div class="doc-meta"><span class="tag required">Required</span></div>
+                            </label>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- HOA / Condo -->
+                <div class="checklist-group">
+                    <div class="checklist-group-header">
+                        <span class="group-tag" style="background:#7c3aed;">HOA / Condo</span>
+                        If applicable
+                    </div>
+                    <div class="checklist-group-body">
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-hoa-questionnaire">
+                            <label for="item-hoa-questionnaire">
+                                HOA questionnaire / condo cert received
+                                <div class="doc-meta">
+                                    <span class="tag conditional">Condo/PUD</span>
+                                    <span class="tag">Module 2 &amp; 3</span>
+                                </div>
+                            </label>
+                            <button class="info-btn" data-doc="hoa-questionnaire" aria-expanded="false" aria-label="HOA details">ⓘ</button>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-hoa-dues">
+                            <label for="item-hoa-dues">
+                                HOA dues confirmed and included in PITIA
+                                <div class="doc-meta"><span class="tag conditional">Condo/PUD</span></div>
+                            </label>
+                        </div>
+
+                        <div class="checklist-item">
+                            <input type="checkbox" id="item-hoa-approved">
+                            <label for="item-hoa-approved">
+                                Project on FHA/VA approved list (gov loans)
+                                <div class="doc-meta"><span class="tag conditional">FHA/VA</span></div>
+                            </label>
+                        </div>
+
+                    </div>
+                </div>
+
+            </section>
+
+            <div class="stage-nav">
+                <a href="05-credit-liabilities.html">
+                    <span class="dir">← Previous</span>
+                    <span class="label">Stage 5: Credit &amp; Liabilities</span>
+                </a>
+                <a href="07-disclosures-compliance.html" class="next">
+                    <span class="dir">Next →</span>
+                    <span class="label">Stage 7: Disclosures &amp; Compliance</span>
+                </a>
+            </div>
+
+        </main>
+    </div>
+
+    <footer class="site-footer">
+        © 2025 Campus Mortgage · Certified Master Loan Processor Bootcamp
+        <br>
+        <a href="../about.html">About</a> · <a href="../modules/index.html">Bootcamp</a> · <a href="../reference/index.html">Reference</a>
+    </footer>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/nav.js"></script>
+    <script src="data/document-guides.js"></script>
+    <script src="js/tooltips.js"></script>
+    <script src="js/checklists.js"></script>
+</body>
+</html>
