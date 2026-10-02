@@ -139,11 +139,11 @@ a { color: var(--accent-purple); }
 .hero {
     max-width: 1450px;
     margin: 0 auto 2rem;
-    background: linear-gradient(135deg, #0f172a 0%, #7c3aed 100%);
+    background: linear-gradient(135deg, #334155 0%, #7c3aed 100%);
     color: #fff;
     border-radius: var(--radius);
-    padding: 3rem 2.5rem;
-    box-shadow: var(--shadow-md);
+    padding: 2.5rem 2.5rem;
+    box-shadow: 0 8px 24px -10px rgba(51, 65, 85, 0.25);
 }
 
 .hero h1 {
@@ -428,7 +428,7 @@ a { color: var(--accent-purple); }
     background: var(--surface);
     border-radius: var(--radius);
     padding: 1.8rem 2rem;
-    box-shadow: var(--shadow);
+    box-shadow: 0 1px 3px rgba(30, 41, 59, 0.03);
     border: 1px solid var(--border-soft);
     scroll-margin-top: 2rem;
 }
@@ -610,7 +610,7 @@ tr:last-child td { border-bottom: none; }
    KEY FORMULA BOX
    ========================================================== */
 .formula-box {
-    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    background: linear-gradient(135deg, #334155 0%, #475569 100%);
     color: #fff;
     border-radius: var(--radius-sm);
     padding: 1.1rem 1.3rem;
