@@ -808,3 +808,381 @@ tr:last-child td { border-bottom: none; }
     .site-header nav a { font-size: 0.8rem; padding: 0.35rem 0.7rem; }
     .hero h1 { font-size: 1.4rem; }
 }
+
+/* ==========================================================
+   MOBILE COMPACT MODE — reduces vertical space on small screens
+   Applied at ≤ 640px width
+   ========================================================== */
+@media (max-width: 640px) {
+
+    /* Global — tighter page padding */
+    body {
+        padding: 0.75rem 0.6rem;
+    }
+
+    /* Header — smaller, more compact */
+    .site-header {
+        padding: 0.55rem 0.75rem;
+        margin-bottom: 0.75rem;
+        border-radius: 14px;
+        gap: 0.5rem;
+    }
+    .site-header .brand {
+        font-size: 0.9rem;
+    }
+    .site-header nav {
+        gap: 0.2rem;
+        width: 100%;
+    }
+    .site-header nav a {
+        padding: 0.3rem 0.55rem;
+        font-size: 0.74rem;
+    }
+
+    /* Hero — much tighter */
+    .hero {
+        padding: 1.2rem 1rem;
+        margin-bottom: 0.9rem;
+        border-radius: 16px;
+    }
+    .hero h1 {
+        font-size: 1.35rem;
+        margin-bottom: 0.35rem;
+        line-height: 1.25;
+    }
+    .hero p {
+        font-size: 0.85rem;
+        margin-bottom: 0.85rem;
+        line-height: 1.45;
+    }
+    .hero .cta-btn {
+        padding: 0.55rem 1rem;
+        font-size: 0.83rem;
+        margin-right: 0.35rem;
+        margin-bottom: 0.35rem;
+        border-radius: 8px;
+    }
+
+    /* Cards — much less padding */
+    .card {
+        padding: 1rem 0.9rem;
+        border-radius: 14px;
+        margin-bottom: 0.85rem;
+    }
+    .card h2 {
+        font-size: 1.05rem;
+        margin-bottom: 0.65rem;
+        padding-bottom: 0.5rem;
+        gap: 0.35rem;
+        line-height: 1.3;
+    }
+    .card h2 .badge {
+        font-size: 0.6rem;
+        padding: 0.18rem 0.5rem;
+    }
+    .card h3 {
+        font-size: 0.95rem;
+        margin: 0.8rem 0 0.4rem;
+    }
+    .card h4 {
+        font-size: 0.87rem;
+        margin: 0.65rem 0 0.3rem;
+    }
+    .card p, .card li {
+        font-size: 0.85rem;
+        line-height: 1.5;
+    }
+    .card ul, .card ol {
+        padding-left: 1.1rem;
+        margin: 0.3rem 0 0.6rem;
+    }
+    .card li {
+        margin-bottom: 0.15rem;
+    }
+
+    /* Tighter vertical rhythm */
+    .main {
+        gap: 0.85rem;
+    }
+
+    /* Section titles */
+    .section-title {
+        font-size: 1.05rem;
+        margin: 1.2rem auto 0.6rem;
+    }
+
+    /* Sidebar — collapses visually, less vertical space */
+    .sidebar {
+        padding: 0.9rem 0.7rem;
+        margin-bottom: 0.85rem;
+        border-radius: 14px;
+    }
+    .sidebar h3 {
+        font-size: 0.8rem;
+        margin-bottom: 0.5rem;
+        padding-bottom: 0.4rem;
+    }
+    .module-block {
+        margin-bottom: 0.35rem;
+    }
+    .module-header {
+        padding: 0.5rem 0.65rem;
+    }
+    .module-header .label {
+        font-size: 0.72rem;
+    }
+    .module-body {
+        padding: 0.25rem 0.25rem 0.35rem;
+    }
+    .module-body li a {
+        padding: 0.32rem 0.55rem 0.32rem 0.85rem;
+        font-size: 0.74rem;
+    }
+
+    /* Tiles — much tighter */
+    .tile {
+        padding: 0.7rem 0.85rem;
+        border-radius: 10px;
+    }
+    .tile h5 {
+        font-size: 0.82rem;
+        margin-bottom: 0.3rem;
+    }
+    .tile p, .tile li {
+        font-size: 0.78rem;
+        line-height: 1.45;
+    }
+
+    /* Grids — single column, less gap */
+    .grid-2, .grid-3 {
+        gap: 0.65rem;
+        margin: 0.6rem 0;
+    }
+
+    /* Tables — smaller text, tighter cells */
+    .table-wrap {
+        margin: 0.65rem 0;
+        border-radius: 10px;
+    }
+    table {
+        font-size: 0.8rem;
+    }
+    th, td {
+        padding: 0.5rem 0.6rem;
+    }
+
+    /* Notes — tighter */
+    .note {
+        padding: 0.7rem 0.9rem;
+        margin: 0.7rem 0;
+        font-size: 0.83rem;
+        border-radius: 10px;
+        border-left-width: 4px;
+    }
+
+    /* Formula box — tighter */
+    .formula-box {
+        padding: 0.8rem 0.9rem;
+        margin: 0.75rem 0;
+        font-size: 0.82rem;
+        border-radius: 10px;
+        border-left-width: 5px;
+    }
+    .formula-box::before {
+        font-size: 0.58rem;
+        padding: 0.12rem 0.5rem;
+        right: 10px;
+    }
+    .formula-box .formula {
+        font-size: 0.88rem;
+        line-height: 1.4;
+    }
+
+    /* Computation box — tighter */
+    .computation-box {
+        padding: 0.8rem 0.9rem;
+        margin: 0.85rem 0;
+        font-size: 0.83rem;
+        border-radius: 10px;
+    }
+    .computation-box::before {
+        font-size: 0.55rem;
+        padding: 0.12rem 0.5rem;
+        left: 10px;
+    }
+    .computation-box .step {
+        padding: 0.35rem 0.55rem;
+        margin: 0.25rem 0;
+        font-size: 0.78rem;
+        border-radius: 6px;
+    }
+    .computation-box .result {
+        padding: 0.4rem 0.6rem;
+        font-size: 0.82rem;
+        border-radius: 6px;
+    }
+
+    /* Process steps — tighter */
+    .process-step {
+        gap: 0.5rem;
+        margin-bottom: 0.45rem;
+    }
+    .process-step .num {
+        width: 20px;
+        height: 20px;
+        font-size: 0.65rem;
+    }
+    .process-step .desc {
+        font-size: 0.82rem;
+        line-height: 1.5;
+    }
+
+    /* Quiz — tighter */
+    .quiz-q {
+        padding: 0.7rem 0.85rem;
+        margin-bottom: 0.6rem;
+        border-radius: 10px;
+    }
+    .quiz-q p {
+        font-size: 0.85rem;
+        margin-bottom: 0.3rem;
+    }
+    .quiz-answer {
+        padding: 0.4rem 0.7rem;
+        font-size: 0.8rem;
+        border-radius: 8px;
+        margin-top: 0.4rem;
+    }
+
+    /* Module grid cards (home & hub) — tighter */
+    .module-grid {
+        gap: 0.7rem;
+    }
+    .module-card {
+        padding: 1rem 0.9rem;
+        border-radius: 14px;
+        gap: 0.4rem;
+    }
+    .module-card .tag {
+        font-size: 0.62rem;
+        padding: 0.18rem 0.55rem;
+    }
+    .module-card h3 {
+        font-size: 1rem;
+        line-height: 1.3;
+    }
+    .module-card p {
+        font-size: 0.82rem;
+        line-height: 1.45;
+    }
+    .module-card .arrow {
+        font-size: 0.78rem;
+    }
+
+    /* Prev/Next nav at bottom of module — tighter */
+    .module-nav {
+        gap: 0.6rem;
+        margin-top: 1rem;
+    }
+    .module-nav a {
+        padding: 0.7rem 0.9rem;
+        min-width: 0;
+        border-radius: 10px;
+        font-size: 0.82rem;
+    }
+    .module-nav a .dir {
+        font-size: 0.65rem;
+    }
+    .module-nav a .label {
+        font-size: 0.85rem;
+    }
+
+    /* Stage nav (checklists) */
+    .stage-nav {
+        gap: 0.6rem;
+        margin-top: 1rem;
+    }
+    .stage-nav a {
+        padding: 0.7rem 0.9rem;
+        border-radius: 10px;
+    }
+    .stage-nav a .label {
+        font-size: 0.85rem;
+    }
+
+    /* Checklist items */
+    .checklist-item {
+        padding: 0.55rem 0.9rem;
+        gap: 0.5rem;
+    }
+    .checklist-item label {
+        font-size: 0.83rem;
+        line-height: 1.4;
+    }
+    .checklist-item input[type="checkbox"] {
+        width: 18px;
+        height: 18px;
+    }
+    .checklist-group-header {
+        padding: 0.65rem 0.9rem;
+        font-size: 0.85rem;
+    }
+    .checklist-group {
+        margin-bottom: 0.8rem;
+    }
+    .checklist-progress {
+        padding: 0.8rem 0.9rem;
+        margin-bottom: 0.9rem;
+        border-radius: 12px;
+    }
+    .checklist-toolbar {
+        gap: 0.4rem;
+        margin-bottom: 0.8rem;
+    }
+    .checklist-toolbar button {
+        padding: 0.4rem 0.75rem;
+        font-size: 0.78rem;
+    }
+
+    /* Footer — tighter */
+    .site-footer {
+        padding: 1rem 0.5rem 0.5rem;
+        font-size: 0.72rem;
+    }
+
+    /* Version info */
+    .version-info {
+        font-size: 0.68rem;
+        margin-top: 0.9rem;
+    }
+
+    /* Popover — full-screen bottom sheet on mobile */
+    .doc-popover {
+        position: fixed;
+        top: auto;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        max-height: 80vh;
+        border-radius: 20px 20px 0 0;
+        margin-top: 0;
+    }
+    .doc-popover-header {
+        border-radius: 20px 20px 0 0;
+        padding: 0.75rem 1rem;
+    }
+    .doc-popover-header h4 {
+        font-size: 0.9rem;
+    }
+    .doc-popover-body {
+        padding: 0.85rem 1rem;
+    }
+    .doc-popover-section h5 {
+        font-size: 0.72rem;
+    }
+    .doc-popover-section li {
+        font-size: 0.8rem;
+        padding: 0.2rem 0 0.2rem 0.9rem;
+    }
+}
