@@ -1718,3 +1718,67 @@ tr:last-child td { border-bottom: none; }
         padding: 0.2rem 0 0.2rem 0.9rem;
     }
 }
+
+/* ==========================================================
+   INFO GRID — flat info tiles for "How to Use" sections
+   Visually distinct from clickable module cards
+   ========================================================== */
+
+.info-grid {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1rem;
+}
+
+.info-tile {
+    background: var(--bg-alt);
+    border-radius: var(--radius-sm);
+    padding: 1.15rem 1.25rem;
+    border: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    position: relative;
+}
+
+.info-tile .icon {
+    font-size: 1.35rem;
+    line-height: 1;
+    margin-bottom: 0.15rem;
+}
+
+.info-tile h4 {
+    font-family: var(--font-body);
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--text);
+    margin: 0;
+    letter-spacing: -0.01em;
+}
+
+.info-tile p {
+    font-size: 0.83rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+    .info-grid {
+        gap: 0.7rem;
+        grid-template-columns: 1fr;
+    }
+    .info-tile {
+        padding: 0.9rem 1rem;
+        border-radius: 10px;
+    }
+    .info-tile h4 {
+        font-size: 0.88rem;
+    }
+    .info-tile p {
+        font-size: 0.8rem;
+    }
+}
