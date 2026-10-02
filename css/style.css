@@ -1079,7 +1079,6 @@ tr:last-child td { border-bottom: none; }
     border-radius: var(--radius-sm);
     border: 1px solid var(--border-soft);
     margin-bottom: 1.1rem;
-    overflow: hidden;
     box-shadow: var(--shadow);
 }
 
@@ -1094,6 +1093,7 @@ tr:last-child td { border-bottom: none; }
     align-items: center;
     gap: 0.6rem;
     font-family: var(--font-body);
+    border-radius: var(--radius-sm) var(--radius-sm) 0 0;   /* ← Add this */
 }
 
 .checklist-group-header .group-tag {
@@ -1107,8 +1107,8 @@ tr:last-child td { border-bottom: none; }
     letter-spacing: 0.05em;
 }
 
-.checklist-group-body {
-    padding: 0.4rem 0;
+.checklist-group-body .checklist-item:last-child {
+    border-radius: 0 0 var(--radius-sm) var(--radius-sm);
 }
 
 .checklist-item {
