@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 1 Summary — Loan Processing 101 · Certified Master Loan Processor</title>
+    <meta name="description" content="Quick summary of Module 1: Loan Processing 101 — terminology, ratios, loan cycle, documentation, TRID basics, and common mistakes.">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <div id="site-header"></div>
+
+    <section class="hero summary-hero">
+        <span style="display:inline-block; background:#fbbf24; color:#78350f; font-size:0.7rem; font-weight:800; padding:0.28rem 0.9rem; border-radius:30px; letter-spacing:0.06em; text-transform:uppercase; margin-bottom:0.6rem;">Module 1 · Summary</span>
+        <h1>Loan Processing 101 — The Basics</h1>
+        <p>The essentials in about 10 minutes. For the full deep dive, use the "Go Deeper" link at the bottom.</p>
+    </section>
+
+    <div class="app" style="grid-template-columns: 1fr; max-width: 900px;">
+        <main class="main">
+
+            <!-- ============ IN 60 SECONDS ============ -->
+            <section class="summary-card">
+                <h2>⚡ In 60 Seconds</h2>
+                <p>Loan Processing 101 covers the foundation of mortgage processing — the terminology you'll hear every day, the three key ratios (LTV, CLTV, HCLTV) that define how much a borrower can finance, how the loan cycle flows from application to closing, what documents are required at each stage, and the key forms (1003, 1008, LE, CD) that drive every transaction. It also introduces TRID disclosure rules and the three disclosure documents that must go out within 3 business days of application.</p>
+            </section>
+
+            <!-- ============ KEY TOPICS ============ -->
+            <section class="summary-card">
+                <h2>📌 Key Topics at a Glance</h2>
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr><th>Topic</th><th>One-Liner</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><strong>Mortgage terminology</strong></td><td>Note vs. mortgage, first vs. second lien, HELOC</td></tr>
+                            <tr><td><strong>LTV / CLTV / HCLTV</strong></td><td>Round up to nearest whole %; use lesser of value or price</td></tr>
+                            <tr><td><strong>PITI &amp; PITIA</strong></td><td>Monthly housing payment; PITIA includes HOA</td></tr>
+                            <tr><td><strong>DTI</strong></td><td>Front-end (housing) vs. back-end (all debt)</td></tr>
+                            <tr><td><strong>Loan cycle</strong></td><td>LO → Setup → Processor → Underwriter → Closer</td></tr>
+                            <tr><td><strong>Initial disclosures</strong></td><td>LE, servicing, ECOA — all within 3 days of application</td></tr>
+                            <tr><td><strong>Form 1003</strong></td><td>100% complete, 2-year history, all signatures</td></tr>
+                            <tr><td><strong>Form 1008</strong></td><td>Underwriting transmittal with ratios and LTV</td></tr>
+                            <tr><td><strong>TRID basics</strong></td><td>LE replaced GFE + TIL; CD replaced HUD-1 + final TIL</td></tr>
+                            <tr><td><strong>Documentation</strong></td><td>90–120 day expiration; 180 for new construction</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- ============ TOP 10 ============ -->
+            <section class="summary-card">
+                <h2>⭐ The 10 Things You Must Remember</h2>
+                <ol class="top-ten">
+                    <li><strong>LTV, CLTV, HCLTV</strong> use the <strong>lesser of appraised value or purchase price</strong>.</li>
+                    <li><strong>HELOC = full line limit</strong>, not the balance, for HCLTV calculation.</li>
+                    <li><strong>PITIA includes HOA dues</strong>; PITI does not. Always qualify on PITIA if there's an HOA.</li>
+                    <li><strong>DTI has two sides:</strong> front-end (housing) and back-end (all monthly debt).</li>
+                    <li><strong>Escrow can only be waived if LTV ≤ 80%</strong> (20% down).</li>
+                    <li><strong>Document expiration:</strong> 90–120 days standard; 180 days for new construction.</li>
+                    <li><strong>Three disclosures within 3 business days of application:</strong> LE, Servicing, ECOA.</li>
+                    <li><strong>CD must be delivered at least 3 business days before consummation.</strong></li>
+                    <li><strong>Six items trigger an application:</strong> name, SSN, income, property address, estimated value, loan amount.</li>
+                    <li><strong>Maximum 4 borrowers</strong> supported by DU/LPA. 5+ requires manual underwrite.</li>
+                </ol>
+            </section>
+
+            <!-- ============ CHEATSHEET ============ -->
+            <section class="summary-card">
+                <h2>📐 Cheatsheet — Critical Formulas</h2>
+
+                <h3>LTV (Loan-to-Value)</h3>
+                <div class="formula-box">
+                    <span class="label">LTV</span>
+                    <span class="formula">First Mortgage Loan Amount ÷ Lesser of Appraised Value or Purchase Price</span>
+                </div>
+                <p style="font-size:0.85rem; color:#64748b; margin-top:-0.5rem;">Round up to nearest whole %.</p>
+
+                <h3>CLTV (Combined Loan-to-Value)</h3>
+                <div class="formula-box">
+                    <span class="label">CLTV</span>
+                    <span class="formula">(First Loan + All Subordinate Liens) ÷ Lesser of Appraised Value or Purchase Price</span>
+                </div>
+
+                <h3>HCLTV (High Combined Loan-to-Value)</h3>
+                <div class="formula-box">
+                    <span class="label">HCLTV</span>
+                    <span class="formula">(First Loan + Total HELOC Credit Limit) ÷ Lesser of Appraised Value or Purchase Price</span>
+                </div>
+
+                <h3>Front-End DTI</h3>
+                <div class="formula-box">
+                    <span class="label">Front-End Ratio</span>
+                    <span class="formula">PITIA ÷ Total Qualifying Income</span>
+                </div>
+
+                <h3>Back-End DTI</h3>
+                <div class="formula-box">
+                    <span class="label">Back-End Ratio</span>
+                    <span class="formula">(PITIA + All Other Monthly Debts) ÷ Total Qualifying Income</span>
+                </div>
+
+                <h3>Cash to Close (Purchase)</h3>
+                <div class="formula-box">
+                    <span class="label">Purchase Cash to Close</span>
+                    <span class="formula">(Sales Price − Loan Amount) + Closing Costs = Cash to Close</span>
+                </div>
+
+                <h3>Cash to Close (Refinance)</h3>
+                <div class="formula-box">
+                    <span class="label">Refinance Cash to Close</span>
+                    <span class="formula">(Payoff − New Loan) + Closing Costs = Cash to Close</span>
+                </div>
+            </section>
+
+            <!-- ============ COMMON MISTAKES ============ -->
+            <section class="summary-card">
+                <h2>⚠️ Common Mistakes</h2>
+                <ul class="mistakes">
+                    <li>Using the <strong>balance</strong> instead of the <strong>full HELOC line limit</strong> for HCLTV.</li>
+                    <li>Forgetting <strong>HOA dues</strong> in the DTI calculation (PITIA, not PITI).</li>
+                    <li>Counting the same day when calculating the <strong>3-day CD window</strong>.</li>
+                    <li>Mixing up <strong>LE business day</strong> (specific) vs. <strong>CD business day</strong> (general).</li>
+                    <li>Missing that <strong>some fees have 0% tolerance</strong> on the LE.</li>
+                    <li>Not verifying <strong>document expiration dates</strong> before each AUS run.</li>
+                    <li>Sending initial disclosures <strong>after the 3-business-day window</strong>.</li>
+                    <li>Forgetting that <strong>maximum 4 borrowers</strong> can be processed through DU/LPA.</li>
+                </ul>
+            </section>
+
+            <!-- ============ GO DEEPER ============ -->
+            <section class="summary-card" style="text-align:center;">
+                <h2>📘 Want the Full Deep Dive?</h2>
+                <p>The full Module 1 includes every calculation, every sample computation, all three session quizzes, and detailed walkthroughs of each form and rule.</p>
+                <a href="../modules/module-1-loan-processing-101.html" class="go-deeper">Go Deeper → Full Module 1</a>
+            </section>
+
+            <div class="stage-nav">
+                <a href="index.html">
+                    <span class="dir">← Back to</span>
+                    <span class="label">All Summaries</span>
+                </a>
+                <a href="../modules/module-1-loan-processing-101.html" class="next">
+                    <span class="dir">Full Module →</span>
+                    <span class="label">Module 1: Loan Processing 101</span>
+                </a>
+            </div>
+
+        </main>
+    </div>
+
+    <footer class="site-footer">
+        © 2025 Campus Mortgage · Certified Master Loan Processor Bootcamp
+        <br>
+        <a href="../about.html">About</a> · <a href="../modules/index.html">Bootcamp</a> · <a href="../reference/index.html">Reference</a>
+    </footer>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/nav.js"></script>
+</body>
+</html>
