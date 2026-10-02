@@ -1782,3 +1782,27 @@ tr:last-child td { border-bottom: none; }
         font-size: 0.8rem;
     }
 }
+
+/* ==========================================================
+   POPOVER POSITIONING — flip top/bottom based on viewport
+   ========================================================== */
+
+.doc-popover.pos-bottom {
+    top: 100%;
+    bottom: auto;
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+}
+
+.doc-popover.pos-top {
+    top: auto;
+    bottom: 100%;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+/* Also remove overflow hidden from any remaining containers */
+.summary-card,
+.card {
+    overflow: visible;
+}
