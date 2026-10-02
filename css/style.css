@@ -1,16 +1,17 @@
 /* ==========================================================
    Certified Master Loan Processor — Shared Stylesheet
-   Used across all pages: home, hubs, modules, reference
+   Used across all pages: home, hubs, modules, reference,
+   checklists, summaries
    ========================================================== */
 
 :root {
-    /* Warmer background — easier on eyes than cool gray */
+    /* Warmer background palette */
     --bg: #f8f7f4;
     --bg-alt: #f2f0eb;
     --surface: #ffffff;
     --surface-warm: #fdfcfa;
 
-    /* Softer text colors — less harsh than pure black */
+    /* Softer text colors */
     --text: #1e293b;
     --text-muted: #64748b;
     --text-light: #94a3b8;
@@ -19,11 +20,12 @@
     --border: #e5e3de;
     --border-soft: #eeebe6;
 
-    /* Softer primary (was #0f172a) */
+    /* Softer primary (slate instead of deep navy) */
     --primary: #334155;
     --primary-dark: #1e293b;
+    --primary-soft: #475569;
 
-    /* Accent colors — slightly muted */
+    /* Accent colors */
     --accent-purple: #7c3aed;
     --accent-orange: #d97706;
     --accent-green: #059669;
@@ -105,7 +107,7 @@ a { color: var(--accent-purple); }
 }
 
 .site-header nav a:hover {
-    background: var(--bg);
+    background: var(--bg-alt);
     color: var(--text);
 }
 
@@ -191,6 +193,15 @@ a { color: var(--accent-purple); }
     border-color: rgba(255, 255, 255, 0.6);
 }
 
+/* Summary hero variant */
+.hero.summary-hero {
+    padding: 2rem 2rem;
+}
+
+.hero.summary-hero h1 {
+    font-size: 1.9rem;
+}
+
 /* ==========================================================
    MODULE CARD GRID
    ========================================================== */
@@ -238,6 +249,7 @@ a { color: var(--accent-purple); }
 .module-card .tag.green { background: var(--accent-green); }
 .module-card .tag.red { background: var(--accent-red); }
 .module-card .tag.blue { background: var(--accent-blue); }
+.module-card .tag.purple { background: var(--accent-purple); }
 .module-card .tag.gray { background: var(--text-light); }
 
 .module-card h3 {
@@ -326,7 +338,7 @@ a { color: var(--accent-purple); }
     border-radius: var(--radius-sm);
     overflow: hidden;
     border: 1px solid var(--border-soft);
-    background: #fbfdff;
+    background: var(--surface-warm);
 }
 
 .module-header {
@@ -335,7 +347,7 @@ a { color: var(--accent-purple); }
     justify-content: space-between;
     padding: 0.65rem 0.8rem;
     cursor: pointer;
-    background: #f8fafc;
+    background: var(--bg-alt);
     transition: background 0.15s ease;
     user-select: none;
 }
@@ -361,7 +373,7 @@ a { color: var(--accent-purple); }
     flex-shrink: 0;
 }
 
-.dot.blue { background: #0f172a; }
+.dot.blue { background: var(--primary); }
 .dot.green { background: var(--accent-green); }
 .dot.orange { background: var(--accent-orange); }
 .dot.purple { background: var(--accent-purple); }
@@ -369,7 +381,7 @@ a { color: var(--accent-purple); }
 
 .module-header .chevron {
     font-size: 0.7rem;
-    color: #64748b;
+    color: var(--text-muted);
     transition: transform 0.25s ease;
     display: inline-block;
 }
@@ -402,7 +414,7 @@ a { color: var(--accent-purple); }
 }
 
 .module-body li a:hover {
-    background: var(--bg);
+    background: var(--bg-alt);
     border-left-color: #94a3b8;
     color: var(--text);
 }
@@ -442,7 +454,7 @@ a { color: var(--accent-purple); }
     display: flex;
     align-items: center;
     gap: 0.6rem;
-    border-bottom: 2px solid #eef2f6;
+    border-bottom: 2px solid var(--border-soft);
     padding-bottom: 0.7rem;
     flex-wrap: wrap;
 }
@@ -467,32 +479,152 @@ a { color: var(--accent-purple); }
     font-size: 1.1rem;
     font-weight: 600;
     margin: 1.3rem 0 0.7rem;
-    color: #1e293b;
+    color: var(--text);
 }
 
 .card h4 {
     font-size: 0.95rem;
     font-weight: 600;
     margin: 1rem 0 0.4rem;
-    color: #334155;
+    color: var(--text);
 }
 
-.card p, .card li { color: #334155; font-size: 0.93rem; }
+.card p, .card li { color: var(--text); font-size: 0.93rem; }
 .card ul, .card ol { padding-left: 1.4rem; margin: 0.4rem 0 0.9rem; }
 .card li { margin-bottom: 0.25rem; }
 
 .highlight {
-    background: #fef9c3;
+    background: #fef3c7;
     padding: 0.05rem 0.3rem;
     border-radius: 4px;
     font-weight: 500;
 }
 
 /* ==========================================================
+   SUMMARY CARDS — extra compact
+   ========================================================== */
+.summary-card {
+    background: var(--surface);
+    border-radius: var(--radius);
+    padding: 1.5rem 1.8rem;
+    box-shadow: 0 1px 3px rgba(30, 41, 59, 0.03);
+    border: 1px solid var(--border-soft);
+    scroll-margin-top: 2rem;
+    margin-bottom: 1.2rem;
+}
+
+.summary-card h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.9rem;
+    color: var(--primary-dark);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-bottom: 2px solid var(--border-soft);
+    padding-bottom: 0.55rem;
+}
+
+.summary-card h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0.9rem 0 0.5rem;
+    color: var(--text);
+}
+
+.summary-card p,
+.summary-card li {
+    font-size: 0.9rem;
+    color: var(--text);
+    line-height: 1.55;
+}
+
+.summary-card ul,
+.summary-card ol {
+    padding-left: 1.3rem;
+    margin: 0.3rem 0 0.8rem;
+}
+
+.summary-card li {
+    margin-bottom: 0.35rem;
+}
+
+.summary-card .top-ten {
+    counter-reset: top10;
+    list-style: none;
+    padding-left: 0;
+    margin: 0.5rem 0 1rem;
+}
+
+.summary-card .top-ten li {
+    counter-increment: top10;
+    position: relative;
+    padding-left: 2.2rem;
+    margin-bottom: 0.65rem;
+    line-height: 1.5;
+}
+
+.summary-card .top-ten li::before {
+    content: counter(top10);
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: linear-gradient(135deg, #475569 0%, #7c3aed 100%);
+    color: #fff;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.78rem;
+    font-weight: 700;
+}
+
+.summary-card .mistakes {
+    list-style: none;
+    padding-left: 0;
+    margin: 0.5rem 0 1rem;
+}
+
+.summary-card .mistakes li {
+    position: relative;
+    padding-left: 1.8rem;
+    margin-bottom: 0.55rem;
+    line-height: 1.5;
+}
+
+.summary-card .mistakes li::before {
+    content: "⚠️";
+    position: absolute;
+    left: 0;
+    top: 0.05rem;
+    font-size: 0.9rem;
+}
+
+.summary-card .go-deeper {
+    display: inline-block;
+    background: linear-gradient(135deg, #475569 0%, #7c3aed 100%);
+    color: #fff;
+    padding: 0.75rem 1.4rem;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    transition: transform 0.15s ease;
+}
+
+.summary-card .go-deeper:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px -6px rgba(124, 58, 237, 0.5);
+}
+
+/* ==========================================================
    NOTE CALLOUTS
    ========================================================== */
 .note {
-    background: #f0f9ff;
+    background: #f0f7ff;
     border-left: 5px solid var(--accent-blue);
     padding: 0.9rem 1.1rem;
     border-radius: 12px;
@@ -502,7 +634,7 @@ a { color: var(--accent-purple); }
 
 .note.warning { background: #fffbeb; border-left-color: var(--accent-orange); }
 .note.danger { background: #fef2f2; border-left-color: var(--accent-red); }
-.note.success { background: #ecfdf5; border-left-color: var(--accent-green); }
+.note.success { background: #f0fdf4; border-left-color: var(--accent-green); }
 .note.purple { background: #f5f3ff; border-left-color: var(--accent-purple); }
 .note strong { color: var(--primary-dark); }
 
@@ -524,7 +656,7 @@ a { color: var(--accent-purple); }
 }
 
 .tile {
-    background: #f8fafc;
+    background: var(--surface-warm);
     border-radius: var(--radius-sm);
     padding: 0.9rem 1.1rem;
     border: 1px solid var(--border);
@@ -556,7 +688,7 @@ table {
 }
 
 th {
-    background: var(--bg);
+    background: var(--bg-alt);
     font-weight: 600;
     text-align: left;
     padding: 0.7rem 0.9rem;
@@ -568,7 +700,7 @@ td {
     padding: 0.7rem 0.9rem;
     border-bottom: 1px solid var(--border-soft);
     vertical-align: top;
-    color: #334155;
+    color: var(--text);
 }
 
 tr:last-child td { border-bottom: none; }
@@ -604,13 +736,13 @@ tr:last-child td { border-bottom: none; }
 .process-step .num.red { background: var(--accent-red); }
 .process-step .num.blue { background: var(--accent-blue); }
 
-.process-step .desc { font-size: 0.9rem; color: #334155; }
+.process-step .desc { font-size: 0.9rem; color: var(--text); }
 
 /* ==========================================================
    KEY FORMULA BOX
    ========================================================== */
 .formula-box {
-    background: linear-gradient(135deg, #334155 0%, #475569 100%);
+    background: linear-gradient(135deg, #475569 0%, #334155 100%);
     color: #fff;
     border-radius: var(--radius-sm);
     padding: 1.1rem 1.3rem;
@@ -618,7 +750,7 @@ tr:last-child td { border-bottom: none; }
     font-family: 'Courier New', monospace;
     font-size: 0.95rem;
     border-left: 6px solid var(--accent-gold);
-    box-shadow: 0 6px 18px -6px rgba(15, 23, 42, 0.5);
+    box-shadow: 0 4px 14px -6px rgba(51, 65, 85, 0.3);
     position: relative;
 }
 
@@ -638,7 +770,7 @@ tr:last-child td { border-bottom: none; }
 }
 
 .formula-box .label {
-    color: var(--text-light);
+    color: #cbd5e1;
     font-size: 0.72rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
@@ -666,7 +798,7 @@ tr:last-child td { border-bottom: none; }
     margin: 1rem 0;
     font-size: 0.9rem;
     position: relative;
-    box-shadow: 0 4px 12px -4px rgba(217, 119, 6, 0.25);
+    box-shadow: 0 2px 8px -4px rgba(217, 119, 6, 0.2);
 }
 
 .computation-box::before {
@@ -691,7 +823,7 @@ tr:last-child td { border-bottom: none; }
     margin: 0.35rem 0;
     border-left: 3px solid var(--accent-orange);
     font-size: 0.86rem;
-    color: #1e293b;
+    color: var(--text);
 }
 
 .computation-box .step strong { color: #b45309; }
@@ -712,7 +844,7 @@ tr:last-child td { border-bottom: none; }
    QUIZ
    ========================================================== */
 .quiz-q {
-    background: #f8fafc;
+    background: var(--surface-warm);
     border-radius: var(--radius-sm);
     padding: 1rem 1.2rem;
     margin-bottom: 1rem;
@@ -726,7 +858,7 @@ tr:last-child td { border-bottom: none; }
 }
 
 .quiz-answer {
-    background: #ecfdf5;
+    background: #f0fdf4;
     padding: 0.5rem 0.9rem;
     border-radius: var(--radius-xs);
     border-left: 4px solid var(--accent-green);
@@ -735,7 +867,7 @@ tr:last-child td { border-bottom: none; }
 }
 
 /* ==========================================================
-   MODULE NAVIGATION (Prev / Next at bottom of pages)
+   MODULE PREV/NEXT NAV
    ========================================================== */
 .module-nav {
     max-width: 1450px;
@@ -789,7 +921,60 @@ tr:last-child td { border-bottom: none; }
 }
 
 /* ==========================================================
-   VERSION FOOTER (small text on module pages)
+   STAGE NAV (checklists / summaries)
+   ========================================================== */
+.stage-nav {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.stage-nav a {
+    flex: 1;
+    min-width: 220px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 1rem 1.4rem;
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 600;
+    font-size: 0.9rem;
+    box-shadow: var(--shadow);
+    transition: all 0.15s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.stage-nav a:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--accent-purple);
+}
+
+.stage-nav a .dir {
+    font-size: 0.72rem;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 700;
+}
+
+.stage-nav a.next {
+    text-align: right;
+    align-items: flex-end;
+}
+
+.stage-nav a .label {
+    color: var(--accent-purple);
+    font-size: 0.95rem;
+}
+
+/* ==========================================================
+   VERSION INFO
    ========================================================== */
 .version-info {
     max-width: 1450px;
@@ -801,7 +986,439 @@ tr:last-child td { border-bottom: none; }
 }
 
 /* ==========================================================
-   RESPONSIVE
+   CHECKLIST-SPECIFIC (uses summary-card too)
+   ========================================================== */
+.checklist-progress {
+    background: var(--surface-warm);
+    border-radius: 14px;
+    padding: 1.1rem 1.4rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--border);
+}
+
+.progress-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.6rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.progress-header .label {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--text);
+}
+
+.progress-header .percent {
+    font-size: 0.9rem;
+    font-weight: 800;
+    color: var(--accent-purple);
+    font-family: 'Courier New', monospace;
+}
+
+.progress-bar {
+    background: var(--border);
+    border-radius: 30px;
+    height: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #7c3aed 0%, #059669 100%);
+    border-radius: 30px;
+    width: 0%;
+    transition: width 0.35s ease;
+}
+
+.checklist-group {
+    background: var(--surface);
+    border-radius: 14px;
+    border: 1px solid var(--border-soft);
+    margin-bottom: 1.2rem;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(30, 41, 59, 0.03);
+}
+
+.checklist-group-header {
+    background: var(--bg-alt);
+    padding: 0.9rem 1.2rem;
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: var(--text);
+    border-bottom: 1px solid var(--border-soft);
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.checklist-group-header .group-tag {
+    background: var(--accent-purple);
+    color: #fff;
+    font-size: 0.65rem;
+    font-weight: 700;
+    padding: 0.2rem 0.6rem;
+    border-radius: 30px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.checklist-group-body {
+    padding: 0.5rem 0;
+}
+
+.checklist-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.7rem;
+    padding: 0.7rem 1.2rem;
+    border-bottom: 1px solid var(--border-soft);
+    transition: background 0.15s ease;
+    position: relative;
+}
+
+.checklist-item:last-child { border-bottom: none; }
+
+.checklist-item:hover {
+    background: var(--surface-warm);
+}
+
+.checklist-item input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #cbd5e1;
+    border-radius: 6px;
+    cursor: pointer;
+    flex-shrink: 0;
+    margin-top: 2px;
+    position: relative;
+    transition: all 0.15s ease;
+    background: var(--surface);
+}
+
+.checklist-item input[type="checkbox"]:hover {
+    border-color: var(--accent-purple);
+}
+
+.checklist-item input[type="checkbox"]:checked {
+    background: var(--accent-purple);
+    border-color: var(--accent-purple);
+}
+
+.checklist-item input[type="checkbox"]:checked::after {
+    content: "✓";
+    position: absolute;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 800;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.checklist-item input[type="checkbox"]:focus-visible {
+    outline: 2px solid var(--accent-purple);
+    outline-offset: 2px;
+}
+
+.checklist-item label {
+    flex-grow: 1;
+    font-size: 0.9rem;
+    color: var(--text);
+    cursor: pointer;
+    line-height: 1.5;
+    transition: all 0.15s ease;
+}
+
+.checklist-item.checked label {
+    color: var(--text-light);
+    text-decoration: line-through;
+}
+
+.checklist-item .doc-meta {
+    display: flex;
+    gap: 0.4rem;
+    margin-top: 0.3rem;
+    flex-wrap: wrap;
+}
+
+.checklist-item .doc-meta .tag {
+    font-size: 0.68rem;
+    font-weight: 600;
+    padding: 0.15rem 0.5rem;
+    border-radius: 30px;
+    background: var(--bg-alt);
+    color: var(--text-muted);
+}
+
+.checklist-item .doc-meta .tag.required {
+    background: #fef2f2;
+    color: #b91c1c;
+}
+
+.checklist-item .doc-meta .tag.conditional {
+    background: #fffbeb;
+    color: #b45309;
+}
+
+.checklist-toolbar {
+    display: flex;
+    gap: 0.6rem;
+    justify-content: flex-end;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.checklist-toolbar button {
+    background: var(--surface);
+    border: 1.5px solid var(--border);
+    color: var(--text);
+    border-radius: 10px;
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    font-family: inherit;
+}
+
+.checklist-toolbar button:hover {
+    border-color: var(--accent-purple);
+    color: var(--accent-purple);
+}
+
+/* ==========================================================
+   HOVER GUIDE INFO BUTTON + POPOVER
+   ========================================================== */
+.info-btn {
+    background: transparent;
+    border: 1.5px solid #cbd5e1;
+    color: var(--text-muted);
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 0.75rem;
+    font-weight: 700;
+    flex-shrink: 0;
+    transition: all 0.15s ease;
+    font-family: 'Courier New', monospace;
+    margin-top: 1px;
+}
+
+.info-btn:hover,
+.info-btn:focus-visible {
+    background: var(--accent-purple);
+    border-color: var(--accent-purple);
+    color: #ffffff;
+    outline: none;
+}
+
+.info-btn.active {
+    background: var(--accent-purple);
+    border-color: var(--accent-purple);
+    color: #ffffff;
+}
+
+.doc-popover {
+    display: none;
+    position: absolute;
+    z-index: 100;
+    width: min(460px, calc(100vw - 2rem));
+    background: var(--surface);
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    box-shadow: 0 20px 40px -10px rgba(30, 41, 59, 0.2),
+                0 8px 16px -6px rgba(30, 41, 59, 0.1);
+    padding: 0;
+    font-size: 0.86rem;
+    top: 100%;
+    right: 1rem;
+    margin-top: 0.5rem;
+    animation: popIn 0.2s ease;
+    overflow: hidden;
+}
+
+.doc-popover.show { display: block; }
+
+@keyframes popIn {
+    from { opacity: 0; transform: translateY(-6px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.doc-popover-header {
+    background: linear-gradient(135deg, #475569 0%, #334155 100%);
+    color: #ffffff;
+    padding: 0.85rem 1.1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0.6rem;
+}
+
+.doc-popover-header h4 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.3;
+    margin: 0;
+}
+
+.doc-popover-header .close-btn {
+    background: transparent;
+    border: none;
+    color: #cbd5e1;
+    font-size: 1.1rem;
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+    flex-shrink: 0;
+    transition: color 0.15s ease;
+}
+
+.doc-popover-header .close-btn:hover {
+    color: #ffffff;
+}
+
+.doc-popover-body {
+    padding: 1rem 1.1rem;
+    max-height: 65vh;
+    overflow-y: auto;
+}
+
+.doc-popover-body::-webkit-scrollbar { width: 6px; }
+.doc-popover-body::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 10px;
+}
+
+.doc-popover-section {
+    margin-bottom: 1rem;
+}
+
+.doc-popover-section:last-child { margin-bottom: 0; }
+
+.doc-popover-section h5 {
+    font-size: 0.78rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--accent-purple);
+    margin-bottom: 0.4rem;
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.doc-popover-section ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.doc-popover-section li {
+    font-size: 0.85rem;
+    color: var(--text);
+    padding: 0.25rem 0 0.25rem 1rem;
+    position: relative;
+    line-height: 1.5;
+}
+
+.doc-popover-section li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--text-light);
+    font-weight: 700;
+}
+
+.doc-popover-section.lookfor h5 { color: var(--accent-green); }
+.doc-popover-section.lookfor li::before { color: var(--accent-green); }
+
+.doc-popover-section.redflags h5 { color: var(--accent-red); }
+.doc-popover-section.redflags li::before { color: var(--accent-red); }
+
+.doc-popover-section.crosscheck h5 { color: var(--accent-blue); }
+.doc-popover-section.crosscheck li::before { color: var(--accent-blue); }
+
+.doc-popover-section.feedsinto h5 { color: var(--accent-orange); }
+.doc-popover-section.feedsinto li::before { color: var(--accent-orange); }
+
+.doc-popover-section .pill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    padding: 0;
+}
+
+.doc-popover-section .pill-list li {
+    padding: 0.25rem 0.65rem;
+    background: var(--bg-alt);
+    border-radius: 30px;
+    font-size: 0.78rem;
+    color: var(--text);
+}
+
+.doc-popover-section .pill-list li::before { display: none; }
+
+/* ==========================================================
+   PRINT STYLES — clean print for checklists
+   ========================================================== */
+@media print {
+    .site-header,
+    .site-footer,
+    .sidebar,
+    .hero,
+    .checklist-toolbar,
+    .info-btn,
+    .stage-nav,
+    .module-nav,
+    .doc-popover {
+        display: none !important;
+    }
+
+    body {
+        padding: 0;
+        background: #ffffff;
+    }
+
+    .app {
+        display: block;
+        max-width: 100%;
+    }
+
+    .card,
+    .summary-card {
+        box-shadow: none;
+        border: none;
+        padding: 0;
+    }
+
+    .checklist-item {
+        padding: 0.4rem 0;
+    }
+
+    .checklist-item.checked label {
+        color: var(--text-light);
+    }
+
+    .checklist-group {
+        page-break-inside: avoid;
+        border: 1px solid var(--border);
+        margin-bottom: 1rem;
+    }
+}
+
+/* ==========================================================
+   RESPONSIVE — Tablet
    ========================================================== */
 @media (max-width: 950px) {
     .app { grid-template-columns: 1fr; }
@@ -814,14 +1431,6 @@ tr:last-child td { border-bottom: none; }
     .hero { padding: 2rem 1.5rem; }
     .hero h1 { font-size: 1.8rem; }
     .grid-2, .grid-3 { grid-template-columns: 1fr; }
-}
-
-@media (max-width: 500px) {
-    body { padding: 0.8rem; }
-    .card { padding: 1.2rem; }
-    .site-header { padding: 0.75rem 1rem; }
-    .site-header nav a { font-size: 0.8rem; padding: 0.35rem 0.7rem; }
-    .hero h1 { font-size: 1.4rem; }
 }
 
 /* ==========================================================
@@ -877,6 +1486,12 @@ tr:last-child td { border-bottom: none; }
         margin-bottom: 0.35rem;
         border-radius: 8px;
     }
+    .hero.summary-hero {
+        padding: 1.2rem 1rem;
+    }
+    .hero.summary-hero h1 {
+        font-size: 1.3rem;
+    }
 
     /* Cards — much less padding */
     .card {
@@ -915,425 +1530,7 @@ tr:last-child td { border-bottom: none; }
         margin-bottom: 0.15rem;
     }
 
-    /* Tighter vertical rhythm */
-    .main {
-        gap: 0.85rem;
-    }
-
-    /* Section titles */
-    .section-title {
-        font-size: 1.05rem;
-        margin: 1.2rem auto 0.6rem;
-    }
-
-    /* Sidebar — collapses visually, less vertical space */
-    .sidebar {
-        padding: 0.9rem 0.7rem;
-        margin-bottom: 0.85rem;
-        border-radius: 14px;
-    }
-    .sidebar h3 {
-        font-size: 0.8rem;
-        margin-bottom: 0.5rem;
-        padding-bottom: 0.4rem;
-    }
-    .module-block {
-        margin-bottom: 0.35rem;
-    }
-    .module-header {
-        padding: 0.5rem 0.65rem;
-    }
-    .module-header .label {
-        font-size: 0.72rem;
-    }
-    .module-body {
-        padding: 0.25rem 0.25rem 0.35rem;
-    }
-    .module-body li a {
-        padding: 0.32rem 0.55rem 0.32rem 0.85rem;
-        font-size: 0.74rem;
-    }
-
-    /* Tiles — much tighter */
-    .tile {
-        padding: 0.7rem 0.85rem;
-        border-radius: 10px;
-    }
-    .tile h5 {
-        font-size: 0.82rem;
-        margin-bottom: 0.3rem;
-    }
-    .tile p, .tile li {
-        font-size: 0.78rem;
-        line-height: 1.45;
-    }
-
-    /* Grids — single column, less gap */
-    .grid-2, .grid-3 {
-        gap: 0.65rem;
-        margin: 0.6rem 0;
-    }
-
-    /* Tables — smaller text, tighter cells */
-    .table-wrap {
-        margin: 0.65rem 0;
-        border-radius: 10px;
-    }
-    table {
-        font-size: 0.8rem;
-    }
-    th, td {
-        padding: 0.5rem 0.6rem;
-    }
-
-    /* Notes — tighter */
-    .note {
-        padding: 0.7rem 0.9rem;
-        margin: 0.7rem 0;
-        font-size: 0.83rem;
-        border-radius: 10px;
-        border-left-width: 4px;
-    }
-
-    /* Formula box — tighter */
-    .formula-box {
-        padding: 0.8rem 0.9rem;
-        margin: 0.75rem 0;
-        font-size: 0.82rem;
-        border-radius: 10px;
-        border-left-width: 5px;
-    }
-    .formula-box::before {
-        font-size: 0.58rem;
-        padding: 0.12rem 0.5rem;
-        right: 10px;
-    }
-    .formula-box .formula {
-        font-size: 0.88rem;
-        line-height: 1.4;
-    }
-
-    /* Computation box — tighter */
-    .computation-box {
-        padding: 0.8rem 0.9rem;
-        margin: 0.85rem 0;
-        font-size: 0.83rem;
-        border-radius: 10px;
-    }
-    .computation-box::before {
-        font-size: 0.55rem;
-        padding: 0.12rem 0.5rem;
-        left: 10px;
-    }
-    .computation-box .step {
-        padding: 0.35rem 0.55rem;
-        margin: 0.25rem 0;
-        font-size: 0.78rem;
-        border-radius: 6px;
-    }
-    .computation-box .result {
-        padding: 0.4rem 0.6rem;
-        font-size: 0.82rem;
-        border-radius: 6px;
-    }
-
-    /* Process steps — tighter */
-    .process-step {
-        gap: 0.5rem;
-        margin-bottom: 0.45rem;
-    }
-    .process-step .num {
-        width: 20px;
-        height: 20px;
-        font-size: 0.65rem;
-    }
-    .process-step .desc {
-        font-size: 0.82rem;
-        line-height: 1.5;
-    }
-
-    /* Quiz — tighter */
-    .quiz-q {
-        padding: 0.7rem 0.85rem;
-        margin-bottom: 0.6rem;
-        border-radius: 10px;
-    }
-    .quiz-q p {
-        font-size: 0.85rem;
-        margin-bottom: 0.3rem;
-    }
-    .quiz-answer {
-        padding: 0.4rem 0.7rem;
-        font-size: 0.8rem;
-        border-radius: 8px;
-        margin-top: 0.4rem;
-    }
-
-    /* Module grid cards (home & hub) — tighter */
-    .module-grid {
-        gap: 0.7rem;
-    }
-    .module-card {
-        padding: 1rem 0.9rem;
-        border-radius: 14px;
-        gap: 0.4rem;
-    }
-    .module-card .tag {
-        font-size: 0.62rem;
-        padding: 0.18rem 0.55rem;
-    }
-    .module-card h3 {
-        font-size: 1rem;
-        line-height: 1.3;
-    }
-    .module-card p {
-        font-size: 0.82rem;
-        line-height: 1.45;
-    }
-    .module-card .arrow {
-        font-size: 0.78rem;
-    }
-
-    /* Prev/Next nav at bottom of module — tighter */
-    .module-nav {
-        gap: 0.6rem;
-        margin-top: 1rem;
-    }
-    .module-nav a {
-        padding: 0.7rem 0.9rem;
-        min-width: 0;
-        border-radius: 10px;
-        font-size: 0.82rem;
-    }
-    .module-nav a .dir {
-        font-size: 0.65rem;
-    }
-    .module-nav a .label {
-        font-size: 0.85rem;
-    }
-
-    /* Stage nav (checklists) */
-    .stage-nav {
-        gap: 0.6rem;
-        margin-top: 1rem;
-    }
-    .stage-nav a {
-        padding: 0.7rem 0.9rem;
-        border-radius: 10px;
-    }
-    .stage-nav a .label {
-        font-size: 0.85rem;
-    }
-
-    /* Checklist items */
-    .checklist-item {
-        padding: 0.55rem 0.9rem;
-        gap: 0.5rem;
-    }
-    .checklist-item label {
-        font-size: 0.83rem;
-        line-height: 1.4;
-    }
-    .checklist-item input[type="checkbox"] {
-        width: 18px;
-        height: 18px;
-    }
-    .checklist-group-header {
-        padding: 0.65rem 0.9rem;
-        font-size: 0.85rem;
-    }
-    .checklist-group {
-        margin-bottom: 0.8rem;
-    }
-    .checklist-progress {
-        padding: 0.8rem 0.9rem;
-        margin-bottom: 0.9rem;
-        border-radius: 12px;
-    }
-    .checklist-toolbar {
-        gap: 0.4rem;
-        margin-bottom: 0.8rem;
-    }
-    .checklist-toolbar button {
-        padding: 0.4rem 0.75rem;
-        font-size: 0.78rem;
-    }
-
-    /* Footer — tighter */
-    .site-footer {
-        padding: 1rem 0.5rem 0.5rem;
-        font-size: 0.72rem;
-    }
-
-    /* Version info */
-    .version-info {
-        font-size: 0.68rem;
-        margin-top: 0.9rem;
-    }
-
-    /* Popover — full-screen bottom sheet on mobile */
-    .doc-popover {
-        position: fixed;
-        top: auto;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        width: 100%;
-        max-height: 80vh;
-        border-radius: 20px 20px 0 0;
-        margin-top: 0;
-    }
-    .doc-popover-header {
-        border-radius: 20px 20px 0 0;
-        padding: 0.75rem 1rem;
-    }
-    .doc-popover-header h4 {
-        font-size: 0.9rem;
-    }
-    .doc-popover-body {
-        padding: 0.85rem 1rem;
-    }
-    .doc-popover-section h5 {
-        font-size: 0.72rem;
-    }
-    .doc-popover-section li {
-        font-size: 0.8rem;
-        padding: 0.2rem 0 0.2rem 0.9rem;
-    }
-}
-
-/* ==========================================================
-   SUMMARY PAGES — extra compact cards for summaries
-   ========================================================== */
-
-.summary-card {
-    background: #ffffff;
-    border-radius: 20px;
-    padding: 1.5rem 1.8rem;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
-    border: 1px solid #e9eef3;
-    scroll-margin-top: 2rem;
-    margin-bottom: 1.2rem;
-}
-
-.summary-card h2 {
-    font-size: 1.25rem;
-    font-weight: 700;
-    margin-bottom: 0.9rem;
-    color: #0b1b33;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    border-bottom: 2px solid #eef2f6;
-    padding-bottom: 0.55rem;
-}
-
-.summary-card h3 {
-    font-size: 1rem;
-    font-weight: 600;
-    margin: 0.9rem 0 0.5rem;
-    color: #1e293b;
-}
-
-.summary-card p,
-.summary-card li {
-    font-size: 0.9rem;
-    color: #334155;
-    line-height: 1.55;
-}
-
-.summary-card ul,
-.summary-card ol {
-    padding-left: 1.3rem;
-    margin: 0.3rem 0 0.8rem;
-}
-
-.summary-card li {
-    margin-bottom: 0.35rem;
-}
-
-.summary-card .top-ten {
-    counter-reset: top10;
-    list-style: none;
-    padding-left: 0;
-    margin: 0.5rem 0 1rem;
-}
-
-.summary-card .top-ten li {
-    counter-increment: top10;
-    position: relative;
-    padding-left: 2.2rem;
-    margin-bottom: 0.65rem;
-    line-height: 1.5;
-}
-
-.summary-card .top-ten li::before {
-    content: counter(top10);
-    position: absolute;
-    left: 0;
-    top: 0;
-    background: linear-gradient(135deg, #0f172a 0%, #7c3aed 100%);
-    color: #fff;
-    width: 26px;
-    height: 26px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.78rem;
-    font-weight: 700;
-}
-
-.summary-card .mistakes {
-    list-style: none;
-    padding-left: 0;
-    margin: 0.5rem 0 1rem;
-}
-
-.summary-card .mistakes li {
-    position: relative;
-    padding-left: 1.8rem;
-    margin-bottom: 0.55rem;
-    line-height: 1.5;
-}
-
-.summary-card .mistakes li::before {
-    content: "⚠️";
-    position: absolute;
-    left: 0;
-    top: 0.05rem;
-    font-size: 0.9rem;
-}
-
-.summary-card .go-deeper {
-    display: inline-block;
-    background: linear-gradient(135deg, #0f172a 0%, #7c3aed 100%);
-    color: #fff;
-    padding: 0.75rem 1.4rem;
-    border-radius: 12px;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 0.9rem;
-    margin-top: 0.5rem;
-    transition: transform 0.15s ease;
-}
-
-.summary-card .go-deeper:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px -6px rgba(124, 58, 237, 0.5);
-}
-
-/* Compact summary hero variant */
-.hero.summary-hero {
-    padding: 2rem 2rem;
-    background: linear-gradient(135deg, #0f172a 0%, #d97706 100%);
-}
-
-.hero.summary-hero h1 {
-    font-size: 1.8rem;
-}
-
-@media (max-width: 640px) {
+    /* Summary cards — tighter */
     .summary-card {
         padding: 1rem 0.9rem;
         border-radius: 14px;
@@ -1362,10 +1559,257 @@ tr:last-child td { border-bottom: none; }
         height: 22px;
         font-size: 0.7rem;
     }
-    .hero.summary-hero {
-        padding: 1.2rem 1rem;
+
+    /* Tighter vertical rhythm */
+    .main {
+        gap: 0.85rem;
     }
-    .hero.summary-hero h1 {
-        font-size: 1.3rem;
+
+    /* Section titles */
+    .section-title {
+        font-size: 1.05rem;
+        margin: 1.2rem auto 0.6rem;
+    }
+
+    /* Sidebar */
+    .sidebar {
+        padding: 0.9rem 0.7rem;
+        margin-bottom: 0.85rem;
+        border-radius: 14px;
+    }
+    .sidebar h3 {
+        font-size: 0.8rem;
+        margin-bottom: 0.5rem;
+        padding-bottom: 0.4rem;
+    }
+    .module-block { margin-bottom: 0.35rem; }
+    .module-header { padding: 0.5rem 0.65rem; }
+    .module-header .label { font-size: 0.72rem; }
+    .module-body { padding: 0.25rem 0.25rem 0.35rem; }
+    .module-body li a {
+        padding: 0.32rem 0.55rem 0.32rem 0.85rem;
+        font-size: 0.74rem;
+    }
+
+    /* Tiles */
+    .tile {
+        padding: 0.7rem 0.85rem;
+        border-radius: 10px;
+    }
+    .tile h5 {
+        font-size: 0.82rem;
+        margin-bottom: 0.3rem;
+    }
+    .tile p, .tile li {
+        font-size: 0.78rem;
+        line-height: 1.45;
+    }
+
+    /* Grids */
+    .grid-2, .grid-3 {
+        gap: 0.65rem;
+        margin: 0.6rem 0;
+    }
+
+    /* Tables */
+    .table-wrap {
+        margin: 0.65rem 0;
+        border-radius: 10px;
+    }
+    table { font-size: 0.8rem; }
+    th, td { padding: 0.5rem 0.6rem; }
+
+    /* Notes */
+    .note {
+        padding: 0.7rem 0.9rem;
+        margin: 0.7rem 0;
+        font-size: 0.83rem;
+        border-radius: 10px;
+        border-left-width: 4px;
+    }
+
+    /* Formula box */
+    .formula-box {
+        padding: 0.8rem 0.9rem;
+        margin: 0.75rem 0;
+        font-size: 0.82rem;
+        border-radius: 10px;
+        border-left-width: 5px;
+    }
+    .formula-box::before {
+        font-size: 0.58rem;
+        padding: 0.12rem 0.5rem;
+        right: 10px;
+    }
+    .formula-box .formula {
+        font-size: 0.88rem;
+        line-height: 1.4;
+    }
+
+    /* Computation box */
+    .computation-box {
+        padding: 0.8rem 0.9rem;
+        margin: 0.85rem 0;
+        font-size: 0.83rem;
+        border-radius: 10px;
+    }
+    .computation-box::before {
+        font-size: 0.55rem;
+        padding: 0.12rem 0.5rem;
+        left: 10px;
+    }
+    .computation-box .step {
+        padding: 0.35rem 0.55rem;
+        margin: 0.25rem 0;
+        font-size: 0.78rem;
+        border-radius: 6px;
+    }
+    .computation-box .result {
+        padding: 0.4rem 0.6rem;
+        font-size: 0.82rem;
+        border-radius: 6px;
+    }
+
+    /* Process steps */
+    .process-step {
+        gap: 0.5rem;
+        margin-bottom: 0.45rem;
+    }
+    .process-step .num {
+        width: 20px;
+        height: 20px;
+        font-size: 0.65rem;
+    }
+    .process-step .desc {
+        font-size: 0.82rem;
+        line-height: 1.5;
+    }
+
+    /* Quiz */
+    .quiz-q {
+        padding: 0.7rem 0.85rem;
+        margin-bottom: 0.6rem;
+        border-radius: 10px;
+    }
+    .quiz-q p {
+        font-size: 0.85rem;
+        margin-bottom: 0.3rem;
+    }
+    .quiz-answer {
+        padding: 0.4rem 0.7rem;
+        font-size: 0.8rem;
+        border-radius: 8px;
+        margin-top: 0.4rem;
+    }
+
+    /* Module grid cards */
+    .module-grid { gap: 0.7rem; }
+    .module-card {
+        padding: 1rem 0.9rem;
+        border-radius: 14px;
+        gap: 0.4rem;
+    }
+    .module-card .tag {
+        font-size: 0.62rem;
+        padding: 0.18rem 0.55rem;
+    }
+    .module-card h3 {
+        font-size: 1rem;
+        line-height: 1.3;
+    }
+    .module-card p {
+        font-size: 0.82rem;
+        line-height: 1.45;
+    }
+    .module-card .arrow { font-size: 0.78rem; }
+
+    /* Prev/Next nav */
+    .module-nav {
+        gap: 0.6rem;
+        margin-top: 1rem;
+    }
+    .module-nav a {
+        padding: 0.7rem 0.9rem;
+        min-width: 0;
+        border-radius: 10px;
+        font-size: 0.82rem;
+    }
+    .module-nav a .dir { font-size: 0.65rem; }
+    .module-nav a .label { font-size: 0.85rem; }
+
+    .stage-nav {
+        gap: 0.6rem;
+        margin-top: 1rem;
+    }
+    .stage-nav a {
+        padding: 0.7rem 0.9rem;
+        border-radius: 10px;
+    }
+    .stage-nav a .label { font-size: 0.85rem; }
+
+    /* Checklist items */
+    .checklist-item {
+        padding: 0.55rem 0.9rem;
+        gap: 0.5rem;
+    }
+    .checklist-item label {
+        font-size: 0.83rem;
+        line-height: 1.4;
+    }
+    .checklist-item input[type="checkbox"] {
+        width: 18px;
+        height: 18px;
+    }
+    .checklist-group-header {
+        padding: 0.65rem 0.9rem;
+        font-size: 0.85rem;
+    }
+    .checklist-group { margin-bottom: 0.8rem; }
+    .checklist-progress {
+        padding: 0.8rem 0.9rem;
+        margin-bottom: 0.9rem;
+        border-radius: 12px;
+    }
+    .checklist-toolbar {
+        gap: 0.4rem;
+        margin-bottom: 0.8rem;
+    }
+    .checklist-toolbar button {
+        padding: 0.4rem 0.75rem;
+        font-size: 0.78rem;
+    }
+
+    /* Footer */
+    .site-footer {
+        padding: 1rem 0.5rem 0.5rem;
+        font-size: 0.72rem;
+    }
+    .version-info {
+        font-size: 0.68rem;
+        margin-top: 0.9rem;
+    }
+
+    /* Popover — full-screen bottom sheet on mobile */
+    .doc-popover {
+        position: fixed;
+        top: auto;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        max-height: 80vh;
+        border-radius: 20px 20px 0 0;
+        margin-top: 0;
+    }
+    .doc-popover-header {
+        border-radius: 20px 20px 0 0;
+        padding: 0.75rem 1rem;
+    }
+    .doc-popover-header h4 { font-size: 0.9rem; }
+    .doc-popover-body { padding: 0.85rem 1rem; }
+    .doc-popover-section h5 { font-size: 0.72rem; }
+    .doc-popover-section li {
+        font-size: 0.8rem;
+        padding: 0.2rem 0 0.2rem 0.9rem;
     }
 }
